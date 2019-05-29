@@ -5,15 +5,79 @@ void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
+  //Widget build(BuildContext context) {
+  //  final wordPair = WordPair.random();
+  //  return MaterialApp(
+  //    title: 'Startup Name Generator',
+  //   theme: ThemeData(
+  //      // Add the 3 lines from here...
+  //      primaryColor: Colors.white,
+  //    ),
+  //   home: RandomWords(),
+  //  );
+  //}
   Widget build(BuildContext context) {
-    final wordPair = WordPair.random();
     return MaterialApp(
-      title: 'Startup Name Generator',
+      //title: 'Welcome to Flutter',
       theme: ThemeData(
         // Add the 3 lines from here...
-        primaryColor: Colors.white,
+        primaryColor: Colors.brown,
       ),
-      home: RandomWords(),
+      home: Scaffold(
+          appBar: AppBar(
+            //title: Text('Welcome to Flutter'),
+            leading: IconButton(
+              icon: Icon(
+                Icons.menu,
+                semanticLabel: 'menu',
+              ),
+              onPressed: () {
+                print('Menu button');
+              },
+            ),
+            actions: <Widget>[
+              IconButton(
+                icon: Icon(
+                  Icons.search,
+                  semanticLabel: 'search',
+                ),
+                onPressed: () {
+                  print('Search button');
+                },
+              ),
+              IconButton(
+                icon: Icon(
+                  Icons.tune,
+                  semanticLabel: 'filter',
+                ),
+                onPressed: () {
+                  print('Filter button');
+                },
+              ),
+            ],
+          ),
+          //body: GridView.count(
+          //  crossAxisCount: 2,
+          //  padding: EdgeInsets.all(16.0),
+          //  childAspectRatio: 8.0 / 9.0,
+          //  // TODO: Build a grid of cards (102)
+          //  children: <Widget>[Card()],
+          //),
+
+          body: ListView(
+            children: ListTile.divideTiles(
+                context: context,
+                tiles: [
+                  ListTile(
+                      title: Text('Spell 1'),
+                      onTap: () {
+                        print("test");
+                      }
+                  )
+                ]
+            ).toList(),
+          )
+      ),
     );
   }
 }
