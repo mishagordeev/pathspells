@@ -47,7 +47,7 @@ class MyApp extends StatelessWidget {
               // Use future builder and DefaultAssetBundle to load the local JSON file
               child: new FutureBuilder(
                   future: DefaultAssetBundle.of(context)
-                      .loadString('assets/spells.json'),
+                      .loadString('assets/dnd_spells.json'),
                   builder: (context, snapshot) {
                     List<Country> countries =
                         parseJosn(snapshot.data.toString());
@@ -78,8 +78,8 @@ class Country {
 
   factory Country.fromJson(Map<String, dynamic> json) {
     return new Country(
-      name: json['name'] as String,
-      flag: json['description'] as String
+      name: json['Spell Name'] as String,
+      flag: json['Duration'] as String
     );
   }
 }
