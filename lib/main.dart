@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primaryColor: Colors.brown,
+        primaryColor: Colors.blue,
       ),
       home: Scaffold(
           appBar: AppBar(
@@ -72,15 +72,12 @@ List<Country> parseJosn(String response) {
 class Country {
   final String name;
   final String flag;
-  final String capital;
 
-  Country({this.name, this.flag, this.capital});
+  Country({this.name, this.flag});
 
   factory Country.fromJson(Map<String, dynamic> json) {
     return new Country(
-      name: json['Spell Name'] as String,
-      flag: json['Duration'] as String
-    );
+        name: json['Spell Name'] as String, flag: json['Duration'] as String);
   }
 }
 
@@ -94,12 +91,39 @@ class CountyList extends StatelessWidget {
         itemCount: country == null ? 0 : country.length,
         itemBuilder: (BuildContext context, int index) {
           return new ListTile(
-            title: Text(country[index].name),
-            subtitle: Text(country[index].flag),
-            onTap: () {
-              print(country[index].name);
-            }
-          );
+              title: Text(country[index].name),
+              subtitle: Text(country[index].flag),
+              onTap: () {
+                _printTest(country[index],context);
+                /*Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SecondRoute()),
+                );*/
+              });
         });
+  }
+
+  void _printTest(Country test, BuildContext context) {
+    print(test.flag);
+    Navigator.push(context,MaterialPageRoute(builder: (context) => SecondRoute()));
+  }
+}
+
+class SecondRoute extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Second Route"),
+      ),
+      body: Center(
+        child: RaisedButton(
+          onPressed: () {
+            // Navigate back to first route when tapped.
+          },
+          child: Text('Go back!'),
+        ),
+      ),
+    );
   }
 }
