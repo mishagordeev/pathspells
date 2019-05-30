@@ -104,8 +104,20 @@ class CountyList extends StatelessWidget {
   }
 
   void _printTest(Country test, BuildContext context) {
-    print(test.flag);
-    Navigator.push(context,MaterialPageRoute(builder: (context) => SecondRoute()));
+    Navigator.of(context).push(
+      MaterialPageRoute<void>(
+        // Add 20 lines from here...
+        builder: (BuildContext context) {
+
+          return Scaffold(
+            appBar: AppBar(
+              title: Text(test.name),
+            ),
+            body: Text(test.flag),
+          );
+        },
+      ),
+    );
   }
 }
 
@@ -117,12 +129,12 @@ class SecondRoute extends StatelessWidget {
         title: Text("Second Route"),
       ),
       body: Center(
-        child: RaisedButton(
-          onPressed: () {
-            // Navigate back to first route when tapped.
-          },
-          child: Text('Go back!'),
-        ),
+        //child: RaisedButton(
+        ////  onPressed: () {
+        //    // Navigate back to first route when tapped.
+        //  },
+        //  child: Text('Go back!'),
+        //),
       ),
     );
   }
