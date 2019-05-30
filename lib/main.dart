@@ -93,30 +93,12 @@ class CountyList extends StatelessWidget {
     return new ListView.builder(
         itemCount: country == null ? 0 : country.length,
         itemBuilder: (BuildContext context, int index) {
-          return new Card(
-            child: new Container(
-              child: new Center(
-                  child: new Column(
-                // Stretch the cards in horizontal axis
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: <Widget>[
-                  new Text(
-                    // Read the name field value and set it in the Text widget
-                    country[index].name,
-                    // set some style to text
-                    //style: new TextStyle(
-                    //   fontSize: 20.0, color: Colors.lightBlueAccent),
-                  ),
-                  new Text(
-                    // Read the name field value and set it in the Text widget
-                    country[index].flag,
-                    // set some style to text
-                    //style: new TextStyle(fontSize: 20.0, color: Colors.amber),
-                  ),
-                ],
-              )),
-              padding: const EdgeInsets.all(15.0),
-            ),
+          return new ListTile(
+            title: Text(country[index].name),
+            subtitle: Text(country[index].flag),
+            onTap: () {
+              print(country[index].name);
+            }
           );
         });
   }
