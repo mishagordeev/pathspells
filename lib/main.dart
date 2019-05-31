@@ -49,10 +49,10 @@ class MyApp extends StatelessWidget {
                   future: DefaultAssetBundle.of(context)
                       .loadString('assets/dnd_spells.json'),
                   builder: (context, snapshot) {
-                    List<Country> countries =
+                    List<Spell> spells =
                         parseJosn(snapshot.data.toString());
-                    return !countries.isEmpty
-                        ? new CountyList(country: countries)
+                    return !spells.isEmpty
+                        ? new SpellList(spell: spells)
                         : new Center(child: new CircularProgressIndicator());
                   }),
             ),
@@ -61,40 +61,40 @@ class MyApp extends StatelessWidget {
   }
 }
 
-List<Country> parseJosn(String response) {
+List<Spell> parseJosn(String response) {
   if (response == null) {
     return [];
   }
   final parsed = json.decode(response.toString()).cast<Map<String, dynamic>>();
-  return parsed.map<Country>((json) => new Country.fromJson(json)).toList();
+  return parsed.map<Spell>((json) => new Spell.fromJson(json)).toList();
 }
 
-class Country {
+class Spell {
   final String name;
   final String flag;
 
-  Country({this.name, this.flag});
+  Spell({this.name, this.flag});
 
-  factory Country.fromJson(Map<String, dynamic> json) {
-    return new Country(
+  factory Spell.fromJson(Map<String, dynamic> json) {
+    return new Spell(
         name: json['Spell Name'] as String, flag: json['Duration'] as String);
   }
 }
 
-class CountyList extends StatelessWidget {
-  final List<Country> country;
-  CountyList({Key key, this.country}) : super(key: key);
+class SpellList extends StatelessWidget {
+  final List<Spell> spell;
+  SpellList({Key key, this.spell}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return new ListView.builder(
-        itemCount: country == null ? 0 : country.length,
+        itemCount: spell == null ? 0 : spell.length,
         itemBuilder: (BuildContext context, int index) {
           return new ListTile(
-              title: Text(country[index].name),
-              subtitle: Text(country[index].flag),
+              title: Text(spell[index].name),
+              subtitle: Text(spell[index].flag),
               onTap: () {
-                _printTest(country[index],context);
+                _printTest(spell[index],context);
                 /*Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => SecondRoute()),
@@ -103,7 +103,7 @@ class CountyList extends StatelessWidget {
         });
   }
 
-  void _printTest(Country test, BuildContext context) {
+  void _printTest(Spell test, BuildContext context) {
     Navigator.of(context).push(
       MaterialPageRoute<void>(
         // Add 20 lines from here...
