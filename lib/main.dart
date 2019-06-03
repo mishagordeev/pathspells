@@ -4,6 +4,7 @@ import 'dart:convert';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -12,15 +13,6 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
           appBar: AppBar(
-            leading: IconButton(
-              icon: Icon(
-                Icons.menu,
-                semanticLabel: 'menu',
-              ),
-              onPressed: () {
-                print('Menu button');
-              },
-            ),
             actions: <Widget>[
               IconButton(
                 icon: Icon(
@@ -47,7 +39,7 @@ class MyApp extends StatelessWidget {
               // Use future builder and DefaultAssetBundle to load the local JSON file
               child: new FutureBuilder(
                   future: DefaultAssetBundle.of(context)
-                      .loadString('assets/dnd_spells.json'),
+                      .loadString('assets/spells.json'),
                   builder: (context, snapshot) {
                     List<Spell> spells =
                         parseJosn(snapshot.data.toString());
@@ -71,13 +63,13 @@ List<Spell> parseJosn(String response) {
 
 class Spell {
   final String name;
-  final String flag;
+  final String description;
 
-  Spell({this.name, this.flag});
+  Spell({this.name, this.description});
 
   factory Spell.fromJson(Map<String, dynamic> json) {
     return new Spell(
-        name: json['Spell Name'] as String, flag: json['Duration'] as String);
+        name: json['name'] as String, description: json['description'] as String);
   }
 }
 
@@ -92,7 +84,7 @@ class SpellList extends StatelessWidget {
         itemBuilder: (BuildContext context, int index) {
           return new ListTile(
               title: Text(spell[index].name),
-              subtitle: Text(spell[index].flag),
+              subtitle: Text(spell[index].description),
               onTap: () {
                 _printTest(spell[index],context);
                 /*Navigator.push(
@@ -113,7 +105,7 @@ class SpellList extends StatelessWidget {
             appBar: AppBar(
               title: Text(test.name),
             ),
-            body: Text(test.flag),
+            body: Text(test.description),
           );
         },
       ),
