@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           title: SearchBar('Misha'),
+          backgroundColor: Color(0xFF3d0800),
         ),
         body: Center(
           child: StateFul(1),
