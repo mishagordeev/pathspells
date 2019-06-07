@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
+String wer;
 
 void main() => runApp(MyApp());
 
@@ -28,9 +29,9 @@ class SearchBatState extends State<SearchBar> {
   @override
   Widget build(BuildContext context) {
     String _test;
-    SearchBatState("dfgdfg");
+    //SearchBatState("dfgdfg");
     return Text(
-      'Hello, $_govno1 How are you?',
+      'Hello, $wer, How are you?',
       textAlign: TextAlign.center,
       overflow: TextOverflow.ellipsis,
       style: TextStyle(fontWeight: FontWeight.bold),
@@ -47,6 +48,7 @@ class SearchBar extends StatefulWidget {
 
   SearchBar(String t) {
     _govno = t;
+    wer = _govno;
     print('govno' + _govno + ' ');
     print('t' + t + ' ');
   }
