@@ -11,15 +11,30 @@ class MyApp extends StatelessWidget {
       title: 'Welcome to Flutter',
       home: Scaffold(
         appBar: AppBar(
-          title: SearchBar('Misha'),
+          //title: SearchBar('Misha'),
+          title: TextField(decoration: new InputDecoration(prefixIcon: new Icon(Icons.search),hintText: "test"),),
           backgroundColor: Color(0xFF3d0800),
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(
+                Icons.search,
+              ),
+              onPressed: () {
+                OutputTest();
+              },
+            )
+          ],
         ),
         body: Center(
-          child: StateFul(1),
+          //child: StateFul(1),
         ),
       ),
     );
   }
+}
+
+void OutputTest() {
+  print("success");
 }
 
 class SearchBatState extends State<SearchBar> {
@@ -41,6 +56,10 @@ class SearchBatState extends State<SearchBar> {
 
   int Test() {
     print('sddsf');
+  }
+
+  void OutputTest() {
+    print("success");
   }
 }
 
