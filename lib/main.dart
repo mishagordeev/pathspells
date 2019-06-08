@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
 String wer;
-
+List<String> spells = <String>['Absorb', 'Bomb', 'Cast Out1111'];
+List<String> gopa = <String>[];
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -34,6 +35,8 @@ class MyApp extends StatelessWidget {
 }
 
 class WelSearch extends SearchDelegate {
+ // WelSearch(List<String> spells);
+
   @override
   List<Widget> buildActions(BuildContext context) {
     // TODO: implement buildActions
@@ -68,20 +71,43 @@ class WelSearch extends SearchDelegate {
   Widget buildSuggestions(BuildContext context) {
     final List<String> entries = <String>['A', 'B', 'C'];
     final List<int> colorCodes = <int>[600, 500, 100];
-    if (query == '') {return ListView.separated(
+
+    if (query == '') {
+      print(gopa);
+      return ListView.separated(
       padding: const EdgeInsets.all(8.0),
-      itemCount: entries.length,
+      itemCount: spells.length,
       itemBuilder: (BuildContext context, int index) {
         return Container(
           height: 50,
           color: Colors.amber[colorCodes[index]],
-          child: Center(child: Text('Entry ${entries[index]}')),
+          child: Center(child: Text('Entry ${spells[index]}')),
         );
       },
       separatorBuilder: (BuildContext context, int index) => const Divider(),
     );} else
       {
-        return Text(query);
+          gopa = [];
+          for (var i = 0; i<spells.length;i++) {
+            if (spells[i].contains(query)) {
+              gopa.add(spells[i]);
+              print(spells[i]);
+            }
+          }
+          //prbint(spells);
+        print(gopa);
+        return ListView.separated(
+          padding: const EdgeInsets.all(8.0),
+          itemCount: gopa.length,
+          itemBuilder: (BuildContext context, int index) {
+            return Container(
+              height: 50,
+              //color: Colors.amber[colorCodes[index]],
+              child: Center(child: Text('Entry ${gopa[index]}')),
+            );
+          },
+          separatorBuilder: (BuildContext context, int index) => const Divider(),
+        );
       }
   }
 
