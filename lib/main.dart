@@ -9,28 +9,82 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Welcome to Flutter',
-      home: Scaffold(
-        appBar: AppBar(
-          //title: SearchBar('Misha'),
-          title: TextField(decoration: new InputDecoration(prefixIcon: new Icon(Icons.search),hintText: "test"),),
-          backgroundColor: Color(0xFF3d0800),
-          actions: <Widget>[
-            IconButton(
-              icon: Icon(
-                Icons.search,
-              ),
-              onPressed: () {
-                OutputTest();
-              },
-            )
-          ],
-        ),
-        body: Center(
-          //child: StateFul(1),
-        ),
+      home: Builder (
+        builder: (context) => Scaffold(
+          appBar: AppBar(
+              title: Text("Pathfinder Spells"),
+              actions: [
+                IconButton(
+                    icon: Icon(Icons.search),
+                    onPressed: () {
+                      showSearch(
+                        context: context,
+                        delegate: WelSearch(),
+                      );
+                    }
+                )
+              ]
+          ),
+          body: Center(
+            child: StateFul(1),
+          ),
+        ),)
+      );
+  }
+}
+
+class WelSearch extends SearchDelegate {
+  @override
+  List<Widget> buildActions(BuildContext context) {
+    // TODO: implement buildActions
+    return [
+      IconButton(
+        icon: Icon(Icons.clear),
+        onPressed: () {
+          query = '';
+        },
       ),
+    ];
+  }
+
+  @override
+  Widget buildLeading(BuildContext context) {
+    // TODO: implement buildLeading
+    return IconButton(
+      icon: Icon(Icons.arrow_back),
+      onPressed: () {
+        close(context, null);
+      },
     );
   }
+
+  @override
+  Widget buildResults(BuildContext context) {
+    // TODO: implement buildResults
+    return Container();
+  }
+
+  @override
+  Widget buildSuggestions(BuildContext context) {
+    final List<String> entries = <String>['A', 'B', 'C'];
+    final List<int> colorCodes = <int>[600, 500, 100];
+    if (query == '') {return ListView.separated(
+      padding: const EdgeInsets.all(8.0),
+      itemCount: entries.length,
+      itemBuilder: (BuildContext context, int index) {
+        return Container(
+          height: 50,
+          color: Colors.amber[colorCodes[index]],
+          child: Center(child: Text('Entry ${entries[index]}')),
+        );
+      },
+      separatorBuilder: (BuildContext context, int index) => const Divider(),
+    );} else
+      {
+        return Text(query);
+      }
+  }
+
 }
 
 void OutputTest() {
