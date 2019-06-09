@@ -16,6 +16,9 @@ class MyApp extends StatelessWidget {
       home: Builder (
         builder: (context) => Scaffold(
             appBar: AppBar(
+              title: Text("Pathfinder Spells",
+              style: TextStyle(fontWeight: FontWeight.bold, color: Color(0xFFebe4b1)),
+              ),
               actions: <Widget>[
                 IconButton(
                   icon: Icon(
@@ -44,7 +47,7 @@ class MyApp extends StatelessWidget {
             body: new Container(
               child: new Center(
                 // Use future builder and DefaultAssetBundle to load the local JSON file
-                child: new LoadAndShowData(),
+                child: LoadAndShowData()
               ),
             )),
       ),
@@ -58,7 +61,7 @@ class LoadAndShowData extends StatelessWidget {
   Widget build(BuildContext context) {
     return FutureBuilder(
         future: DefaultAssetBundle.of(context)
-            .loadString('assets/dnd_spells.json'),
+            .loadString('assets/path_spells.json'),
         builder: (context, snapshot) {
           spells = parseJson(snapshot.data.toString());
           return spells.isNotEmpty
@@ -121,13 +124,13 @@ List<Spell> parseJson(String response) {
 class Spell {
   final String name;
   final String description;
-  final String duration;
+  final String fullDescription;
 
-  Spell({this.name, this.description, this.duration});
+  Spell({this.name, this.description, this.fullDescription});
 
   factory Spell.fromJson(Map<String, dynamic> json) {
     return new Spell(
-        name: json['Spell Name'] as String, description: json['Components'] as String, duration: json['Duration'] as String);
+        name: json['name'] as String, description: json['description'] as String, fullDescription: json['full_description'] as String);
   }
 }
 
@@ -137,14 +140,18 @@ class SpellList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new ListView.builder(
+    return new ListView.separated(
         itemCount: spell == null ? 0 : spell.length,
+        separatorBuilder: (BuildContext context, int index) => Divider(),
         itemBuilder: (BuildContext context, int index) {
           return new ListTile(
               title: Text(spell[index].name),
               subtitle: Text(spell[index].description),
               onTap: () {
                 _printTest(spell[index],context);
+                if (spell[index].fullDescription.contains('Школа')) {
+                  //print("школа");
+                }
                 /*Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => SecondRoute()),
@@ -161,13 +168,49 @@ class SpellList extends StatelessWidget {
 
           return Scaffold(
             appBar: AppBar(
-              title: Text(test.name),
+              title: Text(test.name,
+                style: TextStyle(color: Color(0xFFebe4b1)),
+              ),
             ),
-            body: Text(test.description),
+            body: Description(test.fullDescription),
           );
         },
       ),
     );
+  }
+}
+
+class Description extends StatelessWidget {
+  List<TextSpan> textSpell = [];
+  final String _fullDescription;
+  Description(this._fullDescription);
+
+  @override
+  Widget build(BuildContext context) {
+    String blankText = "";
+    String boldText = "";
+    int i=0;
+    while (i<_fullDescription.length) {
+      if (_fullDescription[i] == ">") {
+        textSpell.add(new TextSpan(text: blankText, style: TextStyle(color: Colors.black)));
+        blankText = "";
+        i++;
+        while (_fullDescription[i] != "<") {
+         boldText += _fullDescription[i];
+         i++;
+        }
+        textSpell.add(new TextSpan(text: boldText, style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)));
+        boldText = "";
+        i++;
+      }
+      blankText += _fullDescription[i];
+      i++;
+    }
+    textSpell.add(new TextSpan(text: blankText, style: TextStyle(color: Colors.black)));
+    return new RichText(
+      text: TextSpan(
+        children: textSpell),
+      );
   }
 }
 
