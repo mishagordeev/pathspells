@@ -3,6 +3,8 @@ import 'dart:convert';
 
 void main() => runApp(MyApp());
 
+List<Spell> spells;
+
 class MyApp extends StatelessWidget {
 
   @override
@@ -11,49 +13,104 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Color(0xFF3d0800),
       ),
-      home: Scaffold(
-          appBar: AppBar(
-            actions: <Widget>[
-              IconButton(
-                icon: Icon(
-                  Icons.search,
-                  semanticLabel: 'search',
+      home: Builder (
+        builder: (context) => Scaffold(
+            appBar: AppBar(
+              actions: <Widget>[
+                IconButton(
+                  icon: Icon(
+                    Icons.search,
+                    semanticLabel: 'search',
+                  ),
+                  onPressed: () {
+                    print('Search button');
+                    showSearch(
+                        context: context,
+                        delegate: SpellSearch()
+                    );
+                  },
                 ),
-                onPressed: () {
-                  print('Search button');
-                },
-              ),
-              IconButton(
-                icon: Icon(
-                  Icons.tune,
-                  semanticLabel: 'filter',
+                IconButton(
+                  icon: Icon(
+                    Icons.tune,
+                    semanticLabel: 'filter',
+                  ),
+                  onPressed: () {
+                    print('Filter button');
+                  },
                 ),
-                onPressed: () {
-                  print('Filter button');
-                },
-              ),
-            ],
-          ),
-          body: new Container(
-            child: new Center(
-              // Use future builder and DefaultAssetBundle to load the local JSON file
-              child: new FutureBuilder(
-                  future: DefaultAssetBundle.of(context)
-                      .loadString('assets/spells.json'),
-                  builder: (context, snapshot) {
-                    List<Spell> spells =
-                        parseJosn(snapshot.data.toString());
-                    return !spells.isEmpty
-                        ? new SpellList(spell: spells)
-                        : new Center(child: new CircularProgressIndicator());
-                  }),
+              ],
             ),
-          )),
+            body: new Container(
+              child: new Center(
+                // Use future builder and DefaultAssetBundle to load the local JSON file
+                child: new LoadAndShowData(),
+              ),
+            )),
+      ),
     );
   }
 }
 
-List<Spell> parseJosn(String response) {
+
+class LoadAndShowData extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return FutureBuilder(
+        future: DefaultAssetBundle.of(context)
+            .loadString('assets/dnd_spells.json'),
+        builder: (context, snapshot) {
+          spells = parseJson(snapshot.data.toString());
+          return spells.isNotEmpty
+              ? new SpellList(spell: spells)
+              : new Center(child: new CircularProgressIndicator());
+        });
+  }
+}
+
+
+class SpellSearch extends SearchDelegate {
+  List<Spell> _searchSuggestions;
+  @override
+  List<Widget> buildActions(BuildContext context) {
+    return [
+      IconButton(
+        icon: Icon(Icons.clear),
+        onPressed: () {
+          query = '';
+        },
+      ),
+    ];
+  }
+
+  @override
+  Widget buildLeading(BuildContext context) {
+    return IconButton(
+      icon: Icon(Icons.arrow_back),
+      onPressed: () {
+        close(context, null);
+      },
+    );
+  }
+
+  @override
+  Widget buildResults(BuildContext context) {
+    return Container();
+  }
+
+  @override
+  Widget buildSuggestions(BuildContext context) {
+    _searchSuggestions = [];
+    for (int i = 0;i<spells.length;i++) {
+      if (spells[i].name.contains(query)) {
+        _searchSuggestions.add(spells[i]);
+      }
+    }
+    return new SpellList(spell: _searchSuggestions);
+  }
+}
+
+List<Spell> parseJson(String response) {
   if (response == null) {
     return [];
   }
@@ -64,12 +121,13 @@ List<Spell> parseJosn(String response) {
 class Spell {
   final String name;
   final String description;
+  final String duration;
 
-  Spell({this.name, this.description});
+  Spell({this.name, this.description, this.duration});
 
   factory Spell.fromJson(Map<String, dynamic> json) {
     return new Spell(
-        name: json['name'] as String, description: json['description'] as String);
+        name: json['Spell Name'] as String, description: json['Components'] as String, duration: json['Duration'] as String);
   }
 }
 
