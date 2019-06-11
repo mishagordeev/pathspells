@@ -172,7 +172,12 @@ class SpellList extends StatelessWidget {
                 style: TextStyle(color: Color(0xFFebe4b1)),
               ),
             ),
-            body: Description(test.fullDescription),
+            body: Padding(
+              padding: EdgeInsets.fromLTRB(8.0, 0.0, 8.0, 0.0),
+              child: SingleChildScrollView(
+                child: Description(test.fullDescription),
+              )
+            )
           );
         },
       ),
