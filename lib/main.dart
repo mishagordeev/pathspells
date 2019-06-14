@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
 
+
 void main() => runApp(MyApp());
 
 List<Spell> spells;
@@ -48,6 +49,7 @@ class MyApp extends StatelessWidget {
               child: new Center(
                 // Use future builder and DefaultAssetBundle to load the local JSON file
                 child: LoadAndShowData()
+                //child: Text("test"),
               ),
             )),
       ),
@@ -64,8 +66,9 @@ class LoadAndShowData extends StatelessWidget {
             .loadString('assets/path_spells.json'),
         builder: (context, snapshot) {
           spells = parseJson(snapshot.data.toString());
+          //print(snapshot.data.toString());
           return spells.isNotEmpty
-              ? new SpellList(spell: spells)
+              ? new SpellList(spell: spells,)
               : new Center(child: new CircularProgressIndicator());
         });
   }
@@ -109,7 +112,8 @@ class SpellSearch extends SearchDelegate {
         _searchSuggestions.add(spells[i]);
       }
     }
-    return new SpellList(spell: _searchSuggestions);
+    //return new SpellList(spell: _searchSuggestions);
+    return Container();
   }
 }
 
@@ -117,8 +121,13 @@ List<Spell> parseJson(String response) {
   if (response == null) {
     return [];
   }
-  final parsed = json.decode(response.toString()).cast<Map<String, dynamic>>();
-  return parsed.map<Spell>((json) => new Spell.fromJson(json)).toList();
+  //final parsed = json.decode(response.toString()).cast<Map<String, dynamic>>();
+  //return parsed.map<Spell>((json) => new Spell.fromJson(json)).toList();
+  final List parsed = json.decode(response);
+  if (parsed == null) return [];
+      else return parsed.map<Spell>((json) => new Spell.fromJson(json)).toList();
+  //return parsed.map<Spell>((json) => new Spell.fromJson(json)).toList();
+
 }
 
 class Spell {
@@ -128,11 +137,39 @@ class Spell {
 
   Spell({this.name, this.description, this.fullDescription});
 
+  //Spell.fromJson(Map<String, dynamic> json)
+  //    : name = json['name'],
+  //      description = json['description'],
+  //      fullDescription = json['full_description'];
   factory Spell.fromJson(Map<String, dynamic> json) {
     return new Spell(
         name: json['name'] as String, description: json['description'] as String, fullDescription: json['full_description'] as String);
   }
+  //Map<String, dynamic> toJson() =>
+  //    {
+  //      'name': name,
+  //      'email': description,
+  //      'full_description': fullDescription,
+  //    };
 }
+
+/*class SpellList {
+  final List<Spell> spells;
+
+  SpellList({
+    this.spells,
+  });
+
+  factory SpellList.fromJson(List<dynamic> parsedJson) {
+
+    List<Spell> spells = new List<Spell>();
+
+    return new SpellList(
+      spells: spells,
+    );
+  }
+}*/
+
 
 class SpellList extends StatelessWidget {
   final List<Spell> spell;
