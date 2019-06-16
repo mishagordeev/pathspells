@@ -112,8 +112,7 @@ class SpellSearch extends SearchDelegate {
         _searchSuggestions.add(spells[i]);
       }
     }
-    //return new SpellList(spell: _searchSuggestions);
-    return Container();
+    return new SpellList(spell: _searchSuggestions);
   }
 }
 
@@ -211,9 +210,10 @@ class SpellList extends StatelessWidget {
             ),
             body: Padding(
               padding: EdgeInsets.fromLTRB(8.0, 0.0, 8.0, 0.0),
-              child: SingleChildScrollView(
-                child: Description(test.fullDescription),
-              )
+          child: SpellCard(test.fullDescription)
+              //child: SingleChildScrollView(
+              //  child: Description(test.fullDescription),
+              //)
             )
           );
         },
@@ -221,6 +221,91 @@ class SpellList extends StatelessWidget {
     );
   }
 }
+
+class SpellCard extends StatelessWidget {
+  String description;
+
+  SpellCard(this.description);
+
+  final List<Widget> spellCardParts = [];
+  List<TextSpan> spellCardSpanParts = [];
+
+  @override
+  Widget build(BuildContext context) {
+    int i = description.indexOf('<');
+    while (i != -1) {
+      spellCardSpanParts.add(new TextSpan(text: description.substring(0, i),
+          style: TextStyle(color: Colors.black)));
+      print(description.length);
+      print(description);
+      print(description[i]);
+      description = description.substring(i, description.length);
+      print(description.length);
+      if (description.startsWith('<t')) {
+        int endIndex = description.indexOf('</t>');
+        spellCardParts.add(RichText(text: TextSpan(children: spellCardSpanParts)));
+        spellCardSpanParts = [];
+        List<String> tableElements = description.substring(4, endIndex).split(",");
+        spellCardParts.add(new GridView.builder(
+            physics: ScrollPhysics(), // to disable GridView's scrolling
+            shrinkWrap: true,
+            itemCount: tableElements.length,
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              childAspectRatio: 5.0,
+              crossAxisSpacing: 3,
+              crossAxisCount: int.parse(description[2]),
+            ),
+            itemBuilder: (BuildContext context, int index) {
+              return new Text(tableElements[index]);
+            }));
+        int j = description.indexOf('</t>');
+        print(description);
+        description = description.substring(j + 4, description.length);
+        print(description);
+      }
+      //int index = description.indexOf('</t>');
+      //print(description.substring(3,index));
+
+      //i = -1;
+      //}
+      if (description.startsWith('<b>')) {
+        int index = description.indexOf('</b>');
+        print(description.substring(3, index));
+        spellCardSpanParts.add(new TextSpan(
+            text: description.substring(3, index),
+            style: TextStyle(
+                color: Colors.black, fontWeight: FontWeight.bold)));
+        description = description.substring(index + 4, description.length);
+        print(description);
+      }
+      if (description.startsWith('<i>')) {
+        int index = description.indexOf('</i>');
+        print(description.substring(3, index));
+        spellCardSpanParts.add(new TextSpan(
+            text: description.substring(3, index),
+            style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold)));
+        description = description.substring(index + 4, description.length);
+        print(description);
+      }
+      i = description.indexOf('<');
+    }
+    print(description);
+    spellCardSpanParts.add(new TextSpan(text: description, style: TextStyle(color: Colors.black)));
+    spellCardParts.add(RichText(text: TextSpan(children: spellCardSpanParts)));
+    return new ListView(
+        children: (
+          spellCardParts
+        )
+    );
+  }
+}
+      //i = -1;
+      //}
+      //spellCardSpanParts.add(new TextSpan(text: description, style: TextStyle(color: Colors.black)));
+      //print(description.replaceRange(i, i+1, ''));
+      //print(i);
+      //print(description.substring(0,i));
+
 
 class Description extends StatelessWidget {
   List<TextSpan> textSpell = [];
