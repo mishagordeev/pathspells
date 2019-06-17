@@ -246,6 +246,7 @@ class SpellCard extends StatelessWidget {
         spellCardParts.add(RichText(text: TextSpan(children: spellCardSpanParts)));
         spellCardSpanParts = [];
         List<String> tableElements = description.substring(4, endIndex).split(",");
+        final int columnNumber = int.parse(description[2]);
         spellCardParts.add(new GridView.builder(
             physics: ScrollPhysics(), // to disable GridView's scrolling
             shrinkWrap: true,
@@ -253,10 +254,19 @@ class SpellCard extends StatelessWidget {
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               childAspectRatio: 5.0,
               crossAxisSpacing: 3,
-              crossAxisCount: int.parse(description[2]),
+              crossAxisCount: columnNumber,
             ),
             itemBuilder: (BuildContext context, int index) {
-              return new Text(tableElements[index]);
+              print(index);
+              print(columnNumber);
+              if (index < columnNumber)
+                if (index % columnNumber == 0) return new Text(tableElements[index],style:
+                TextStyle(fontWeight: FontWeight.bold)); else return new
+                  Text(tableElements[index],style:
+               TextStyle(fontWeight: FontWeight.bold),textAlign: TextAlign.center);
+                if (index >= columnNumber)
+                  if (index % columnNumber == 0) return new Text(tableElements[index]); else return new
+                  Text(tableElements[index],textAlign: TextAlign.center);
             }));
         int j = description.indexOf('</t>');
         print(description);
