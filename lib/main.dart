@@ -1,24 +1,24 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
 
-
 void main() => runApp(MyApp());
 
 List<Spell> spells;
 
 class MyApp extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
         primaryColor: Color(0xFF3d0800),
       ),
-      home: Builder (
+      home: Builder(
         builder: (context) => Scaffold(
             appBar: AppBar(
-              title: Text("Pathfinder Spells",
-              style: TextStyle(fontWeight: FontWeight.bold, color: Color(0xFFebe4b1)),
+              title: Text(
+                "Pathfinder Spells",
+                style: TextStyle(
+                    fontWeight: FontWeight.bold, color: Color(0xFFebe4b1)),
               ),
               actions: <Widget>[
                 IconButton(
@@ -27,10 +27,7 @@ class MyApp extends StatelessWidget {
                     semanticLabel: 'search',
                   ),
                   onPressed: () {
-                    showSearch(
-                        context: context,
-                        delegate: SpellSearch()
-                    );
+                    showSearch(context: context, delegate: SpellSearch());
                   },
                 ),
                 IconButton(
@@ -38,21 +35,17 @@ class MyApp extends StatelessWidget {
                     Icons.tune,
                     semanticLabel: 'filter',
                   ),
-                  onPressed: () {
-                  },
+                  onPressed: () {},
                 ),
               ],
             ),
             body: new Container(
-              child: new Center(
-                child: LoadAndShowData()
-              ),
+              child: new Center(child: LoadAndShowData()),
             )),
       ),
     );
   }
 }
-
 
 class LoadAndShowData extends StatelessWidget {
   @override
@@ -63,7 +56,9 @@ class LoadAndShowData extends StatelessWidget {
         builder: (context, snapshot) {
           spells = parseJson(snapshot.data.toString());
           return spells.isNotEmpty
-              ? new SpellList(spell: spells,)
+              ? new SpellList(
+                  spell: spells,
+                )
               : new Center(child: new CircularProgressIndicator());
         });
   }
@@ -101,7 +96,7 @@ class SpellSearch extends SearchDelegate {
   @override
   Widget buildSuggestions(BuildContext context) {
     _searchSuggestions = [];
-    for (int i = 0;i<spells.length;i++) {
+    for (int i = 0; i < spells.length; i++) {
       if (spells[i].name.contains(query)) {
         _searchSuggestions.add(spells[i]);
       }
@@ -115,8 +110,10 @@ List<Spell> parseJson(String response) {
     return [];
   }
   final List parsed = json.decode(response);
-  if (parsed == null) return [];
-      else return parsed.map<Spell>((json) => new Spell.fromJson(json)).toList();
+  if (parsed == null)
+    return [];
+  else
+    return parsed.map<Spell>((json) => new Spell.fromJson(json)).toList();
 }
 
 class Spell {
@@ -128,7 +125,9 @@ class Spell {
 
   factory Spell.fromJson(Map<String, dynamic> json) {
     return new Spell(
-        name: json['name'] as String, description: json['description'] as String, fullDescription: json['full_description'] as String);
+        name: json['name'] as String,
+        description: json['description'] as String,
+        fullDescription: json['full_description'] as String);
   }
 }
 
@@ -146,7 +145,7 @@ class SpellList extends StatelessWidget {
               title: Text(spell[index].name),
               subtitle: Text(spell[index].description),
               onTap: () {
-                _printTest(spell[index],context);
+                _printTest(spell[index], context);
               });
         });
   }
@@ -155,18 +154,16 @@ class SpellList extends StatelessWidget {
     Navigator.of(context).push(
       MaterialPageRoute<void>(
         builder: (BuildContext context) {
-
           return Scaffold(
-            appBar: AppBar(
-              title: Text(test.name,
-                style: TextStyle(color: Color(0xFFebe4b1)),
+              appBar: AppBar(
+                title: Text(
+                  test.name,
+                  style: TextStyle(color: Color(0xFFebe4b1)),
+                ),
               ),
-            ),
-            body: Padding(
-              padding: EdgeInsets.fromLTRB(8.0, 0.0, 8.0, 0.0),
-          child: SpellCard(test.fullDescription)
-            )
-          );
+              body: Padding(
+                  padding: EdgeInsets.fromLTRB(8.0, 0.0, 8.0, 0.0),
+                  child: SpellCard(test.fullDescription)));
         },
       ),
     );
@@ -185,14 +182,17 @@ class SpellCard extends StatelessWidget {
   Widget build(BuildContext context) {
     int i = description.indexOf('<');
     while (i != -1) {
-      spellCardSpanParts.add(new TextSpan(text: description.substring(0, i),
+      spellCardSpanParts.add(new TextSpan(
+          text: description.substring(0, i),
           style: TextStyle(color: Colors.black)));
       description = description.substring(i, description.length);
       if (description.startsWith('<t')) {
         int endIndex = description.indexOf('</t>');
-        spellCardParts.add(RichText(text: TextSpan(children: spellCardSpanParts)));
+        spellCardParts
+            .add(RichText(text: TextSpan(children: spellCardSpanParts)));
         spellCardSpanParts = [];
-        List<String> tableElements = description.substring(4, endIndex).split(",");
+        List<String> tableElements =
+            description.substring(4, endIndex).split(",");
         final int columnNumber = int.parse(description[2]);
         spellCardParts.add(new GridView.builder(
             physics: ScrollPhysics(),
@@ -200,18 +200,47 @@ class SpellCard extends StatelessWidget {
             itemCount: tableElements.length,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               childAspectRatio: 5.0,
-              crossAxisSpacing: 3,
+              crossAxisSpacing: 0,
               crossAxisCount: columnNumber,
             ),
             itemBuilder: (BuildContext context, int index) {
-              if (index < columnNumber)
-                if (index % columnNumber == 0) return new Text(tableElements[index],style:
-                TextStyle(fontWeight: FontWeight.bold)); else return new
-                  Text(tableElements[index],style:
-               TextStyle(fontWeight: FontWeight.bold),textAlign: TextAlign.center);
-                if (index >= columnNumber)
-                  if (index % columnNumber == 0) return new Text(tableElements[index]); else return new
-                  Text(tableElements[index],textAlign: TextAlign.center);
+              if (index < columnNumber) if (index % columnNumber == 0)
+                return new Container(
+                    decoration: new BoxDecoration(
+                        border: new Border(
+                            bottom: BorderSide(
+                                color: Theme.of(context).dividerColor,
+                                width: 2.0))),
+                    child: Text(tableElements[index],
+                        style: TextStyle(fontWeight: FontWeight.bold)));
+              else
+                return new Container(
+                    decoration: new BoxDecoration(
+                        border: new Border(
+                            bottom: BorderSide(
+                                color: Theme.of(context).dividerColor,
+                                width: 2.0))),
+                    child: Text(tableElements[index],
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                        textAlign: TextAlign.center));
+              if (index >= columnNumber) if (index % columnNumber == 0)
+                return new Container(
+                  decoration: new BoxDecoration(
+                      border: new Border(
+                          bottom: BorderSide(
+                              color: Theme.of(context).dividerColor))),
+                  child:
+                  Text(tableElements[index])
+                );
+              else
+                return new Container(
+                  decoration: new BoxDecoration(
+                      border: new Border(
+                          bottom: BorderSide(
+                              color: Theme.of(context).dividerColor))),
+                  child:
+                      Text(tableElements[index], textAlign: TextAlign.center),
+                );
             }));
         int j = description.indexOf('</t>');
         description = description.substring(j + 4, description.length);
@@ -220,8 +249,8 @@ class SpellCard extends StatelessWidget {
         int index = description.indexOf('</b>');
         spellCardSpanParts.add(new TextSpan(
             text: description.substring(3, index),
-            style: TextStyle(
-                color: Colors.black, fontWeight: FontWeight.bold)));
+            style:
+                TextStyle(color: Colors.black, fontWeight: FontWeight.bold)));
         description = description.substring(index + 4, description.length);
       }
       if (description.startsWith('<i>')) {
@@ -233,13 +262,10 @@ class SpellCard extends StatelessWidget {
       }
       i = description.indexOf('<');
     }
-    spellCardSpanParts.add(new TextSpan(text: description, style: TextStyle(color: Colors.black)));
+    spellCardSpanParts.add(
+        new TextSpan(text: description, style: TextStyle(color: Colors.black)));
     spellCardParts.add(RichText(text: TextSpan(children: spellCardSpanParts)));
-    return new ListView(
-        children: (
-          spellCardParts
-        )
-    );
+    return new ListView(children: (spellCardParts));
   }
 }
 
@@ -252,28 +278,32 @@ class Description extends StatelessWidget {
   Widget build(BuildContext context) {
     String blankText = "";
     String boldText = "";
-    int i=0;
-    while (i<_fullDescription.length) {
+    int i = 0;
+    while (i < _fullDescription.length) {
       if (_fullDescription[i] == ">") {
-        textSpell.add(new TextSpan(text: blankText, style: TextStyle(color: Colors.black)));
+        textSpell.add(new TextSpan(
+            text: blankText, style: TextStyle(color: Colors.black)));
         blankText = "";
         i++;
         while (_fullDescription[i] != "<") {
-         boldText += _fullDescription[i];
-         i++;
+          boldText += _fullDescription[i];
+          i++;
         }
-        textSpell.add(new TextSpan(text: boldText, style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)));
+        textSpell.add(new TextSpan(
+            text: boldText,
+            style:
+                TextStyle(color: Colors.black, fontWeight: FontWeight.bold)));
         boldText = "";
         i++;
       }
       blankText += _fullDescription[i];
       i++;
     }
-    textSpell.add(new TextSpan(text: blankText, style: TextStyle(color: Colors.black)));
+    textSpell.add(
+        new TextSpan(text: blankText, style: TextStyle(color: Colors.black)));
     return new RichText(
-      text: TextSpan(
-        children: textSpell),
-      );
+      text: TextSpan(children: textSpell),
+    );
   }
 }
 
@@ -284,8 +314,7 @@ class SecondRoute extends StatelessWidget {
       appBar: AppBar(
         title: Text("Second Route"),
       ),
-      body: Center(
-      ),
+      body: Center(),
     );
   }
 }
