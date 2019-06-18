@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
                 ),
                 IconButton(
                   icon: Icon(
-                    Icons.tune,
+                    Icons.filter_list,
                     semanticLabel: 'filter',
                   ),
                   onPressed: () {},
