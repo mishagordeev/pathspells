@@ -79,6 +79,17 @@ class SpellSearch extends SearchDelegate {
   }
 
   @override
+  ThemeData appBarTheme(BuildContext context) {
+    final ThemeData theme = Theme.of(context);
+    // TODO: implement appBarTheme
+    return theme.copyWith(
+      primaryColor: Color(0xFF3d0800),
+      primaryColorBrightness: Brightness.light,
+      primaryTextTheme: theme.textTheme,
+    );
+  }
+
+  @override
   Widget buildLeading(BuildContext context) {
     return IconButton(
       icon: Icon(Icons.arrow_back),
@@ -97,7 +108,7 @@ class SpellSearch extends SearchDelegate {
   Widget buildSuggestions(BuildContext context) {
     _searchSuggestions = [];
     for (int i = 0; i < spells.length; i++) {
-      if (spells[i].name.contains(query)) {
+      if (spells[i].name.toLowerCase().contains(query.toLowerCase())) {
         _searchSuggestions.add(spells[i]);
       }
     }
