@@ -35,14 +35,88 @@ class MyApp extends StatelessWidget {
                     Icons.filter_list,
                     semanticLabel: 'filter',
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    _scaffoldKey.currentState.openEndDrawer();
+                  },
                 ),
               ],
             ),
             body: new Container(
               child: new Center(child: LoadAndShowData()),
-            )),
+            ),
+          endDrawer: new AppDrawer(),
+        ),
       ),
+    );
+  }
+}
+
+class AppDrawer extends StatefulWidget {
+  @override
+  _AppDrawerState createState() => new _AppDrawerState();
+}
+
+class _AppDrawerState extends State<AppDrawer> {
+  @override
+  Widget build(BuildContext context) {
+    return new Drawer(
+      child: new Scaffold(
+        appBar: AppBar(
+          title: Text(
+            "Filter",
+            style: TextStyle(
+                fontWeight: FontWeight.bold),
+          ),
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(
+                Icons.clear,
+                semanticLabel: 'filter',
+              ),
+              onPressed: () {
+              },
+            ),
+          ],
+        ),
+        body: new ListView(
+
+          children: <Widget>[
+
+            ListTile(title: Text("Класс"),),
+            ListTile(title: Text("Школа"),),
+            Table(
+              border: TableBorder.all(width: 1.0),
+              children: [
+                TableRow(
+                  children: [
+                    Text("0",textAlign: TextAlign.center,),
+                    Text("1",textAlign: TextAlign.center,),
+                    Text("2",textAlign: TextAlign.center,),
+                    Text("3",textAlign: TextAlign.center,),
+                    Text("4",textAlign: TextAlign.center,),
+                    Text("5",textAlign: TextAlign.center,),
+                    Text("6",textAlign: TextAlign.center,),
+                    Text("7",textAlign: TextAlign.center,),
+                    Text("8",textAlign: TextAlign.center,),
+                    Text("9",textAlign: TextAlign.center,),
+                  ]
+                )
+              ]
+            )
+          ],
+        )
+      ),
+
+     /* child: new ListView(
+        children: <Widget>[
+          new DrawerHeader(
+            child: new Text("Header"),
+          ),
+          new ListTile(
+            title: new Text("Item 1"),
+          ),
+        ],
+      ),*/
     );
   }
 }
