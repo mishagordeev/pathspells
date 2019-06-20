@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primaryColor: Color(0xFF3d0800),
+        primaryColor: Colors.pink[900],
       ),
       home: Builder(
         builder: (context) => Scaffold(
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
               title: Text(
                 "Pathfinder Spells",
                 style: TextStyle(
-                    fontWeight: FontWeight.bold, color: Color(0xFFebe4b1)),
+                    fontWeight: FontWeight.bold),
               ),
               actions: <Widget>[
                 IconButton(
