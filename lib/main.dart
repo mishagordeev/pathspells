@@ -78,33 +78,11 @@ class _AppDrawerState extends State<AppDrawer> {
             ),
           ],
         ),
-        body: new ListView(
-
-          children: <Widget>[
-
-            ListTile(title: Text("Класс"),),
-            ListTile(title: Text("Школа"),),
-            Table(
-              border: TableBorder.all(width: 1.0),
-              children: [
-                TableRow(
-                  children: [
-                    Text("0",textAlign: TextAlign.center,),
-                    Text("1",textAlign: TextAlign.center,),
-                    Text("2",textAlign: TextAlign.center,),
-                    Text("3",textAlign: TextAlign.center,),
-                    Text("4",textAlign: TextAlign.center,),
-                    Text("5",textAlign: TextAlign.center,),
-                    Text("6",textAlign: TextAlign.center,),
-                    Text("7",textAlign: TextAlign.center,),
-                    Text("8",textAlign: TextAlign.center,),
-                    Text("9",textAlign: TextAlign.center,),
-                  ]
-                )
-              ]
-            )
-          ],
-        )
+        body: ListView.builder(
+          itemBuilder: (BuildContext context, int index) =>
+              EntryItem(data[index]),
+          itemCount: data.length,
+        ),
       ),
 
      /* child: new ListView(
@@ -118,6 +96,74 @@ class _AppDrawerState extends State<AppDrawer> {
         ],
       ),*/
     );
+  }
+}
+
+class Entry {
+  Entry(this.title, [this.children = const <Entry>[]]);
+
+  final String title;
+  final List<Entry> children;
+}
+
+final List<Entry> data = <Entry>[
+  Entry(
+    'Класс',
+    <Entry>[
+      Entry('Бард'),
+      Entry('Варвар'),
+      Entry('Воин'),
+      Entry('Волшебник'),
+      Entry('Друид'),
+      Entry('Жрец'),
+      Entry('Монах'),
+      Entry('Паладин'),
+      Entry('Разбойник'),
+      Entry('Следопыт'),
+    ],
+  ),
+  Entry(
+    'Круг',
+    <Entry>[
+      Entry('Section B0'),
+      Entry('Section B1'),
+    ],
+  ),
+  Entry(
+    'Школа',
+    <Entry>[
+      Entry('Section C0'),
+      Entry('Section C1'),
+      Entry(
+        'Section C2',
+        <Entry>[
+          Entry('Item C2.0'),
+          Entry('Item C2.1'),
+          Entry('Item C2.2'),
+          Entry('Item C2.3'),
+        ],
+      ),
+    ],
+  ),
+];
+
+class EntryItem extends StatelessWidget {
+  const EntryItem(this.entry);
+
+  final Entry entry;
+
+  Widget _buildTiles(Entry root) {
+    if (root.children.isEmpty) return ListTile(title: Text(root.title));
+    return ExpansionTile(
+      key: PageStorageKey<Entry>(root),
+      title: Text(root.title),
+      children: root.children.map(_buildTiles).toList(),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return _buildTiles(entry);
   }
 }
 
