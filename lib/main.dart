@@ -6,6 +6,7 @@ void main() => runApp(MyApp());
 List<Spell> spells;
 
 class MyApp extends StatelessWidget {
+  var _scaffoldKey = new GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
       ),
       home: Builder(
         builder: (context) => Scaffold(
+            key: _scaffoldKey,
             appBar: AppBar(
               title: Text(
                 "Pathfinder Spells",
