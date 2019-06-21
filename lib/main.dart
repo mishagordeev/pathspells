@@ -291,7 +291,6 @@ class SpellList extends StatelessWidget {
               appBar: AppBar(
                 title: Text(
                   test.name,
-                  style: TextStyle(color: Color(0xFFebe4b1)),
                 ),
               ),
               body: Padding(
