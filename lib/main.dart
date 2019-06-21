@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
+import 'package:mdi/mdi.dart';
 
 void main() => runApp(MyApp());
 
@@ -26,7 +27,6 @@ class MyApp extends StatelessWidget {
                 IconButton(
                   icon: Icon(
                     Icons.search,
-                    semanticLabel: 'search',
                   ),
                   onPressed: () {
                     showSearch(context: context, delegate: SpellSearch());
@@ -34,8 +34,15 @@ class MyApp extends StatelessWidget {
                 ),
                 IconButton(
                   icon: Icon(
+                      Mdi.bookmarkMultipleOutline
+                  ),
+                  onPressed: () {
+
+                  },
+                ),
+                IconButton(
+                  icon: Icon(
                     Icons.filter_list,
-                    semanticLabel: 'filter',
                   ),
                   onPressed: () {
                     _scaffoldKey.currentState.openEndDrawer();
