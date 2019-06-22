@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
         builder: (context) => Scaffold(
             key: _scaffoldKey,
             appBar: AppBar(
+              automaticallyImplyLeading: false,
               title: Text(
                 "Pathfinder Spells",
                 style: TextStyle(
@@ -46,12 +47,19 @@ class MyApp extends StatelessWidget {
             body: new Container(
               child: new Center(child: LoadAndShowData()),
             ),
-          endDrawer: new AppDrawer(),
+          endDrawer: SafeArea(child: Drawer(
+            child: ListView(
+              children: <Widget>[
+              ],
+            ),
+          )),
         ),
       ),
     );
   }
 }
+
+
 
 class AppDrawer extends StatefulWidget {
   @override
