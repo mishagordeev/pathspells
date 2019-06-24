@@ -4,6 +4,7 @@ import 'dart:convert';
 void main() => runApp(MyApp());
 
 List<Spell> spells;
+bool circle0 = false;
 
 class MyApp extends StatelessWidget {
   var _scaffoldKey = new GlobalKey<ScaffoldState>();
@@ -47,66 +48,50 @@ class MyApp extends StatelessWidget {
             body: new Container(
               child: new Center(child: LoadAndShowData()),
             ),
-          endDrawer: SafeArea(child: Drawer(
-            child: ListView(
-              children: <Widget>[
-              ],
-            ),
-          )),
+          endDrawer: SafeArea(child: FilterDrawer()),
         ),
       ),
     );
   }
 }
 
-
-
-class AppDrawer extends StatefulWidget {
+class FilterDrawer extends StatefulWidget {
   @override
-  _AppDrawerState createState() => new _AppDrawerState();
+  State<StatefulWidget> createState() {
+    return FilterDrawerState();
+  }
 }
 
-class _AppDrawerState extends State<AppDrawer> {
+class FilterDrawerState extends State<FilterDrawer>{
+
   @override
   Widget build(BuildContext context) {
-    return new Drawer(
-      child: new Scaffold(
-        appBar: AppBar(
-          title: Text(
-            "Filter",
-            style: TextStyle(
-                fontWeight: FontWeight.bold),
-          ),
-          actions: <Widget>[
-            IconButton(
-              icon: Icon(
-                Icons.clear,
-                semanticLabel: 'filter',
-              ),
-              onPressed: () {
-              },
+    return Drawer(
+        child: ListView(
+          children: <Widget>[
+            ListTile(
+              title: Text("Circle"),
             ),
+            Row(
+              children: <Widget>[
+                Checkbox(
+                    value: circle0,
+                    onChanged: (bool newValue) {
+                      setState(() {
+                        print("tap");
+                        circle0 = newValue;
+                      });
+                    },
+                    activeColor: Colors.pink[900],
+                ),
+                Text("0")
+              ],
+            )
           ],
-        ),
-        body: ListView.builder(
-          itemBuilder: (BuildContext context, int index) =>
-              EntryItem(data[index]),
-          itemCount: data.length,
-        ),
-      ),
-
-     /* child: new ListView(
-        children: <Widget>[
-          new DrawerHeader(
-            child: new Text("Header"),
-          ),
-          new ListTile(
-            title: new Text("Item 1"),
-          ),
-        ],
-      ),*/
+        )
     );
   }
+
 }
 
 class Entry {
