@@ -5,7 +5,7 @@ void main() => runApp(MyApp());
 
 List<Spell> spells;
 bool circle0 = false;
-
+String dropdownValue;
 class MyApp extends StatelessWidget {
   var _scaffoldKey = new GlobalKey<ScaffoldState>();
   @override
@@ -49,6 +49,18 @@ class MyApp extends StatelessWidget {
               child: new Center(child: LoadAndShowData()),
             ),
           endDrawer: SafeArea(child: FilterDrawer()),
+            bottomNavigationBar: BottomAppBar(
+              child: new Row(
+                mainAxisSize: MainAxisSize.max,
+                //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  IconButton(icon: Icon(Icons.menu), onPressed: () {},),
+                  IconButton(icon: Icon(Icons.search), onPressed: () {showSearch(context: context, delegate: SpellSearch());},),
+                  IconButton(icon: Icon(Icons.filter_list), onPressed: () {},),
+                  IconButton(icon: Icon(Icons.bookmark_border), onPressed: () {},),
+                ],
+              ),
+            )
         ),
       ),
     );
@@ -70,7 +82,26 @@ class FilterDrawerState extends State<FilterDrawer>{
         child: ListView(
           children: <Widget>[
             ListTile(
-              title: Text("Circle"),
+              title: Text("Filter"),
+            ),
+            ListTile(
+              title: Text("Class"),
+            ),
+            DropdownButton<String>(
+            value: dropdownValue,
+            onChanged: (String newValue) {
+            setState(() {
+            dropdownValue = newValue;
+            });
+            },
+            items: <String>['One', 'Two', 'Free', 'Four']
+                .map<DropdownMenuItem<String>>((String value) {
+            return DropdownMenuItem<String>(
+            value: value,
+            child: Text(value),
+            );
+            })
+                .toList(),
             ),
             Row(
               children: <Widget>[
