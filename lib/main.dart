@@ -6,6 +6,7 @@ void main() => runApp(MyApp());
 List<Spell> spells;
 bool circle0 = false;
 String dropdownValue;
+
 class MyApp extends StatelessWidget {
   var _scaffoldKey = new GlobalKey<ScaffoldState>();
   @override
@@ -21,8 +22,7 @@ class MyApp extends StatelessWidget {
               automaticallyImplyLeading: false,
               title: Text(
                 "Pathfinder Spells",
-                style: TextStyle(
-                    fontWeight: FontWeight.bold),
+                style: TextStyle(fontWeight: FontWeight.bold),
               ),
               actions: <Widget>[
                 IconButton(
@@ -48,20 +48,33 @@ class MyApp extends StatelessWidget {
             body: new Container(
               child: new Center(child: LoadAndShowData()),
             ),
-          endDrawer: SafeArea(child: FilterDrawer()),
+            endDrawer: SafeArea(child: FilterDrawer()),
             bottomNavigationBar: BottomAppBar(
               child: new Row(
                 mainAxisSize: MainAxisSize.max,
                 //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  IconButton(icon: Icon(Icons.menu), onPressed: () {},),
-                  IconButton(icon: Icon(Icons.search), onPressed: () {showSearch(context: context, delegate: SpellSearch());},),
-                  IconButton(icon: Icon(Icons.filter_list), onPressed: () {},),
-                  IconButton(icon: Icon(Icons.bookmark_border), onPressed: () {},),
+                  IconButton(
+                    icon: Icon(Icons.menu),
+                    onPressed: () {},
+                  ),
+                  IconButton(
+                    icon: Icon(Icons.search),
+                    onPressed: () {
+                      showSearch(context: context, delegate: SpellSearch());
+                    },
+                  ),
+                  IconButton(
+                    icon: Icon(Icons.filter_list),
+                    onPressed: () {},
+                  ),
+                  IconButton(
+                    icon: Icon(Icons.bookmark_border),
+                    onPressed: () {},
+                  ),
                 ],
               ),
-            )
-        ),
+            )),
       ),
     );
   }
@@ -74,55 +87,56 @@ class FilterDrawer extends StatefulWidget {
   }
 }
 
-class FilterDrawerState extends State<FilterDrawer>{
-
+class FilterDrawerState extends State<FilterDrawer> {
   @override
   Widget build(BuildContext context) {
     return Drawer(
         child: ListView(
+      children: <Widget>[
+        ListTile(
+          title: Text("Filter"),
+        ),
+        ListTile(
+          title: Text("Class"),
+        ),
+        ListTile(
+          title: Center(
+            child: DropdownButtonFormField<String>(
+              decoration: InputDecoration(fillColor: Colors.green, filled: true),
+              value: dropdownValue,
+              onChanged: (String newValue) {
+                setState(() {
+                  dropdownValue = newValue;
+                });
+              },
+              items: <String>['Бард', 'Варвар', 'Воин', 'Волшебник','Друид','Жрец','Монах','Паладин','Разбойник','Следопыт']
+                  .map<DropdownMenuItem<String>>((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
+            ),
+          ),
+        ),
+        Row(
           children: <Widget>[
-            ListTile(
-              title: Text("Filter"),
+            Checkbox(
+              value: circle0,
+              onChanged: (bool newValue) {
+                setState(() {
+                  print("tap");
+                  circle0 = newValue;
+                });
+              },
+              activeColor: Colors.pink[900],
             ),
-            ListTile(
-              title: Text("Class"),
-            ),
-            DropdownButton<String>(
-            value: dropdownValue,
-            onChanged: (String newValue) {
-            setState(() {
-            dropdownValue = newValue;
-            });
-            },
-            items: <String>['One', 'Two', 'Free', 'Four']
-                .map<DropdownMenuItem<String>>((String value) {
-            return DropdownMenuItem<String>(
-            value: value,
-            child: Text(value),
-            );
-            })
-                .toList(),
-            ),
-            Row(
-              children: <Widget>[
-                Checkbox(
-                    value: circle0,
-                    onChanged: (bool newValue) {
-                      setState(() {
-                        print("tap");
-                        circle0 = newValue;
-                      });
-                    },
-                    activeColor: Colors.pink[900],
-                ),
-                Text("0")
-              ],
-            )
+            Text("0")
           ],
         )
-    );
+      ],
+    ));
   }
-
 }
 
 class Entry {
@@ -381,13 +395,11 @@ class SpellCard extends StatelessWidget {
                         textAlign: TextAlign.center));
               if (index >= columnNumber) if (index % columnNumber == 0)
                 return new Container(
-                  decoration: new BoxDecoration(
-                      border: new Border(
-                          bottom: BorderSide(
-                              color: Theme.of(context).dividerColor))),
-                  child:
-                  Text(tableElements[index])
-                );
+                    decoration: new BoxDecoration(
+                        border: new Border(
+                            bottom: BorderSide(
+                                color: Theme.of(context).dividerColor))),
+                    child: Text(tableElements[index]));
               else
                 return new Container(
                   decoration: new BoxDecoration(
