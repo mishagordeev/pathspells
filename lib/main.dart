@@ -6,6 +6,7 @@ void main() => runApp(MyApp());
 List<Spell> spells;
 bool circle0 = false;
 String dropdownValue;
+String dropdownValue1;
 
 class MyApp extends StatelessWidget {
   var _scaffoldKey = new GlobalKey<ScaffoldState>();
@@ -102,15 +103,26 @@ class FilterDrawerState extends State<FilterDrawer> {
         ListTile(
           title: Center(
             child: DropdownButtonFormField<String>(
-              decoration: InputDecoration(fillColor: Colors.green, filled: true),
+              decoration:
+                  InputDecoration(fillColor: Colors.green, filled: true),
               value: dropdownValue,
               onChanged: (String newValue) {
                 setState(() {
                   dropdownValue = newValue;
                 });
               },
-              items: <String>['Бард', 'Варвар', 'Воин', 'Волшебник','Друид','Жрец','Монах','Паладин','Разбойник','Следопыт']
-                  .map<DropdownMenuItem<String>>((String value) {
+              items: <String>[
+                'Бард',
+                'Варвар',
+                'Воин',
+                'Волшебник',
+                'Друид',
+                'Жрец',
+                'Монах',
+                'Паладин',
+                'Разбойник',
+                'Следопыт'
+              ].map<DropdownMenuItem<String>>((String value) {
                 return DropdownMenuItem<String>(
                   value: value,
                   child: Text(value),
@@ -118,6 +130,9 @@ class FilterDrawerState extends State<FilterDrawer> {
               }).toList(),
             ),
           ),
+        ),
+        ListTile(
+          title: Text("Circle"),
         ),
         Row(
           children: <Widget>[
@@ -127,13 +142,54 @@ class FilterDrawerState extends State<FilterDrawer> {
                 setState(() {
                   print("tap");
                   circle0 = newValue;
+                  print(circle0);
                 });
               },
               activeColor: Colors.pink[900],
             ),
             Text("0")
           ],
-        )
+        ),
+        Visibility(
+          visible: circle0,
+          child: ListTile(
+            title: Text("School"),
+          ),
+        ),
+        Visibility(
+          visible: circle0,
+          child: ListTile(
+            title: Center(
+              child: DropdownButtonFormField<String>(
+                decoration:
+                    InputDecoration(fillColor: Colors.grey, filled: true),
+                value: dropdownValue1,
+                onChanged: (String newValue) {
+                  setState(() {
+                    dropdownValue1 = newValue;
+                  });
+                },
+                items: <String>[
+                  '-',
+                  '-',
+                  '-',
+                  '-',
+                  '-',
+                  '-',
+                  '-',
+                  '-',
+                  '-',
+                  '-'
+                ].map<DropdownMenuItem<String>>((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
+              ),
+            ),
+          ),
+        ),
       ],
     ));
   }
