@@ -92,106 +92,41 @@ class FilterDrawerState extends State<FilterDrawer> {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-        child: ListView(
-      children: <Widget>[
-        ListTile(
-          title: Text("Filter"),
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text("Filter", style: TextStyle(color: Colors.black)),
+          backgroundColor: Colors.white,
         ),
-        ListTile(
-          title: Text("Class"),
-        ),
-        ListTile(
-          title: Center(
-            child: DropdownButtonFormField<String>(
-              decoration:
-                  InputDecoration(fillColor: Colors.green, filled: true),
-              value: dropdownValue,
-              onChanged: (String newValue) {
-                setState(() {
-                  dropdownValue = newValue;
-                });
-              },
-              items: <String>[
-                'Бард',
-                'Варвар',
-                'Воин',
-                'Волшебник',
-                'Друид',
-                'Жрец',
-                'Монах',
-                'Паладин',
-                'Разбойник',
-                'Следопыт'
-              ].map<DropdownMenuItem<String>>((String value) {
-                return DropdownMenuItem<String>(
-                  value: value,
-                  child: Text(value),
-                );
-              }).toList(),
-            ),
-          ),
-        ),
-        ListTile(
-          title: Text("Circle"),
-        ),
-        Row(
+        body: ListView(
           children: <Widget>[
-            Checkbox(
-              value: circle0,
-              onChanged: (bool newValue) {
-                setState(() {
-                  print("tap");
-                  circle0 = newValue;
-                  print(circle0);
-                });
+            ListTile(
+              title: Text("Бард"),
+              onTap: () {
+                print("bard");
               },
-              activeColor: Colors.pink[900],
             ),
-            Text("0")
+            ListTile(
+              title: Text("Жрец"),
+            ),
+            ListTile(
+              title: Text("Друид"),
+            ),
+            ListTile(
+              title: Text("Паладин"),
+            ),
+            ListTile(
+              title: Text("Следопыт"),
+            ),
+            ListTile(
+              title: Text("Чародей"),
+            ),
+            ListTile(
+              title: Text("Волшебник"),
+            ),
           ],
-        ),
-        Visibility(
-          visible: circle0,
-          child: ListTile(
-            title: Text("School"),
-          ),
-        ),
-        Visibility(
-          visible: circle0,
-          child: ListTile(
-            title: Center(
-              child: DropdownButtonFormField<String>(
-                decoration:
-                    InputDecoration(fillColor: Colors.grey, filled: true),
-                value: dropdownValue1,
-                onChanged: (String newValue) {
-                  setState(() {
-                    dropdownValue1 = newValue;
-                  });
-                },
-                items: <String>[
-                  '-',
-                  '-',
-                  '-',
-                  '-',
-                  '-',
-                  '-',
-                  '-',
-                  '-',
-                  '-',
-                  '-'
-                ].map<DropdownMenuItem<String>>((String value) {
-                  return DropdownMenuItem<String>(
-                    value: value,
-                    child: Text(value),
-                  );
-                }).toList(),
-              ),
-            ),
-          ),
-        ),
-      ],
-    ));
+        )
+      ),
+    );
   }
 }
 
