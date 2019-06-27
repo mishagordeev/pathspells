@@ -18,64 +18,39 @@ class MyApp extends StatelessWidget {
       ),
       home: Builder(
         builder: (context) => Scaffold(
-            key: _scaffoldKey,
-            appBar: AppBar(
-              automaticallyImplyLeading: false,
-              title: Text(
-                "Pathfinder Spells",
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-              actions: <Widget>[
-                IconButton(
-                  icon: Icon(
-                    Icons.search,
-                    semanticLabel: 'search',
-                  ),
-                  onPressed: () {
-                    showSearch(context: context, delegate: SpellSearch());
-                  },
+              key: _scaffoldKey,
+              appBar: AppBar(
+                automaticallyImplyLeading: false,
+                title: Text(
+                  "Pathfinder Spells",
+                  style: TextStyle(fontWeight: FontWeight.bold),
                 ),
-                IconButton(
-                  icon: Icon(
-                    Icons.filter_list,
-                    semanticLabel: 'filter',
-                  ),
-                  onPressed: () {
-                    _scaffoldKey.currentState.openEndDrawer();
-                  },
-                ),
-              ],
-            ),
-            body: new Container(
-              child: new Center(child: LoadAndShowData()),
-            ),
-            endDrawer: SafeArea(child: FilterDrawer()),
-            bottomNavigationBar: BottomAppBar(
-              child: new Row(
-                mainAxisSize: MainAxisSize.max,
-                //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
+                actions: <Widget>[
                   IconButton(
-                    icon: Icon(Icons.menu),
-                    onPressed: () {},
-                  ),
-                  IconButton(
-                    icon: Icon(Icons.search),
+                    icon: Icon(
+                      Icons.search,
+                      semanticLabel: 'search',
+                    ),
                     onPressed: () {
                       showSearch(context: context, delegate: SpellSearch());
                     },
                   ),
                   IconButton(
-                    icon: Icon(Icons.filter_list),
-                    onPressed: () {},
-                  ),
-                  IconButton(
-                    icon: Icon(Icons.bookmark_border),
-                    onPressed: () {},
+                    icon: Icon(
+                      Icons.filter_list,
+                      semanticLabel: 'filter',
+                    ),
+                    onPressed: () {
+                      _scaffoldKey.currentState.openEndDrawer();
+                    },
                   ),
                 ],
               ),
-            )),
+              body: new Container(
+                child: new Center(child: LoadAndShowData()),
+              ),
+              endDrawer: SafeArea(child: FilterDrawer()),
+            ),
       ),
     );
   }
@@ -89,42 +64,50 @@ class FilterDrawer extends StatefulWidget {
 }
 
 class FilterDrawerState extends State<FilterDrawer> {
+  Widget tiles = Text("2");
+  String _head;
+
   @override
+  void initState() {
+    super.initState();
+    //tiles = Text("2");
+    _head = "Filter";
+  }
+
+  int circleCount(String value) {
+    switch (value) {
+      case 'Бард':
+        return 7;
+      case 'Жрец':
+        return 10;
+      case 'Друид':
+        return 10;
+      case 'Паладин':
+        return 5;
+      case 'Следопыт':
+        return 5;
+      case 'Чародей':
+        return 10;
+    }
+  }
+
+  Widget circleList(int value) {
+    return new ListView.separated(
+        itemCount: value,
+        separatorBuilder: (BuildContext context, int index) => Divider(),
+        itemBuilder: (BuildContext context, int index) {
+          return new ListTile(title: Text(index.toString()), onTap: () {});
+        });
+  }
+
   Widget build(BuildContext context) {
     return Drawer(
       child: Scaffold(
-        appBar: AppBar(
-          title: Text("Filter", style: TextStyle(color: Colors.black)),
-          backgroundColor: Colors.white,
-        ),
-        body: ListView(
-          children: <Widget>[
-            ListTile(
-              title: Text("Бард"),
-              onTap: () {
-                print("bard");
-              },
-            ),
-            ListTile(
-              title: Text("Жрец"),
-            ),
-            ListTile(
-              title: Text("Друид"),
-            ),
-            ListTile(
-              title: Text("Паладин"),
-            ),
-            ListTile(
-              title: Text("Следопыт"),
-            ),
-            ListTile(
-              title: Text("Чародей"),
-            ),
-            ListTile(
-              title: Text("Волшебник"),
-            ),
-          ],
-        )
+          appBar: AppBar(
+            title: Text(_head, style: TextStyle(color: Colors.black)),
+            backgroundColor: Colors.white,
+          ),
+          body: circleList(circleCount("Бард"))
       ),
     );
   }
@@ -232,7 +215,6 @@ class SpellSearch extends SearchDelegate {
   @override
   ThemeData appBarTheme(BuildContext context) {
     final ThemeData theme = Theme.of(context);
-    // TODO: implement appBarTheme
     return theme.copyWith(
       primaryColor: Color(0xFF3d0800),
       primaryColorBrightness: Brightness.light,
