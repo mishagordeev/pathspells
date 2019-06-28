@@ -107,7 +107,65 @@ class FilterDrawerState extends State<FilterDrawer> {
             title: Text(_head, style: TextStyle(color: Colors.black)),
             backgroundColor: Colors.white,
           ),
-          body: circleList(circleCount("Бард"))
+          body: Row(
+            children: <Widget>[
+              Expanded(
+                flex: 4, // 20%
+                child: Container(
+                child: ListView(
+                  children: <Widget>[
+                    ListTile(title: Text("Бард"),
+                    onTap: () {
+                      print("bard");
+                    }),
+                    Container(child: ListTile(title: Text("Волшебник")),color: Colors.pink[700]),
+                    ListTile(title: Text("Волшебник")),
+                    ListTile(title: Text("Паладин")),
+                    ListTile(title: Text("Плут")),
+                    ListTile(title: Text("Друид")),
+                    ListTile(title: Text("Колдун")),
+
+                  ],
+                )),
+              ),
+              Expanded(
+                flex: 2, // 60%
+                child: Container(
+                    child: ListView(
+                      children: <Widget>[
+                        ListTile(title: Text("0")),
+                        ListTile(title: Text("1")),
+                        Container(child: ListTile(title: Text("2")),color: Colors.pink[700]),
+                        ListTile(title: Text("3")),
+                        ListTile(title: Text("4")),
+                        ListTile(title: Text("5")),
+                        ListTile(title: Text("6")),
+                        ListTile(title: Text("7")),
+                        ListTile(title: Text("8")),
+                        ListTile(title: Text("9")),
+
+                      ],
+                    )),
+              ),
+              Expanded(
+                flex: 4, // 20%
+                child: Container(
+                    child: ListView(
+                      children: <Widget>[
+                        ListTile(title: Text("Abjuration")),
+                        ListTile(title: Text("Conjuration")),
+                        ListTile(title: Text("Divination")),
+                        ListTile(title: Text("Enchantment")),
+                        Container(child: ListTile(title: Text("Evocation")),color: Colors.pink[700]),
+                        ListTile(title: Text("Illusion")),
+                        ListTile(title: Text("Necromancy")),
+                        ListTile(title: Text("Transmutat")),
+                        ListTile(title: Text("Universal")),
+                      ],
+                    )),
+              )
+            ],
+          )
       ),
     );
   }
