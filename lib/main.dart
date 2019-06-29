@@ -9,168 +9,40 @@ String dropdownValue;
 String dropdownValue1;
 
 class MyApp extends StatelessWidget {
-  var _scaffoldKey = new GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: Colors.pink[900],
+          primaryColor: Colors.pink[900],
       ),
       home: Builder(
         builder: (context) => Scaffold(
-              key: _scaffoldKey,
-              appBar: AppBar(
-                automaticallyImplyLeading: false,
-                title: Text(
-                  "Pathfinder Spells",
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-                actions: <Widget>[
-                  IconButton(
-                    icon: Icon(
-                      Icons.search,
-                      semanticLabel: 'search',
-                    ),
-                    onPressed: () {
-                      showSearch(context: context, delegate: SpellSearch());
-                    },
-                  ),
-                  IconButton(
-                    icon: Icon(
-                      Icons.filter_list,
-                      semanticLabel: 'filter',
-                    ),
-                    onPressed: () {
-                      _scaffoldKey.currentState.openEndDrawer();
-                    },
-                  ),
-                ],
-              ),
-              body: new Container(
-                child: new Center(child: LoadAndShowData()),
-              ),
-              endDrawer: SafeArea(child: FilterDrawer()),
-            ),
-      ),
-    );
-  }
-}
-
-class FilterDrawer extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() {
-    return FilterDrawerState();
-  }
-}
-
-class FilterDrawerState extends State<FilterDrawer> {
-  Widget tiles = Text("2");
-  String _head;
-
-  @override
-  void initState() {
-    super.initState();
-    //tiles = Text("2");
-    _head = "Filter";
-  }
-
-  int circleCount(String value) {
-    switch (value) {
-      case 'Бард':
-        return 7;
-      case 'Жрец':
-        return 10;
-      case 'Друид':
-        return 10;
-      case 'Паладин':
-        return 5;
-      case 'Следопыт':
-        return 5;
-      case 'Чародей':
-        return 10;
-    }
-  }
-
-  Widget circleList(int value) {
-    return new ListView.separated(
-        itemCount: value,
-        separatorBuilder: (BuildContext context, int index) => Divider(),
-        itemBuilder: (BuildContext context, int index) {
-          return new ListTile(title: Text(index.toString()), onTap: () {});
-        });
-  }
-
-  Widget build(BuildContext context) {
-    return Drawer(
-      child: Scaffold(
           appBar: AppBar(
-            title: Text(_head, style: TextStyle(color: Colors.black)),
-            backgroundColor: Colors.white,
-          ),
-          body: Row(
-            children: <Widget>[
-              Expanded(
-                flex: 4, // 20%
-                child: Container(
-                child: ListView(
-                  children: <Widget>[
-                    ListTile(title: Text("Бард"),
-                    onTap: () {
-                      print("bard");
-                    }),
-                    Container(child: ListTile(title: Text("Волшебник")),color: Colors.pink[700]),
-                    ListTile(title: Text("Волшебник")),
-                    ListTile(title: Text("Паладин")),
-                    ListTile(title: Text("Плут")),
-                    ListTile(title: Text("Друид")),
-                    ListTile(title: Text("Колдун")),
-
-                  ],
-                )),
+            automaticallyImplyLeading: false,
+            title: Text(
+              "Pathfinder Spells",
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            actions: <Widget>[
+              IconButton(
+                icon: Icon(
+                  Icons.search,
+                ),
+                onPressed: () {
+                  showSearch(context: context, delegate: SpellSearch());
+                },
               ),
-              Expanded(
-                flex: 2, // 60%
-                child: Container(
-                    child: ListView(
-                      children: <Widget>[
-                        ListTile(title: Text("0")),
-                        ListTile(title: Text("1")),
-                        Container(child: ListTile(title: Text("2")),color: Colors.pink[700]),
-                        ListTile(title: Text("3")),
-                        ListTile(title: Text("4")),
-                        ListTile(title: Text("5")),
-                        ListTile(title: Text("6")),
-                        ListTile(title: Text("7")),
-                        ListTile(title: Text("8")),
-                        ListTile(title: Text("9")),
-
-                      ],
-                    )),
-              ),
-              Expanded(
-                flex: 4, // 20%
-                child: Container(
-                    child: ListView(
-                      children: <Widget>[
-                        ListTile(title: Text("Abjuration")),
-                        ListTile(title: Text("Conjuration")),
-                        ListTile(title: Text("Divination")),
-                        ListTile(title: Text("Enchantment")),
-                        Container(child: ListTile(title: Text("Evocation")),color: Colors.pink[700]),
-                        ListTile(title: Text("Illusion")),
-                        ListTile(title: Text("Necromancy")),
-                        ListTile(title: Text("Transmutat")),
-                        ListTile(title: Text("Universal")),
-                      ],
-                    )),
-              )
             ],
-          )
+          ),
+          body: new Container(
+            child: new Center(child: LoadAndShowData()),
+          ),
+        ),
       ),
     );
   }
 }
-
 
 class LoadAndShowData extends StatelessWidget {
   @override
@@ -182,8 +54,8 @@ class LoadAndShowData extends StatelessWidget {
           spells = parseJson(snapshot.data.toString());
           return spells.isNotEmpty
               ? new SpellList(
-                  spell: spells,
-                )
+            spell: spells,
+          )
               : new Center(child: new CircularProgressIndicator());
         });
   }
@@ -207,9 +79,7 @@ class SpellSearch extends SearchDelegate {
   ThemeData appBarTheme(BuildContext context) {
     final ThemeData theme = Theme.of(context);
     return theme.copyWith(
-      primaryColor: Color(0xFF3d0800),
-      primaryColorBrightness: Brightness.light,
-      primaryTextTheme: theme.textTheme,
+
     );
   }
 
@@ -326,7 +196,7 @@ class SpellCard extends StatelessWidget {
             .add(RichText(text: TextSpan(children: spellCardSpanParts)));
         spellCardSpanParts = [];
         List<String> tableElements =
-            description.substring(4, endIndex).split(",");
+        description.substring(4, endIndex).split(",");
         final int columnNumber = int.parse(description[2]);
         spellCardParts.add(new GridView.builder(
             physics: ScrollPhysics(),
@@ -371,7 +241,7 @@ class SpellCard extends StatelessWidget {
                           bottom: BorderSide(
                               color: Theme.of(context).dividerColor))),
                   child:
-                      Text(tableElements[index], textAlign: TextAlign.center),
+                  Text(tableElements[index], textAlign: TextAlign.center),
                 );
             }));
         int j = description.indexOf('</t>');
@@ -382,7 +252,7 @@ class SpellCard extends StatelessWidget {
         spellCardSpanParts.add(new TextSpan(
             text: description.substring(3, index),
             style:
-                TextStyle(color: Colors.black, fontWeight: FontWeight.bold)));
+            TextStyle(color: Colors.black, fontWeight: FontWeight.bold)));
         description = description.substring(index + 4, description.length);
       }
       if (description.startsWith('<i>')) {
