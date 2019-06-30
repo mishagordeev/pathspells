@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
                   builder: (context, snapshot) {
                     spells = parseJson(snapshot.data.toString());
                     return spells.isNotEmpty
-                        ? new ClassList()
+                        ? new ClassList(spells)
                         : new Center(child: new CircularProgressIndicator());
                   })
             ),

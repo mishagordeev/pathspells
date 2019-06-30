@@ -51,6 +51,6 @@ class SpellSearch extends SearchDelegate {
         searchSuggestions.add(spells[i]);
       }
     }
-    return new SpellList(spells: searchSuggestions);
+    return new SpellList(searchSuggestions, null, null);
   }
 }
