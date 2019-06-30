@@ -50,7 +50,7 @@ class SpellList extends StatelessWidget {
                 ),
               ),
               body: Padding(
-                  padding: EdgeInsets.fromLTRB(8.0, 0.0, 8.0, 0.0),
+                  padding: EdgeInsets.fromLTRB(8.0, 4.0, 8.0, 0.0),
                   child: SpellCard(spell.fullDescription)));
         },
       ),

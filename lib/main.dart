@@ -42,7 +42,9 @@ class MyApp extends StatelessWidget {
                     spells = parseJson(snapshot.data.toString());
                     return spells.isNotEmpty
                         ? new ClassList(spells)
-                        : new Center(child: new CircularProgressIndicator());
+                        : new Center(child: new CircularProgressIndicator(
+                      backgroundColor: Colors.red[900],
+                    ));
                   })
             ),
       ),
