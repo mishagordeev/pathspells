@@ -96,7 +96,6 @@ class ClassList extends StatelessWidget {
                         indicatorColor: Colors.white,
                         tabs: tabs)),
                 body: TabBarView(
-
                   children: tabsView,
                 ),
               ));

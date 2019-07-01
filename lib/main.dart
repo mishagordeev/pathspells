@@ -15,6 +15,28 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: Colors.red[900],
+        hintColor: Colors.white70,
+        //accentColor: Colors.red,
+        //backgroundColor: Colors.red,
+        //bottomAppBarColor: Colors.red,
+        //buttonColor: Colors.red,
+        //canvasColor: Colors.red,
+        //cardColor: Colors.red,
+        cursorColor: Colors.white,
+        //disabledColor: Colors.red,
+        //dividerColor: Colors.red,
+        //dialogBackgroundColor: Colors.red,
+        //errorColor: Colors.red,
+
+        //highlightColor: Colors.red,
+        //indicatorColor: Colors.red,
+        //primaryColorLight: Colors.red,
+        //primaryColorDark: Colors.red,
+        textSelectionColor: Colors.red,
+
+
+
+
       ),
       home: Builder(
         builder: (context) => Scaffold(
