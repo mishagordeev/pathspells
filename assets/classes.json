@@ -1,0 +1,37 @@
+[
+  {
+    "image": "assets/images/bard.png",
+    "name": "Бард",
+    "level_count": 7
+  },
+  {
+    "image": "assets/images/mage.png",
+    "name": "Волшебик",
+    "level_count": 10
+  },
+  {
+    "image": "assets/images/cleric.png",
+    "name": "Жрец",
+    "level_count": 10
+  },
+  {
+    "image": "assets/images/druid.png",
+    "name": "Друид",
+    "level_count": 10
+  },
+  {
+    "image": "assets/images/paladin.png",
+    "name": "Паладин",
+    "level_count": 5
+  },
+  {
+    "image": "assets/images/ranger.png",
+    "name": "Следопыт",
+    "level_count": 5
+  },
+  {
+    "image": "assets/images/wizard.png",
+    "name": "Волшебник",
+    "level_count": 10
+  }
+]
