@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'dart:convert';
 import 'package:pathspells_flutter/Spell.dart';
 import 'package:pathspells_flutter/SpellSearch.dart';
+import 'package:pathspells_flutter/Json.dart';
+import 'package:pathspells_flutter/Class.dart';
 import 'package:pathspells_flutter/ClassList.dart';
+import 'package:pathspells_flutter/ClassListView.dart';
 
 void main() => runApp(MyApp());
 
@@ -34,9 +36,6 @@ class MyApp extends StatelessWidget {
         //primaryColorDark: Colors.red,
         textSelectionColor: Colors.red,
 
-
-
-
       ),
       home: Builder(
         builder: (context) => Scaffold(
@@ -59,11 +58,12 @@ class MyApp extends StatelessWidget {
               ),
               body: FutureBuilder(
                   future: DefaultAssetBundle.of(context)
-                      .loadString('assets/path_spells.json'),
+                      .loadString('assets/classes.json'),
                   builder: (context, snapshot) {
-                    spells = parseJson(snapshot.data.toString());
-                    return spells.isNotEmpty
-                        ? new ClassList(spells)
+                    var references = Json().parse(snapshot.data.toString());
+                    List<Class> classes = ClassList().get(references);
+                    return classes.isNotEmpty
+                        ? new ClassListView([], classes)
                         : new Center(child: new CircularProgressIndicator(
                       backgroundColor: Colors.red[900],
                     ));
@@ -71,16 +71,5 @@ class MyApp extends StatelessWidget {
             ),
       ),
     );
-  }
-
-  List<Spell> parseJson(String response) {
-    if (response == null) {
-      return [];
-    }
-    final List parsed = json.decode(response);
-    if (parsed == null)
-      return [];
-    else
-      return parsed.map<Spell>((json) => new Spell.fromJson(json)).toList();
   }
 }
