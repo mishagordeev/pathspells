@@ -11,19 +11,6 @@ class ClassListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    ListView test = ListView.separated(
-        itemCount: classes == null ? 0 : classes.length,
-        separatorBuilder: (BuildContext context, int index) => Divider(),
-        itemBuilder: (BuildContext context, int index) {
-          return new ListTile(
-              leading: Image.asset(classes[index].image),
-              title: Text(classes[index].name),
-              onTap: () {
-                showClassSpells(context,classes[index].id, classes[index].levelCount,classes[index].name);
-              });
-        });
-
     return SafeArea(
       child: ListView.separated(
           itemCount: classes == null ? 0 : classes.length,
@@ -33,7 +20,7 @@ class ClassListView extends StatelessWidget {
                 leading: Image.asset(classes[index].image),
                 title: Text(classes[index].name),
                 onTap: () {
-                  showClassSpells(context,classes[index].id, classes[index].levelCount,classes[index].name);
+                  showClassSpells(context, classes[index].id, classes[index].levelCount, classes[index].name);
                 });
           })
     );

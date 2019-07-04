@@ -3,7 +3,7 @@ import 'package:pathspells_flutter/Spell.dart';
 import 'package:pathspells_flutter/SpellCard.dart';
 
 class SpellList extends StatelessWidget {
-  List<Spell> spells;
+  final List<Spell> spells;
   final String characterClass;
   final String level;
 
@@ -11,32 +11,37 @@ class SpellList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List <Spell> _spells;
+
     if (characterClass != null && level != null) {
-      spells = sortSpellList(spells, characterClass, level);
+      _spells = filterSpellList(spells, characterClass, level);
     }
+    else
+      _spells = spells;
+
     return new ListView.separated(
-        itemCount: spells == null ? 0 : spells.length,
+        itemCount: _spells == null ? 0 : _spells.length,
         separatorBuilder: (BuildContext context, int index) => Divider(),
         itemBuilder: (BuildContext context, int index) {
           return new ListTile(
-              title: Text(spells[index].name),
-              subtitle: Text(spells[index].description),
+              title: Text(_spells[index].name),
+              subtitle: Text(_spells[index].description),
               onTap: () {
-                _showSpellCard(spells[index], context);
+                _showSpellCard(_spells[index], context);
               });
         });
   }
 
-  List<Spell> sortSpellList(
+  List<Spell> filterSpellList(
       List<Spell> spells, String characterClass, String level) {
-    List<Spell> sortedSpellList = [];
+    List<Spell> filteredSpellList = [];
     int itemCount = spells.length;
     for (int i = 0; i < itemCount; i++) {
       if (spells[i].classLevel[characterClass] == level) {
-        sortedSpellList.add(spells[i]);
+        filteredSpellList.add(spells[i]);
       }
     }
-    return sortedSpellList;
+    return filteredSpellList;
   }
 
   void _showSpellCard(Spell spell, BuildContext context) {
