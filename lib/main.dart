@@ -5,6 +5,8 @@ import 'package:pathspells_flutter/Json.dart';
 import 'package:pathspells_flutter/Class.dart';
 import 'package:pathspells_flutter/ClassList.dart';
 import 'package:pathspells_flutter/ClassListView.dart';
+import 'SpellList.dart';
+import 'SpellListView.dart';
 
 void main() => runApp(MyApp());
 
@@ -58,12 +60,14 @@ class MyApp extends StatelessWidget {
               ),
               body: FutureBuilder(
                   future: DefaultAssetBundle.of(context)
-                      .loadString('assets/classes.json'),
+                      .loadString('assets/path_spells_eng.json'),
                   builder: (context, snapshot) {
                     var references = Json().parse(snapshot.data.toString());
-                    List<Class> classes = ClassList().get(references);
+                    print(references);
+                    List<Spell> classes = SpellList().get(references);
+                    print(classes);
                     return classes.isNotEmpty
-                        ? new ClassListView([], classes)
+                        ? new SpellListView(classes,null,null)
                         : new Center(child: new CircularProgressIndicator(
                       backgroundColor: Colors.red[900],
                     ));

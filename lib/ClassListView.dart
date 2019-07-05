@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pathspells_flutter/SpellList.dart';
+import 'package:pathspells_flutter/SpellListView.dart';
 import 'package:pathspells_flutter/Spell.dart';
 import 'package:pathspells_flutter/Class.dart';
 
@@ -30,11 +30,11 @@ class ClassListView extends StatelessWidget {
     List<Widget> tabs = [];
     List<Widget> tabsView = [];
     tabs.add(Tab(text: "ФОКУСЫ"));
-    tabsView.add(SpellList(spells, characterClass, 0.toString()));
+    tabsView.add(SpellListView(spells, characterClass, 0.toString()));
 
     for (int i = 1; i < levelCount; i++) {
       tabs.add(Tab(text: "$i КРУГ"));
-      tabsView.add(SpellList(spells, characterClass, i.toString()));
+      tabsView.add(SpellListView(spells, characterClass, i.toString()));
     }
     Navigator.of(context).push(
       MaterialPageRoute<void>(

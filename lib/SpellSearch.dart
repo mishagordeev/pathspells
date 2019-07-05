@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'Spell.dart';
-import 'SpellList.dart';
+import 'SpellListView.dart';
 
 class SpellSearch extends SearchDelegate {
   List<Spell> spells;
@@ -58,6 +58,6 @@ class SpellSearch extends SearchDelegate {
         searchSuggestions.add(spells[i]);
       }
     }
-    return new SpellList(searchSuggestions, null, null);
+    return new SpellListView(searchSuggestions, null, null);
   }
 }

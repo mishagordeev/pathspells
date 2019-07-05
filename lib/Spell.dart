@@ -10,7 +10,7 @@ class Spell {
       this.fullDescription,
       this.classLevel});
 
-  factory Spell.fromJson(Map<String, dynamic> json) {
+  factory Spell.get(Map<String, dynamic> json) {
     return new Spell(
         name: json['name'] as String,
         description: json['description'] as String,
