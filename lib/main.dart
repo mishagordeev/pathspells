@@ -81,6 +81,7 @@ class MyApp extends StatelessWidget {
                         ? new ClassListView(spells,classes)
                         : new Center(child: new CircularProgressIndicator(
 
+                      valueColor: AlwaysStoppedAnimation<Color>(Colors.red[900]),
                     ));
                   })
             ),
