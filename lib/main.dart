@@ -67,16 +67,11 @@ class MyApp extends StatelessWidget {
                     DefaultAssetBundle.of(context).loadString('assets/path_spells_eng.json')]).then(
                           (response) => new ExternalData(classes:response[0],spells: response[1]),
                   ),
-                  //future: DefaultAssetBundle.of(context)
-                  //    .loadString('assets/path_spells_eng.json'),
                   builder: (context, AsyncSnapshot<ExternalData>snapshot) {
-                    print(snapshot.data.spells);
-                    var references = Json().parse(snapshot.data.spells.toString());
-                    var referencesClasses = Json().parse(snapshot.data.classes.toString());
-                    print(references);
+                    var references = Json().parse(snapshot?.data?.spells?.toString());
+                    var referencesClasses = Json().parse(snapshot?.data?.classes?.toString());
                     List<Spell> spells = SpellList().get(references);
                     List<Class> classes = ClassList().get(referencesClasses);
-                    print(spells);
                     return spells.isNotEmpty && classes.isNotEmpty
                         ? new ClassListView(spells,classes)
                         : new Center(child: new CircularProgressIndicator(
