@@ -7,6 +7,7 @@ import 'package:pathspells_flutter/ClassList.dart';
 import 'package:pathspells_flutter/ClassListView.dart';
 import 'SpellList.dart';
 import 'SpellListView.dart';
+import 'ExternalData.dart';
 
 void main() => runApp(MyApp());
 
@@ -15,6 +16,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //Future<String> spel = ;
+    //Future<String> clas = DefaultAssetBundle.of(context).loadString('assets/classes.json');
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -59,17 +62,25 @@ class MyApp extends StatelessWidget {
                 ],
               ),
               body: FutureBuilder(
-                  future: DefaultAssetBundle.of(context)
-                      .loadString('assets/path_spells_eng.json'),
-                  builder: (context, snapshot) {
-                    var references = Json().parse(snapshot.data.toString());
+                  future: Future.wait([
+                    DefaultAssetBundle.of(context).loadString('assets/classes.json'),
+                    DefaultAssetBundle.of(context).loadString('assets/path_spells_eng.json')]).then(
+                          (response) => new ExternalData(classes:response[0],spells: response[1]),
+                  ),
+                  //future: DefaultAssetBundle.of(context)
+                  //    .loadString('assets/path_spells_eng.json'),
+                  builder: (context, AsyncSnapshot<ExternalData>snapshot) {
+                    print(snapshot.data.spells);
+                    var references = Json().parse(snapshot.data.spells.toString());
+                    var referencesClasses = Json().parse(snapshot.data.classes.toString());
                     print(references);
-                    List<Spell> classes = SpellList().get(references);
-                    print(classes);
-                    return classes.isNotEmpty
-                        ? new SpellListView(classes,null,null)
+                    List<Spell> spells = SpellList().get(references);
+                    List<Class> classes = ClassList().get(referencesClasses);
+                    print(spells);
+                    return spells.isNotEmpty && classes.isNotEmpty
+                        ? new ClassListView(spells,classes)
                         : new Center(child: new CircularProgressIndicator(
-                      backgroundColor: Colors.red[900],
+
                     ));
                   })
             ),
