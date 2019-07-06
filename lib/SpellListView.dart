@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pathspells_flutter/Spell.dart';
-import 'package:pathspells_flutter/SpellCard.dart';
+import 'package:pathspells_flutter/SpellView.dart';
 
 class SpellListView extends StatelessWidget {
   final List<Spell> spells;
@@ -56,7 +56,7 @@ class SpellListView extends StatelessWidget {
               ),
               body: Padding(
                   padding: EdgeInsets.fromLTRB(8.0, 4.0, 8.0, 0.0),
-                  child: SpellCard(spell.fullDescription)));
+                  child: SpellView(spell.fullDescription)));
         },
       ),
     );

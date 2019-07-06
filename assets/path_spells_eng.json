@@ -8,7 +8,7 @@
     "paladin": "-",
     "ranger": "-",
     "wizard": "-",
-    "full_description": "-",
+    "full_description": "<bSource> PRPG Core Rulebook pg. 263\n<bSchool> evocation [light]\n<bLevel> arcanist 0, bard 0, magus 0, medium 0, mesmerist 0, occultist 0, psychic 0, shaman 0, skald 0, sorcerer 0, witch 0, wizard 0\n<bCasting Time> 1 standard action\n<bComponents> V, S\n<bRange> medium (100 ft. + 10 ft./level)\n<bEffect> up to four lights, all within a 10-ft.-radius area\n<bDuration> 1 minute (D)\n<bSaving Throw> none; <bSpell Resistance> no\n\nDepending on the version selected, you create up to four lights that resemble lanterns or torches (and cast that amount of light), or up to four glowing spheres of light (which look like will-o'-wisps), or one faintly glowing, vaguely humanoid shape. The <idancing lights> must stay within a 10-foot-radius area in relation to each other but otherwise move as you desire (no concentration required): forward or back, up or down, straight or turning corners, or the like. The lights can move up to 100 feet per round. A light winks out if the distance between you and it exceeds the spell's range.\n\nYou can only have one <idancing lights> spell active at any one time. If you cast this spell while another casting is still in effect, the previous casting is dispelled. If you make this spell permanent, it does not count against this limit.\n\n<iDancing lights> can be made permanent with a <ipermanency> spell.",
     "legal": "TRUE",
     "additional": "",
     "notes": ""
@@ -22,7 +22,7 @@
     "paladin": "-",
     "ranger": "-",
     "wizard": "-",
-    "full_description": "-",
+    "full_description": "<bSource> PRPG Core Rulebook pg. 264\n<bSchool> enchantment (compulsion) [mind-affecting]\n<bLevel> arcanist 0, bard 0, inquisitor 0, magus 0, medium 0, mesmerist 0, occultist 0, psychic 0, shaman 0, skald 0, sorcerer 0, spiritualist 0, summoner 0, summoner (unchained) 0, witch 0, wizard 0\n<bCasting Time> 1 standard action\n<bComponents> V, S, M (a pinch of wool or similar substance)\n<bRange> close (25 ft. + 5 ft./2 levels)\n<bTarget> one humanoid creature of 4 HD or less\n<bDuration> 1 round\n<bSaving Throw> Will negates; <bSpell Resistance> yes\n\nThis spell clouds the mind of a humanoid creature with 4 or fewer Hit Dice so that it takes no actions. Humanoids of 5 or more HD are not affected. A dazed subject is not stunned, so attackers get no special advantage against it. After a creature has been dazed by this spell, it is immune to the effects of this spell for 1 minute.",
     "legal": "TRUE",
     "additional": "",
     "notes": ""
@@ -36,7 +36,7 @@
     "paladin": "-",
     "ranger": "-",
     "wizard": "-",
-    "full_description": "-",
+    "full_description": "plaintext\n<t49 или меньше;3;1;2;10-13;4;2;3;14-17;6;3;4;18-19;8;4;5;20 или выше;12;6;8>\nplaintext",
     "legal": "FALSE",
     "additional": "",
     "notes": ""
@@ -50,7 +50,7 @@
     "paladin": "-",
     "ranger": "-",
     "wizard": "-",
-    "full_description": "-",
+    "full_description": "<bSource> PRPG Core Rulebook pg. 280\n<bSchool> necromancy [emotion, pain]\n<bLevel> alchemist 6, arcanist 6, bard 6, investigator 6, mesmerist 6, skald 6, sorcerer 6, spiritualist 6, witch 6, wizard 6\n<bCasting Time> 1 standard action\n<bComponents> V, S\n<bRange> close (25 ft. + 5 ft./2 levels)\n<bTarget> one living creature\n<bDuration> 1 round/level\n<bSaving Throw> Fortitude negates; <bSpell Resistance> yes\n\nEach round, you can target a single living creature, striking it with waves of power. Depending on the target's HD, this attack has as many as three effects.\n<t2HD; Effect; 10 or more; Sickened; 5-9; Panicked, sickened; 4 or less; Comatose, panicked, sickened>\nThe effects are cumulative and concurrent.\n\n<iSickened>: Sudden pain and fever sweeps over the subject's body. A creature affected by this spell remains sickened for 10 minutes per caster level. The effects cannot be negated by a <iremove disease> or <iheal> spell, but a <iremove> curse is effective.\n\n<iPanicked>: The subject becomes panicked for 1d4 rounds. Even after the panic ends, the creature remains shaken for 10 minutes per caster level, and it automatically becomes panicked again if it comes within sight of you during that time. This is a fear effect.\n\n<iComatose>: The subject falls into a catatonic coma for 10 minutes per caster level. During this time, it cannot be awakened by any means short of dispelling the effect. This is not a <isleep> effect, and thus elves are not immune to it.\n\nYou must spend a swift action each round after the first to target a foe.",
     "legal": "TRUE",
     "additional": "",
     "notes": ""
@@ -64,7 +64,7 @@
     "paladin": "-",
     "ranger": "-",
     "wizard": "-",
-    "full_description": "-",
+    "full_description": "<t31;2;3;4;5;6;7;8;9>",
     "legal": "TRUE",
     "additional": "",
     "notes": ""
@@ -11488,7 +11488,7 @@
     "paladin": "-",
     "ranger": "-",
     "wizard": "-",
-    "full_description": "-",
+    "full_description": "<bSource> PRPG Core Rulebook pg. 280\n<bSchool> necromancy [emotion, pain]\n<bLevel> alchemist 6, arcanist 6, bard 6, investigator 6, mesmerist 6, skald 6, sorcerer 6, spiritualist 6, witch 6, wizard 6\n<bCasting Time> 1 standard action\n<bComponents> V, S\n<bRange> close (25 ft. + 5 ft./2 levels)\n<bTarget> one living creature\n<bDuration> 1 round/level\n<bSaving Throw> Fortitude negates; <bSpell Resistance> yes\n\nEach round, you can target a single living creature, striking it with waves of power. Depending on the target's HD, this attack has as many as three effects.\n\n<t21; 2; 3; 4; 5; 6; 7; 8>\n\nThe effects are cumulative and concurrent.\n\n<iSickened>: Sudden pain and fever sweeps over the subject's body. A creature affected by this spell remains sickened for 10 minutes per caster level. The effects cannot be negated by a <iremove disease> or <iheal> spell, but a <iremove> curse is effective.\n\n<iPanicked>: The subject becomes panicked for 1d4 rounds. Even after the panic ends, the creature remains shaken for 10 minutes per caster level, and it automatically becomes panicked again if it comes within sight of you during that time. This is a fear effect.\n\n<iComatose>: The subject falls into a catatonic coma for 10 minutes per caster level. During this time, it cannot be awakened by any means short of dispelling the effect. This is not a <isleep> effect, and thus elves are not immune to it.\n\nYou must spend a swift action each round after the first to target a foe.",
     "legal": "TRUE",
     "additional": "",
     "notes": ""
