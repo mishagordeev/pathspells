@@ -21,20 +21,19 @@ class ClassListView extends StatelessWidget {
                 leading: Image.asset(classes[index].image),
                 title: Text(classes[index].name),
                 onTap: () {
-                  showClassSpells(context, classes[index].id, classes[index].levelCount, classes[index].name);
+                  _showClassSpells(context, classes[index].id, classes[index].levelCount, classes[index].name);
                 });
           })
     );
   }
 
-  void showClassSpells(BuildContext context, String characterClass, int levelCount, String className) {
+  void _showClassSpells(BuildContext context, String characterClass, int levelCount, String className) {
     List<Widget> tabs = [];
     List<Widget> tabsView = [];
-    tabs.add(Tab(text: "ФОКУСЫ"));
-    tabsView.add(SpellListView(spells, characterClass, 0.toString()));
+    List<String> endingNumerals = ['','ST','ND','RD','TH','TH','TH','TH','TH','TH'];
 
-    for (int i = 1; i < levelCount; i++) {
-      tabs.add(Tab(text: "$i КРУГ"));
+    for (int i = 0; i < levelCount; i++) {
+      tabs.add(Tab(text: i.toString() + endingNumerals[i] + "-" + "LEVEL"));
       tabsView.add(SpellListView(spells, characterClass, i.toString()));
     }
     Navigator.of(context).push(
@@ -48,6 +47,7 @@ class ClassListView extends StatelessWidget {
                     bottom: TabBar(
                         isScrollable: true,
                         indicatorColor: Colors.white,
+
                         tabs: tabs)),
                 body: TabBarView(
                   children: tabsView,
