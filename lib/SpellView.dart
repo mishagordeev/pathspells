@@ -55,7 +55,9 @@ class SpellView extends StatelessWidget {
                               color: Theme.of(context).dividerColor,
                               width: 2.0))),
                   child: Text(tableElements[index],
-                      style: TextStyle(fontWeight: FontWeight.bold)));
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                      textAlign: TextAlign.left,
+                  ));
             else
               return new Container(
                   decoration: new BoxDecoration(
@@ -65,14 +67,15 @@ class SpellView extends StatelessWidget {
                               width: 2.0))),
                   child: Text(tableElements[index],
                       style: TextStyle(fontWeight: FontWeight.bold),
-                      textAlign: TextAlign.center));
+                      textAlign: TextAlign.left));
             if (index >= columnNumber) if (index % columnNumber == 0)
               return new Container(
                   decoration: new BoxDecoration(
                       border: new Border(
                           bottom: BorderSide(
                               color: Theme.of(context).dividerColor))),
-                  child: Text(tableElements[index]));
+                  child: Text(tableElements[index],
+                    textAlign: TextAlign.left));
             else
               return new Container(
                 decoration: new BoxDecoration(
@@ -80,7 +83,7 @@ class SpellView extends StatelessWidget {
                         bottom: BorderSide(
                             color: Theme.of(context).dividerColor))),
                 child:
-                Text(tableElements[index], textAlign: TextAlign.center),
+                Text(tableElements[index], textAlign: TextAlign.left),
               );
           })
       );
