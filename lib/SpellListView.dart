@@ -14,25 +14,26 @@ class SpellListView extends StatelessWidget {
     List <Spell> _spells;
 
     if (characterClass != null && level != null) {
-      _spells = filterSpellList(spells, characterClass, level);
+      _spells = _filterSpellList(spells, characterClass, level);
     }
     else
       _spells = spells;
 
     return new ListView.separated(
         itemCount: _spells == null ? 0 : _spells.length,
-        separatorBuilder: (BuildContext context, int index) => Divider(),
+        separatorBuilder: (BuildContext context, int index) => Divider(height: 0),
         itemBuilder: (BuildContext context, int index) {
           return new ListTile(
+              isThreeLine: true,
               title: Text(_spells[index].name),
               subtitle: Text(_spells[index].description),
               onTap: () {
-                _showSpellCard(_spells[index], context);
+                _showSpellView(_spells[index], context);
               });
         });
   }
 
-  List<Spell> filterSpellList(
+  List<Spell> _filterSpellList(
       List<Spell> spells, String characterClass, String level) {
     List<Spell> filteredSpellList = [];
     int itemCount = spells.length;
@@ -44,7 +45,7 @@ class SpellListView extends StatelessWidget {
     return filteredSpellList;
   }
 
-  void _showSpellCard(Spell spell, BuildContext context) {
+  void _showSpellView(Spell spell, BuildContext context) {
     Navigator.of(context).push(
       MaterialPageRoute<void>(
         builder: (BuildContext context) {

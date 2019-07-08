@@ -14,9 +14,10 @@ class ClassListView extends StatelessWidget {
     return SafeArea(
       child: ListView.separated(
           itemCount: classes == null ? 0 : classes.length,
-          separatorBuilder: (BuildContext context, int index) => Divider(),
+          separatorBuilder: (BuildContext context, int index) => Divider(height: 0),
           itemBuilder: (BuildContext context, int index) {
             return new ListTile(
+                contentPadding: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
                 leading: Image.asset(classes[index].image),
                 title: Text(classes[index].name),
                 onTap: () {
