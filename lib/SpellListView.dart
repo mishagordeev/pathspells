@@ -54,9 +54,8 @@ class SpellListView extends StatelessWidget {
                   spell.name,
                 ),
               ),
-              body: Padding(
-                  padding: EdgeInsets.fromLTRB(8.0, 4.0, 8.0, 0.0),
-                  child: SpellView(spell.fullDescription)));
+              body: SpellView(spell.fullDescription),
+          );
         },
       ),
     );
