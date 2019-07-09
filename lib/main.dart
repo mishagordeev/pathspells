@@ -12,7 +12,7 @@ import 'ExternalData.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  List<Spell> spells;
+  //List<Spell> spells;
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +56,13 @@ class MyApp extends StatelessWidget {
                       Icons.search,
                     ),
                     onPressed: () {
-                      showSearch(context: context, delegate: SpellSearch(spells));
+                    },
+                  ),
+                  IconButton(
+                    icon: Icon(
+                      Icons.help_outline,
+                    ),
+                    onPressed: () {
                     },
                   ),
                 ],

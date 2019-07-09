@@ -49,16 +49,6 @@ class ClassListView extends StatelessWidget {
                         indicatorColor: Colors.white,
                         tabs: tabs,
                     ),
-                    actions: <Widget>[
-                      IconButton(
-                        icon: Icon(
-                          Icons.filter_list,
-                        ),
-                        onPressed: () {
-
-                        },
-                      )
-                    ],
                 ),
 
                 body: TabBarView(
