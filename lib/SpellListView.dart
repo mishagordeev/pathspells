@@ -23,6 +23,21 @@ class SpellListView extends StatelessWidget {
         itemCount: _spells == null ? 0 : _spells.length,
         separatorBuilder: (BuildContext context, int index) => Divider(height: 0),
         itemBuilder: (BuildContext context, int index) {
+          if (!_spells[index].legal) {
+            return new Container(
+              child: ListTile(
+                  isThreeLine: true,
+                  title: Text(_spells[index].name),
+                  subtitle: Text(_spells[index].description),
+                  onTap: () {
+                    _showSpellView(_spells[index], context);
+                  },
+                  trailing: Container(
+                    child: Text("not\nPFS\nlegal",textAlign: TextAlign.center,style: TextStyle(color: Colors.red[900].withOpacity(0.3))),
+                  )
+              ), 
+            );
+          }
           if (_spells[index].attributes.isNotEmpty) {
             return new Container(
               child: ListTile(
