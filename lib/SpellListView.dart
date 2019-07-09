@@ -5,7 +5,7 @@ import 'package:pathspells_flutter/SpellView.dart';
 class SpellListView extends StatelessWidget {
   final List<Spell> spells;
   final String characterClass;
-  final String level;
+  final int level;
 
   SpellListView(this.spells, this.characterClass, this.level);
 
@@ -55,7 +55,7 @@ class SpellListView extends StatelessWidget {
   }
 
   List<Spell> _filterSpellList(
-      List<Spell> spells, String characterClass, String level) {
+      List<Spell> spells, String characterClass, int level) {
     List<Spell> filteredSpellList = [];
     int itemCount = spells.length;
     for (int i = 0; i < itemCount; i++) {

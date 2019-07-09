@@ -2,7 +2,7 @@ class Spell {
   final String name;
   final String description;
   final String fullDescription;
-  final Map<String, String> classLevel;
+  final Map<String, int> classLevel;
   final List<dynamic> attributes;
 
   Spell(
@@ -18,12 +18,12 @@ class Spell {
         description: json['description'] as String,
         fullDescription: json['full_description'] as String,
         classLevel: {
-          'bard': json['bard'] as String,
-          'cleric': json['cleric'] as String,
-          'druid': json['druid'] as String,
-          'paladin': json['paladin'] as String,
-          'ranger': json['ranger'] as String,
-          'wizard': json['wizard'] as String,
+          'bard': json['bard'] as int,
+          'cleric': json['cleric'] as int,
+          'druid': json['druid'] as int,
+          'paladin': json['paladin'] as int,
+          'ranger': json['ranger'] as int,
+          'wizard': json['wizard'] as int,
         },
         attributes: json['attributes'] as List<dynamic>
     );

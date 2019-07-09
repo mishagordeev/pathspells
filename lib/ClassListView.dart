@@ -34,7 +34,7 @@ class ClassListView extends StatelessWidget {
 
     for (int i = 0; i < levelCount; i++) {
       tabs.add(Tab(text: i.toString() + endingNumerals[i] + "-" + "Level"));
-      tabsView.add(SpellListView(spells, characterClass, i.toString()));
+      tabsView.add(SpellListView(spells, characterClass, i));
     }
     Navigator.of(context).push(
       MaterialPageRoute<void>(
