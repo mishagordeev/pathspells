@@ -52,11 +52,6 @@ flutter:
     - assets/images/paladin.png
     - assets/images/ranger.png
     - assets/images/wizard.png
-    - assets/icons/f.png
-    - assets/icons/m.png
-    - assets/icons/r.png
-    - assets/icons/t.png
-    - assets/icons/y.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:

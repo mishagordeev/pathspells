@@ -66,19 +66,69 @@ class SpellListView extends StatelessWidget {
     for (var x in attributes) {
       switch (x) {
         case 'F':
-          _attributes.add(Image.asset("assets/icons/f.png"));
+          _attributes.add(
+              Container(
+                padding: EdgeInsets.all(1),
+                child: Container(
+                  width: 18,
+                  height: 18,
+                  color: Colors.red[900].withOpacity(0.6),
+                  child: Text("F",textAlign: TextAlign.center,style: TextStyle(color: Colors.white)),
+                ),
+              )
+          );
           break;
         case 'M':
-          _attributes.add(Image.asset("assets/icons/m.png"));
+          _attributes.add(
+              Container(
+                padding: EdgeInsets.all(1),
+                child: Container(
+                  width: 18,
+                  height: 18,
+                  color: Colors.red[900].withOpacity(0.6),
+                  child: Text("M",textAlign: TextAlign.center,style: TextStyle(color: Colors.white)),
+                ),
+              )
+          );
           break;
         case 'R':
-          _attributes.add(Image.asset("assets/icons/r.png"));
+          _attributes.add(
+              Container(
+                padding: EdgeInsets.all(1),
+                child: Container(
+                  width: 18,
+                  height: 18,
+                  color: Colors.red[900].withOpacity(0.6),
+                  child: Text("R",textAlign: TextAlign.center,style: TextStyle(color: Colors.white)),
+                ),
+              )
+          );
           break;
         case 'T':
-          _attributes.add(Image.asset("assets/icons/t.png"));
+          _attributes.add(
+              Container(
+                padding: EdgeInsets.all(1),
+                child: Container(
+                  width: 18,
+                  height: 18,
+                  color: Colors.red[900].withOpacity(0.6),
+                  child: Text("T",textAlign: TextAlign.center,style: TextStyle(color: Colors.white)),
+                ),
+              )
+          );
           break;
         case 'Y':
-          _attributes.add(Image.asset("assets/icons/y.png"));
+          _attributes.add(
+              Container(
+                padding: EdgeInsets.all(1),
+                child: Container(
+                  width: 18,
+                  height: 18,
+                  color: Colors.red[900].withOpacity(0.6),
+                  child: Text("Y",textAlign: TextAlign.center,style: TextStyle(color: Colors.white)),
+                ),
+              )
+          );
           break;
       }
     }
