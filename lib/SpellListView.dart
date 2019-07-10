@@ -23,49 +23,29 @@ class SpellListView extends StatelessWidget {
         itemCount: _spells == null ? 0 : _spells.length,
         separatorBuilder: (BuildContext context, int index) => Divider(height: 0),
         itemBuilder: (BuildContext context, int index) {
+          Widget legal;
+          List <Widget> title = [Text(_spells[index].name)];
+          
           if (!_spells[index].legal) {
-            return new Container(
-              child: ListTile(
-                  isThreeLine: true,
-                  title: Text(_spells[index].name),
-                  subtitle: Text(_spells[index].description),
-                  onTap: () {
-                    _showSpellView(_spells[index], context);
-                  },
-                  trailing: Container(
-                    child: Text("not\nPFS\nlegal",textAlign: TextAlign.center,style: TextStyle(color: Colors.red[900].withOpacity(0.3))),
-                  )
-              ), 
+            legal = Container(
+              child: Text("not\nPFS\nlegal",textAlign: TextAlign.center,style: TextStyle(color: Colors.red[900].withOpacity(0.3))),
             );
           }
           if (_spells[index].attributes.isNotEmpty) {
-            return new Container(
-              child: ListTile(
-                  isThreeLine: true,
-                  title: Row(
-                    children: [
-                      Text(_spells[index].name),
-                      Row(
-                        children: _setAttributes(_spells[index].attributes),
-                      )
-                    ]
-                  ),
-                  subtitle: Text(_spells[index].description),
-                  onTap: () {
-                    _showSpellView(_spells[index], context);
-                  }),
-            );
-          } else {
-            return new Container(
-              child: ListTile(
-                  isThreeLine: true,
-                  title: Text(_spells[index].name),
-                  subtitle: Text(_spells[index].description),
-                  onTap: () {
-                    _showSpellView(_spells[index], context);
-                  }),
-            );
+            title.add(_setAttributes(_spells[index].attributes));
           }
+          return new Container(
+            child: ListTile(
+                isThreeLine: true,
+                title: Row(
+                  children: title
+                ),
+                subtitle: Text(_spells[index].description),
+                trailing: legal,
+                onTap: () {
+                  _showSpellView(_spells[index], context);
+                }),
+          );
         });
   }
 
@@ -81,7 +61,7 @@ class SpellListView extends StatelessWidget {
     return filteredSpellList;
   }
 
-  List <Widget> _setAttributes(List<dynamic> attributes) {
+  Widget _setAttributes(List<dynamic> attributes) {
     List<Widget> _attributes = [];
     for (var x in attributes) {
       switch (x) {
@@ -102,7 +82,9 @@ class SpellListView extends StatelessWidget {
           break;
       }
     }
-    return _attributes;
+    return Row(
+      children: _attributes,
+    );
   }
 
   void _showSpellView(Spell spell, BuildContext context) {
