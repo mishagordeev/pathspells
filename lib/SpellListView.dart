@@ -25,7 +25,7 @@ class SpellListView extends StatelessWidget {
         itemBuilder: (BuildContext context, int index) {
           Widget legal;
           List <Widget> title = [Text(_spells[index].name)];
-          
+
           if (!_spells[index].legal) {
             legal = Container(
               child: Text("not\nPFS\nlegal",textAlign: TextAlign.center,style: TextStyle(color: Colors.red[900].withOpacity(0.3))),
@@ -97,7 +97,7 @@ class SpellListView extends StatelessWidget {
                   spell.name,
                 ),
               ),
-              body: SpellView(spell.fullDescription),
+              body: SpellView(spell.fullDescription,spell.notes),
           );
         },
       ),

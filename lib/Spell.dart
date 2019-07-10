@@ -5,6 +5,7 @@ class Spell {
   final Map<String, int> classLevel;
   final List<dynamic> attributes;
   final bool legal;
+  final String notes;
 
   Spell(
       {this.name,
@@ -12,7 +13,8 @@ class Spell {
       this.fullDescription,
       this.classLevel,
       this.attributes,
-      this.legal});
+      this.legal,
+      this.notes});
 
   factory Spell.get(Map<String, dynamic> json) {
     return new Spell(
@@ -28,7 +30,8 @@ class Spell {
           'wizard': json['wizard'] as int,
         },
         attributes: json['attributes'] as List<dynamic>,
-        legal: json['legal'] as bool
+        legal: json['legal'] as bool,
+        notes: json['notes'] as String
     );
   }
 }

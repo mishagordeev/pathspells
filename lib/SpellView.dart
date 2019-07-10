@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 class SpellView extends StatelessWidget {
   final String description;
+  final String notes;
 
-  SpellView(this.description);
+  SpellView(this.description,this.notes);
 
   @override
   Widget build(BuildContext context) {
@@ -11,6 +12,12 @@ class SpellView extends StatelessWidget {
     List<TextSpan> spellViewSpanParts = [];
     int i = 0;
     String descriptionPart = "";
+
+    void addNotes(String string) {
+      spellViewSpanParts.add(new TextSpan(
+          text: string + "\n\n",
+          style: TextStyle(color: Colors.black)));
+    }
 
     void addBlankText(String string) {
       spellViewSpanParts.add(new TextSpan(
@@ -88,7 +95,9 @@ class SpellView extends StatelessWidget {
           })
       );
     }
-
+    if (notes != '') {
+      addNotes(notes);
+    }
     while (i != description.length) {
       if (description[i] != '<') {
         descriptionPart += description[i];
