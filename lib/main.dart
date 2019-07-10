@@ -6,14 +6,11 @@ import 'package:pathspells_flutter/Class.dart';
 import 'package:pathspells_flutter/ClassList.dart';
 import 'package:pathspells_flutter/ClassListView.dart';
 import 'SpellList.dart';
-import 'SpellListView.dart';
 import 'ExternalData.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  //List<Spell> spells;
-
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
