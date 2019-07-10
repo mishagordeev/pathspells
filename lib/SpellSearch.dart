@@ -10,14 +10,16 @@ class SpellSearch extends SearchDelegate {
 
   @override
   List<Widget> buildActions(BuildContext context) {
-    return [
-      IconButton(
-        icon: Icon(Icons.clear),
-        onPressed: () {
-          query = '';
-        },
-      ),
-    ];
+    if (query != '') {
+      return [
+        IconButton(
+          icon: Icon(Icons.clear),
+          onPressed: () {
+            query = '';
+          },
+        ),
+      ];
+    }
   }
 
   @override
