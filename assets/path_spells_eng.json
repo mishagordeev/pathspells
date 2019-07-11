@@ -8,7 +8,7 @@
     "paladin": 0,
     "ranger": 0,
     "wizard": 0,
-    "full_description": "-",
+    "full_description": "<bSourse> Inner Sea Gods pg. 228, Pathfinder #8: Seven Days to the Grave pg. 71, Gods and Magic pg. 5\n<bLevel> cleric 1, inquisitor 1, oracle 1, paladin 1, warpriest 1 (Abadar)\n<bSchool> enchantment (compulsion) [mind-affecting]\n<bCasting Time> 1 standard action\n<bComponents> V, S, DF\n<bRange> touch\n<bTarget> creature touched\n<bDuration> 1 min./level\n<bSaving Throw> Will negates; <bSpell Resistance> yes\n\nThis spell functions identically to the spell <izone of truth>, except as noted above. The target momentarily takes on the semblance of a being of perfect order, like an archon or inevitable, so that all who can see the target know it is affected by the spell. This divine guise flickers over the target for only an instant and does not allow it to pass as a member of a different race.",
     "attributes": [
       "R"
     ],
@@ -24,7 +24,7 @@
     "paladin": 0,
     "ranger": 0,
     "wizard": 0,
-    "full_description": "-",
+    "full_description": "<bSource> Pathfinder #82: Secrets of the Sphinx pg. 74\n<bLevel> cleric 2, inquisitor 2, oracle 2, paladin 2, warpriest 2\n<bSchool> abjuration\n<bCasting Time> 1 minute\n<bComponents> V, S, M (a flask of holy water worth 25 gp), DF\n<bRange> touch\n<biTarget> creature touched\n<bDuration> 24 hours\n<bSaving Throw> Will negates (harmless); <bSpell Resistance> yes (harmless)\n<iAbeyance> suppresses the effects of a single curse on a creature. It does not restore any damage or drain that might have been caused by the curse. <iAbeyance> cannot suppress curses that cannot be removed by <iremove curse>, but it can suppress curses such as lycanthropy that require remove curse along with additional measures. An individual curse can be suppressed only once by abeyance, even if cast by a different caster.\n\n<iAbeyance> does not allow a creature to divest itself of cursed objects, though it can suppress a curse contracted from an object.",
     "attributes": [
       "M"
     ],
@@ -40,7 +40,7 @@
     "paladin": 0,
     "ranger": 0,
     "wizard": 0,
-    "full_description": "-",
+    "full_description": "<bSource> Ultimate Combat pg. 221\n <bLevel> alchemist 1, arcanist 1, bard 1, investigator 1, magus 1, occultist 1, psychic 1, skald 1, sorcerer 1, wizard 1\n<bSchool> abjuration [force]\n<bCasting Time> 1 standard action\n<bComponents> V, S, M (a rabbit’s foot)\n<bRange> personal \n<bTarget> you\n<bDuration> 1 round/level or until discharged\n\nThis spell creates a subtle and complicated force effect that is most effective when used by a still or slow-moving spellcaster or formula user. While you are subject to this spell, you can take two 5-foot steps each round and still cast spells and use spell-like abilities without provoke attacks of opportunity. This spell automatically discharges as soon as you make an attack, cast a harmful spell against another creature, or move more than 5 feet with a single move action. If the action that discharges the spell also provokes attacks of opportunity, that action still provokes attacks of opportunity as normal.",
     "attributes": [],
     "legal": true,
     "notes": ""
@@ -54,7 +54,7 @@
     "paladin": 0,
     "ranger": 0,
     "wizard": 0,
-    "full_description": "-",
+    "full_description": "<bSource> Ultimate Combat pg. 221\n<bLevel> alchemist 2, arcanist 3, bloodrager 2, investigator 2, magus 2, occultist 2, psychic 3, sorcerer 3, summoner 2, summoner (unchained) 3, wizard 3\n<bSchool> conjuration (creation) [force]\n<bCasting Time> 1 standard action\n<bComponents>V, S, M (a piece of metal cut from a shield)\n<bRange> touch\n<bTarget> creature touched\n<bDuration> 1 hour/level or until discharged\n<bSaving Throw> Will negates (harmless); <bSpell Resistance> no\n \nInvisible layers of solid force surround and protect the target, granting that target a +2 armor bonus to AC. Additionally, the first 5 points of lethal damage the target takes from each attack are converted into nonlethal damage. Against attacks that already deal nonlethal damage, the target gains DR 5/—. Once this spell has converted 5 points of damage to nonlethal damage per caster level (maximum 50 points), the spell is discharged.\n<bMythic Ablative Barrier>\n<bSource> Mythic Adventures pg. 84\nAdd half your tier to the spell’s armor bonus. Add half your tier to the amount of lethal damage from each attack that is converted to nonlethal damage and to the DR against nonlethal damage. Add half your tier to your caster level when determining how much damage the spell converts before it’s discharged.",
     "attributes": [
       "Y"
     ],
@@ -70,7 +70,7 @@
     "paladin": 0,
     "ranger": 0,
     "wizard": 0,
-    "full_description": "-",
+    "full_description": "<bSource> Humans of Golarion pg. 28\n<bLevel> arcanist 3, sorcerer 3, wizard 3\n<bSchool> abjuration\n<bCasting Time> 1 standard action\n<bComponents> V, S, M (a crystalline sphere worth 10 gp)\n<bRange> personal\n<bTarget> you\n<bDuration> 1 minute/level (D)\n \nThe Garundi tenaciously protect their homes, and through the years they have perfected magic to aid them in their defense. An immobile, crystalline, weblike globe surrounds you.\n\nWhen the <iablative sphere> winks into existence, it provides you with improved cover (Pathfinder RPG Core Rulebook 196). The barrier does not impede a spell’s line of sight or effect.\n\nThe sphere is 1 inch thick per caster level, has hardness 5, and 3 hit points per inch of thickness. When an <iablative sphere> loses hit points, the level of cover it provides is reduced. When the ablative sphere has lost one-third of its hit points, it provides cover instead of improved cover. Once it has lost two-thirds of its hit points, it provides only partial cover. Finally, when the <iablative sphere’s> hit points reach 0, the globe is destroyed. When an attack reduces an <iablative sphere’s> hit points to 0, you take any remaining damage.",
     "attributes": [
       "M"
     ],
@@ -86,7 +86,7 @@
     "paladin": 0,
     "ranger": 0,
     "wizard": 0,
-    "full_description": "-",
+    "full_description": "<bSource> Advanced Race Guide pg. 189\n<bLevel> arcanist 2, cleric 2, druid 2, hunter 2, oracle 2, redmantisassassin 2, sorcerer 2, warpriest 2, witch 2, wizard 2 (gillman)\n<bSchool> transmutation\n<bCasting Time> 1 standard action\n<bComponents> V, S, M/DF (piece of seaweed)\n<bRange> touch\n<bTarget> living creatures touched\n<bDuration> 1 hour/level; see text\n<bSaving Throw> Will negates; <bSpell Resistance> yes\n \nThe targets are able to breathe water, freely. However, they can no longer breathe air. Divide the duration evenly among all the creatures you touch. This spell has no effect on creatures that can already breathe water.",
     "attributes": [
       "R"
     ],
@@ -102,7 +102,7 @@
     "paladin": 0,
     "ranger": 0,
     "wizard": 0,
-    "full_description": "-",
+    "full_description": "<bSource> Ultimate Intrigue pg. 203\n<bLevel> cleric 4, oracle 4, paladin 4, warpriest 4\n<bSchool>  abjuration\n<bCasting Time> 1 round\n<bComponents> V, S, M (a vial of holy water), DF\n<bRange> touch\n<bTarget> living creature touched\n<bDuration> instantaneous\n<bSaving Throw> none; <bSpell Resistance> no\n \nYou purge impure thoughts from the target’s mind and fill him with exultant relief at the forgiveness of his sins. Absolution ends all charm or compulsion effects affecting the target (including harmless compulsions, such as <iheroism>) as per break enchantment. If the target was forced to perform any actions contrary to his alignment, monk vows, paladin oath, or similar code of conduct by that charm or compulsion effect, that action doesn’t cause him to lose access to class abilities, including divine spellcasting.\n\nUnlike an <iatonement> spell, <iabsolution> can’t reverse alignment change or the effects of willing transgressions, induce a creature to change its alignment, or restore class abilities lost because of misdeeds performed in the past. <iAbsolution> automatically works if the caster and the target share the same alignment or the same patron deity. If they don’t, but their alignments are within one step of each other, absolution has a 5% chance of success per caster level. If neither of these is true, the spell automatically fails.\n\nIf using the honor subsystem (<iPathfinder RPG Ultimate Campaign 160>), casting absolution also eliminates the honor loss for events and actions committed by the target while he was affected by a charm or compulsion effect that the spell ended.",
     "attributes": [],
     "legal": true,
     "notes": ""
