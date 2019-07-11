@@ -60,7 +60,9 @@ class MyApp extends StatelessWidget {
                               icon: Icon(
                                 Icons.help_outline,
                               ),
-                              onPressed: () {},
+                              onPressed: () {
+                                _showInfo(context);
+                              },
                             ),
                           ],
                         ),
@@ -98,7 +100,9 @@ class MyApp extends StatelessWidget {
                               icon: Icon(
                                 Icons.help_outline,
                               ),
-                              onPressed: () {},
+                              onPressed: () {
+                                _showInfo(context);
+                              },
                             ),
                           ],
                         ),
@@ -110,5 +114,28 @@ class MyApp extends StatelessWidget {
                   ),
                 );
         });
+  }
+
+  _showInfo(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute<void>(
+        builder: (BuildContext context) {
+          return Scaffold(
+            appBar: AppBar(
+              title: Text(
+                "About"
+              ),
+            ),
+            body: Container(
+              child: ListView(children: [
+                Text("This app uses trademarks and/or copyrights owned by Paizo Inc., which are used under Paizo's Community Use Policy. We are expressly prohibited from charging you to use or access this content. This app is not published, endorsed, or specifically approved by Paizo Inc. For more information about Paizo's Community Use Policy, please visit paizo.com/communityuse. For more information about Paizo Inc. and Paizo products, please visit paizo.com.\n\n"),
+                Text("All information got from Aon website. Thank to Blake Davis for great work!\n\n"),
+                Text("F This spell has a focus component not normally included in a spell component pouch.\nM This spell has a material component not normally included in a spell component pouch.\nR Spell requires a requisite religion or race. If religion, spellcaster must worship the listed deity to utilize the spell. If race, the spell might only target members of the listed race (the spell will say this if it does), but often are just the race's guarded secrets. Members of other races can learn to cast them with GM permission.\nT In order to prepare any of these spells, the caster must spend an hour performing a ritual in which he beseeches Torag (or a member of his family) for the aid of one of his divine family members. For 24 hours after the ritual, the caster may prepare spells of the requested deity. The caster may only attune himself to one additional deity at a time.\nY This spell has a Mythic version")
+              ], padding: EdgeInsets.fromLTRB(8.0, 4.0, 8.0, 8.0))
+            )
+          );
+        },
+      ),
+    );
   }
 }
