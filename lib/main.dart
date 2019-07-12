@@ -143,7 +143,7 @@ class MyApp extends StatelessWidget {
                 text: "This app uses trademarks and/or copyrights owned by Paizo Inc., which are used under Paizo's Community Use Policy. We are expressly prohibited from charging you to use or access this content. This app is not published, endorsed, or specifically approved by Paizo Inc. For more information about Paizo's Community Use Policy, please visit paizo.com/communityuse. For more information about Paizo Inc. and Paizo products, please visit paizo.com.\n\n"
               ),
               TextSpan(
-                text: "All spells ate taken from Archives of Nethys website aonprd.com. Thank Blake Davis for his great work!\n\n"
+                text: "All spells are taken from Archives of Nethys website aonprd.com. Thank Blake Davis for his great work!\n\n"
               ),
               TextSpan(
                 text: " F ",
