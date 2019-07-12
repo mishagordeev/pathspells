@@ -28,7 +28,7 @@ class SpellListView extends StatelessWidget {
 
           if (!_spells[index].legal) {
             legal = Container(
-              child: Text("not\nPFS\nlegal",textAlign: TextAlign.center,style: TextStyle(color: Colors.red[900].withOpacity(0.3))),
+              child: Text("Not\nPFS\nlegal",textAlign: TextAlign.center,style: TextStyle(color: Colors.red[900].withOpacity(0.3),fontSize: 12)),
             );
           }
           if (_spells[index].attributes.isNotEmpty) {
@@ -72,7 +72,7 @@ class SpellListView extends StatelessWidget {
                 child: Container(
                   width: 18,
                   height: 18,
-                  color: Colors.red[900].withOpacity(0.6),
+                  color: Colors.red[900].withOpacity(0.5),
                   child: Text("F",textAlign: TextAlign.center,style: TextStyle(color: Colors.white)),
                 ),
               )
@@ -85,7 +85,7 @@ class SpellListView extends StatelessWidget {
                 child: Container(
                   width: 18,
                   height: 18,
-                  color: Colors.red[900].withOpacity(0.6),
+                  color: Colors.red[900].withOpacity(0.5),
                   child: Text("M",textAlign: TextAlign.center,style: TextStyle(color: Colors.white)),
                 ),
               )
@@ -98,7 +98,7 @@ class SpellListView extends StatelessWidget {
                 child: Container(
                   width: 18,
                   height: 18,
-                  color: Colors.red[900].withOpacity(0.6),
+                  color: Colors.red[900].withOpacity(0.5),
                   child: Text("R",textAlign: TextAlign.center,style: TextStyle(color: Colors.white)),
                 ),
               )
@@ -111,7 +111,7 @@ class SpellListView extends StatelessWidget {
                 child: Container(
                   width: 18,
                   height: 18,
-                  color: Colors.red[900].withOpacity(0.6),
+                  color: Colors.red[900].withOpacity(0.5),
                   child: Text("T",textAlign: TextAlign.center,style: TextStyle(color: Colors.white)),
                 ),
               )
@@ -124,7 +124,7 @@ class SpellListView extends StatelessWidget {
                 child: Container(
                   width: 18,
                   height: 18,
-                  color: Colors.red[900].withOpacity(0.6),
+                  color: Colors.red[900].withOpacity(0.5),
                   child: Text("Y",textAlign: TextAlign.center,style: TextStyle(color: Colors.white)),
                 ),
               )
