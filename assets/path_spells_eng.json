@@ -8,7 +8,7 @@
     "paladin": 0,
     "ranger": 0,
     "wizard": 0,
-    "full_description": "<bSourse> Inner Sea Gods pg. 228, Pathfinder #8: Seven Days to the Grave pg. 71, Gods and Magic pg. 5\n<bLevel> cleric 1, inquisitor 1, oracle 1, paladin 1, warpriest 1 (Abadar)\n<bSchool> enchantment (compulsion) [mind-affecting]\n<bCasting Time> 1 standard action\n<bComponents> V, S, DF\n<bRange> touch\n<bTarget> creature touched\n<bDuration> 1 min./level\n<bSaving Throw> Will negates; <bSpell Resistance> yes\n\nThis spell functions identically to the spell <izone of truth>, except as noted above. The target momentarily takes on the semblance of a being of perfect order, like an archon or inevitable, so that all who can see the target know it is affected by the spell. This divine guise flickers over the target for only an instant and does not allow it to pass as a member of a different race.",
+    "full_description": "<bSourse> Inner Sea Gods pg. 228, Pathfinder #8: Seven Days to the Grave pg. 71, Gods and Magic pg. 5\n\n<bLevel> cleric 1, inquisitor 1, oracle 1, paladin 1, warpriest 1 (Abadar)\n<bSchool> enchantment (compulsion) [mind-affecting]\n<bCasting Time> 1 standard action\n<bComponents> V, S, DF\n<bRange> touch\n<bTarget> creature touched\n<bDuration> 1 min./level\n<bSaving Throw> Will negates; <bSpell Resistance> yes\n\nThis spell functions identically to the spell <izone of truth>, except as noted above. The target momentarily takes on the semblance of a being of perfect order, like an archon or inevitable, so that all who can see the target know it is affected by the spell. This divine guise flickers over the target for only an instant and does not allow it to pass as a member of a different race.",
     "attributes": [
       "R"
     ],
@@ -3054,7 +3054,7 @@
     "notes": ""
   },
   {
-    "name": "Batrachian SurgeR",
+    "name": "Batrachian Surge",
     "description": "Amplify your latent amphibian nature",
     "bard": 2,
     "cleric": 0,
@@ -3066,7 +3066,7 @@
     "attributes": [
       "R"
     ],
-    "legal": false,
+    "legal": true,
     "notes": "Only available to Grippli characters."
   },
   {
