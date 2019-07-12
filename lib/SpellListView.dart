@@ -28,7 +28,7 @@ class SpellListView extends StatelessWidget {
 
           if (!_spells[index].legal) {
             legal = Container(
-              child: Text("Not\nPFS\nlegal",textAlign: TextAlign.center,style: TextStyle(color: Colors.red[900].withOpacity(0.3),fontSize: 12)),
+              child: Text("Not\nPFS\nlegal",textAlign: TextAlign.center,style: TextStyle(color: Colors.red[900].withOpacity(0.5),fontSize: 12)),
             );
           }
           if (_spells[index].attributes.isNotEmpty) {
@@ -61,6 +61,82 @@ class SpellListView extends StatelessWidget {
     return filteredSpellList;
   }
 
+  Widget _setAppBarAttributes(List<dynamic> attributes) {
+    List<Widget> _attributes = [];
+    for (var x in attributes) {
+      switch (x) {
+        case 'F':
+          _attributes.add(
+              Container(
+                padding: EdgeInsets.all(1.5),
+                child: Container(
+                  width: 24,
+                  height: 24,
+                  color: Colors.white,
+                  child: Text("F",textAlign: TextAlign.center,style: TextStyle(color: Colors.red[900])),
+                ),
+              )
+          );
+          break;
+        case 'M':
+          _attributes.add(
+              Container(
+                padding: EdgeInsets.all(1.5),
+                child: Container(
+                  width: 24,
+                  height: 24,
+                  color: Colors.white,
+                  child: Text("M",textAlign: TextAlign.center,style: TextStyle(color: Colors.red[900])),
+                ),
+              )
+          );
+          break;
+        case 'R':
+          _attributes.add(
+              Container(
+                padding: EdgeInsets.all(1.5),
+                child: Container(
+                  width: 24,
+                  height: 24,
+                  color: Colors.white,
+                  child: Text("R",textAlign: TextAlign.center,style: TextStyle(color: Colors.red[900])),
+                ),
+              )
+          );
+          break;
+        case 'T':
+          _attributes.add(
+              Container(
+                padding: EdgeInsets.all(1.5),
+                child: Container(
+                  width: 24,
+                  height: 24,
+                  color: Colors.white,
+                  child: Text("T",textAlign: TextAlign.center,style: TextStyle(color: Colors.red[900])),
+                ),
+              )
+          );
+          break;
+        case 'Y':
+          _attributes.add(
+              Container(
+                padding: EdgeInsets.all(1.5),
+                child: Container(
+                  width: 24,
+                  height: 24,
+                  color: Colors.white,
+                  child: Text("Y",textAlign: TextAlign.center,style: TextStyle(color: Colors.red[900])),
+                ),
+              )
+          );
+          break;
+      }
+    }
+    return Row(
+      children: _attributes,
+    );
+  }
+
   Widget _setAttributes(List<dynamic> attributes) {
     List<Widget> _attributes = [];
     for (var x in attributes) {
@@ -72,7 +148,7 @@ class SpellListView extends StatelessWidget {
                 child: Container(
                   width: 18,
                   height: 18,
-                  color: Colors.red[900].withOpacity(0.5),
+                  color: Colors.red[900].withOpacity(0.7),
                   child: Text("F",textAlign: TextAlign.center,style: TextStyle(color: Colors.white)),
                 ),
               )
@@ -85,7 +161,7 @@ class SpellListView extends StatelessWidget {
                 child: Container(
                   width: 18,
                   height: 18,
-                  color: Colors.red[900].withOpacity(0.5),
+                  color: Colors.red[900].withOpacity(0.7),
                   child: Text("M",textAlign: TextAlign.center,style: TextStyle(color: Colors.white)),
                 ),
               )
@@ -98,7 +174,7 @@ class SpellListView extends StatelessWidget {
                 child: Container(
                   width: 18,
                   height: 18,
-                  color: Colors.red[900].withOpacity(0.5),
+                  color: Colors.red[900].withOpacity(0.7),
                   child: Text("R",textAlign: TextAlign.center,style: TextStyle(color: Colors.white)),
                 ),
               )
@@ -111,7 +187,7 @@ class SpellListView extends StatelessWidget {
                 child: Container(
                   width: 18,
                   height: 18,
-                  color: Colors.red[900].withOpacity(0.5),
+                  color: Colors.red[900].withOpacity(0.7),
                   child: Text("T",textAlign: TextAlign.center,style: TextStyle(color: Colors.white)),
                 ),
               )
@@ -124,7 +200,7 @@ class SpellListView extends StatelessWidget {
                 child: Container(
                   width: 18,
                   height: 18,
-                  color: Colors.red[900].withOpacity(0.5),
+                  color: Colors.red[900].withOpacity(0.7),
                   child: Text("Y",textAlign: TextAlign.center,style: TextStyle(color: Colors.white)),
                 ),
               )
@@ -141,6 +217,19 @@ class SpellListView extends StatelessWidget {
     Navigator.of(context).push(
       MaterialPageRoute<void>(
         builder: (BuildContext context) {
+          if (spell.attributes.isNotEmpty) {
+            return Scaffold(
+              appBar: AppBar(
+                title: Row(
+                  children: <Widget>[
+                    Text(spell.name),
+                    _setAppBarAttributes(spell.attributes)
+                  ],
+                ),
+              ),
+              body: SpellView(spell.fullDescription,spell.notes),
+            );
+          } else
           return Scaffold(
               appBar: AppBar(
                 title: Text(
