@@ -33,7 +33,7 @@ class ClassListView extends StatelessWidget {
     List<String> endingNumerals = ['','st','nd','rd','th','th','th','th','th','th'];
 
     for (int i = 0; i < levelCount; i++) {
-      tabs.add(Tab(text: i.toString() + endingNumerals[i] + "-" + "Level"));
+      tabs.add(Tab(child: Text(i.toString() + endingNumerals[i] + "-" + "Level",style: TextStyle(fontSize: 16),),));
       tabsView.add(SpellListView(spells, characterClass, i));
     }
     Navigator.of(context).push(
