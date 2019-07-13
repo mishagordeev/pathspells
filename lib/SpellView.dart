@@ -13,6 +13,22 @@ class SpellView extends StatelessWidget {
     int i = 0;
     String descriptionPart = "";
 
+    void addCaption(String string) {
+      if (spellViewSpanParts != []) {
+        spellViewParts
+            .add(RichText(text: TextSpan(children: spellViewSpanParts)));
+        spellViewSpanParts = [];
+      }
+      spellViewParts.add(new Container(
+        child: Flex(
+          direction: Axis.horizontal,
+          children: <Widget>[
+            Expanded(child: Text(string, style: TextStyle(color: Colors.white, backgroundColor: Colors.red[900].withOpacity(0.9), fontWeight: FontWeight.bold, fontSize: 16,),),)
+          ],
+        ),
+      ));
+    }
+
     void addNotes(String string) {
       spellViewSpanParts.add(new TextSpan(
           text: string + "\n\n",
@@ -121,6 +137,15 @@ class SpellView extends StatelessWidget {
             i++;
           }
           addItalicText(descriptionPart);
+          descriptionPart = "";
+        }
+        if (description[i] == 'c') {
+          i++;
+          while (description[i] != '>') {
+            descriptionPart += description[i];
+            i++;
+          }
+          addCaption(descriptionPart);
           descriptionPart = "";
         }
         if (description[i] == 't') {
