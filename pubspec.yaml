@@ -41,10 +41,7 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   assets:
-    - assets/spells.json
     - assets/classes.json
-    - assets/dnd_spells.json
-    - assets/path_spells.json
     - assets/path_spells_eng.json
     - assets/images/sorcerer.png
     - assets/images/bard.png
