@@ -53,6 +53,29 @@ flutter:
     - assets/images/paladin.png
     - assets/images/ranger.png
     - assets/images/wizard.png
+    - assets/images/alchemist.png
+    - assets/images/antipaladin.png
+    - assets/images/arcanist.png
+    - assets/images/bloodrager.png
+    - assets/images/hunter.png
+    - assets/images/inquisitor.png
+    - assets/images/investigator.png
+    - assets/images/magus.png
+    - assets/images/medium.png
+    - assets/images/mesmerist.png
+    - assets/images/occultist.png
+    - assets/images/oracle.png
+    - assets/images/psychic.png
+    - assets/images/shaman.png
+    - assets/images/skald.png
+    - assets/images/spiritualist.png
+    - assets/images/summoner.png
+    - assets/images/warpriest.png
+    - assets/images/witch.png
+    - assets/images/adept.png
+    - assets/images/red_mantis_assassin.png
+    - assets/images/sahir-afiyun.png
+    - assets/images/summoner_unchained.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:
