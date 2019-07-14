@@ -61,74 +61,36 @@ class SpellListView extends StatelessWidget {
     return filteredSpellList;
   }
 
+  Widget CaptionAttribute(String attribute) {
+    return Container(
+      padding: EdgeInsets.all(1.5),
+      child: Container(
+        width: 24,
+        height: 24,
+        color: Colors.white,
+        child: Text(attribute,textAlign: TextAlign.center,style: TextStyle(color: Colors.red[900])),
+      ),
+    );
+  }
+
   Widget _setAppBarAttributes(List<dynamic> attributes) {
     List<Widget> _attributes = [];
     for (var x in attributes) {
       switch (x) {
         case 'F':
-          _attributes.add(
-              Container(
-                padding: EdgeInsets.all(1.5),
-                child: Container(
-                  width: 24,
-                  height: 24,
-                  color: Colors.white,
-                  child: Text("F",textAlign: TextAlign.center,style: TextStyle(color: Colors.red[900])),
-                ),
-              )
-          );
+          _attributes.add(CaptionAttribute("F"));
           break;
         case 'M':
-          _attributes.add(
-              Container(
-                padding: EdgeInsets.all(1.5),
-                child: Container(
-                  width: 24,
-                  height: 24,
-                  color: Colors.white,
-                  child: Text("M",textAlign: TextAlign.center,style: TextStyle(color: Colors.red[900])),
-                ),
-              )
-          );
+          _attributes.add(CaptionAttribute("M"));
           break;
         case 'R':
-          _attributes.add(
-              Container(
-                padding: EdgeInsets.all(1.5),
-                child: Container(
-                  width: 24,
-                  height: 24,
-                  color: Colors.white,
-                  child: Text("R",textAlign: TextAlign.center,style: TextStyle(color: Colors.red[900])),
-                ),
-              )
-          );
+          _attributes.add(CaptionAttribute("R"));
           break;
         case 'T':
-          _attributes.add(
-              Container(
-                padding: EdgeInsets.all(1.5),
-                child: Container(
-                  width: 24,
-                  height: 24,
-                  color: Colors.white,
-                  child: Text("T",textAlign: TextAlign.center,style: TextStyle(color: Colors.red[900])),
-                ),
-              )
-          );
+          _attributes.add(CaptionAttribute("T"));
           break;
         case 'Y':
-          _attributes.add(
-              Container(
-                padding: EdgeInsets.all(1.5),
-                child: Container(
-                  width: 24,
-                  height: 24,
-                  color: Colors.white,
-                  child: Text("Y",textAlign: TextAlign.center,style: TextStyle(color: Colors.red[900])),
-                ),
-              )
-          );
+          _attributes.add(CaptionAttribute("Y"));
           break;
       }
     }
@@ -137,74 +99,36 @@ class SpellListView extends StatelessWidget {
     );
   }
 
+  Widget LabelAttributes(String attribute) {
+    return Container(
+      padding: EdgeInsets.all(1.5),
+      child: Container(
+        width: 18,
+        height: 18,
+        color: Colors.red[900].withOpacity(0.7),
+        child: Text(attribute, textAlign: TextAlign.center,style: TextStyle(color: Colors.white)),
+      ),
+    );
+  }
+
   Widget _setAttributes(List<dynamic> attributes) {
     List<Widget> _attributes = [];
     for (var x in attributes) {
       switch (x) {
         case 'F':
-          _attributes.add(
-              Container(
-                padding: EdgeInsets.all(1),
-                child: Container(
-                  width: 18,
-                  height: 18,
-                  color: Colors.red[900].withOpacity(0.7),
-                  child: Text("F",textAlign: TextAlign.center,style: TextStyle(color: Colors.white)),
-                ),
-              )
-          );
+          _attributes.add(LabelAttributes("F"));
           break;
         case 'M':
-          _attributes.add(
-              Container(
-                padding: EdgeInsets.all(1),
-                child: Container(
-                  width: 18,
-                  height: 18,
-                  color: Colors.red[900].withOpacity(0.7),
-                  child: Text("M",textAlign: TextAlign.center,style: TextStyle(color: Colors.white)),
-                ),
-              )
-          );
+          _attributes.add(LabelAttributes("M"));
           break;
         case 'R':
-          _attributes.add(
-              Container(
-                padding: EdgeInsets.all(1),
-                child: Container(
-                  width: 18,
-                  height: 18,
-                  color: Colors.red[900].withOpacity(0.7),
-                  child: Text("R",textAlign: TextAlign.center,style: TextStyle(color: Colors.white)),
-                ),
-              )
-          );
+          _attributes.add(LabelAttributes("R"));
           break;
         case 'T':
-          _attributes.add(
-              Container(
-                padding: EdgeInsets.all(1),
-                child: Container(
-                  width: 18,
-                  height: 18,
-                  color: Colors.red[900].withOpacity(0.7),
-                  child: Text("T",textAlign: TextAlign.center,style: TextStyle(color: Colors.white)),
-                ),
-              )
-          );
+          _attributes.add(LabelAttributes("T"));
           break;
         case 'Y':
-          _attributes.add(
-              Container(
-                padding: EdgeInsets.all(1),
-                child: Container(
-                  width: 18,
-                  height: 18,
-                  color: Colors.red[900].withOpacity(0.7),
-                  child: Text("Y",textAlign: TextAlign.center,style: TextStyle(color: Colors.white)),
-                ),
-              )
-          );
+          _attributes.add(LabelAttributes("Y"));
           break;
       }
     }
