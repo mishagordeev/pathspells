@@ -4,7 +4,7 @@ class SpellView extends StatelessWidget {
   final String description;
   final String notes;
 
-  SpellView(this.description,this.notes);
+  SpellView(this.description, this.notes);
 
   @override
   Widget build(BuildContext context) {
@@ -20,10 +20,16 @@ class SpellView extends StatelessWidget {
         spellViewSpanParts = [];
       }
       spellViewParts.add(new Container(
+        color: Colors.red[900].withOpacity(0.9),
         child: Flex(
           direction: Axis.horizontal,
           children: <Widget>[
-            Expanded(child: Text(string, style: TextStyle(color: Colors.white, backgroundColor: Colors.red[900].withOpacity(0.9), fontWeight: FontWeight.bold, fontSize: 16,),),)
+            Expanded(
+              child: Container(
+                child: Text(string, style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16)),
+                padding: EdgeInsets.only(left: 3),
+              ),
+            )
           ],
         ),
       ));
@@ -31,14 +37,12 @@ class SpellView extends StatelessWidget {
 
     void addNotes(String string) {
       spellViewSpanParts.add(new TextSpan(
-          text: string + "\n\n",
-          style: TextStyle(color: Colors.black)));
+          text: string + "\n\n", style: TextStyle(color: Colors.black)));
     }
 
     void addBlankText(String string) {
-      spellViewSpanParts.add(new TextSpan(
-          text: string,
-          style: TextStyle(color: Colors.black)));
+      spellViewSpanParts.add(
+          new TextSpan(text: string, style: TextStyle(color: Colors.black)));
     }
 
     void addBoldText(String string) {
@@ -77,9 +81,10 @@ class SpellView extends StatelessWidget {
                           bottom: BorderSide(
                               color: Theme.of(context).dividerColor,
                               width: 2.0))),
-                  child: Text(tableElements[index],
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                      textAlign: TextAlign.left,
+                  child: Text(
+                    tableElements[index],
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                    textAlign: TextAlign.left,
                   ));
             else
               return new Container(
@@ -97,20 +102,18 @@ class SpellView extends StatelessWidget {
                       border: new Border(
                           bottom: BorderSide(
                               color: Theme.of(context).dividerColor))),
-                  child: Text(tableElements[index],
-                    textAlign: TextAlign.left));
+                  child: Text(tableElements[index], textAlign: TextAlign.left));
             else
               return new Container(
                 decoration: new BoxDecoration(
                     border: new Border(
-                        bottom: BorderSide(
-                            color: Theme.of(context).dividerColor))),
-                child:
-                Text(tableElements[index], textAlign: TextAlign.left),
+                        bottom:
+                            BorderSide(color: Theme.of(context).dividerColor))),
+                child: Text(tableElements[index], textAlign: TextAlign.left),
               );
-          })
-      );
+          }));
     }
+
     if (notes != '') {
       addNotes(notes);
     }
@@ -165,7 +168,9 @@ class SpellView extends StatelessWidget {
     }
     addBlankText(descriptionPart);
     spellViewParts.add(RichText(text: TextSpan(children: spellViewSpanParts)));
-    return new ListView(children: (spellViewParts), padding: EdgeInsets.fromLTRB(8.0, 4.0, 8.0, 8.0));
+    return new ListView(
 
+        children: (spellViewParts),
+        padding: EdgeInsets.fromLTRB(8.0, 4.0, 8.0, 8.0));
   }
 }
