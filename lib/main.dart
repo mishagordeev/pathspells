@@ -38,6 +38,7 @@ class MyApp extends StatelessWidget {
                     hintColor: Colors.white70,
                     cursorColor: Colors.white,
                     textSelectionColor: Colors.red,
+                    accentColor: Colors.red[900]
                   ),
                   home: Builder(
                     builder: (context) => Scaffold(
