@@ -54,7 +54,7 @@ class SpellListView extends StatelessWidget {
     List<Spell> filteredSpellList = [];
     int itemCount = spells.length;
     for (int i = 0; i < itemCount; i++) {
-      if (spells[i].classLevel[characterClass] == level) {
+      if (spells[i].level[characterClass] == level) {
         filteredSpellList.add(spells[i]);
       }
     }

@@ -2,7 +2,7 @@ class Spell {
   final String name;
   final String description;
   final String fullDescription;
-  final Map<String, int> classLevel;
+  final Map<String, dynamic> level;
   final List<dynamic> attributes;
   final bool legal;
   final String notes;
@@ -11,7 +11,7 @@ class Spell {
       {this.name,
       this.description,
       this.fullDescription,
-      this.classLevel,
+      this.level,
       this.attributes,
       this.legal,
       this.notes});
@@ -21,14 +21,7 @@ class Spell {
         name: json['name'] as String,
         description: json['description'] as String,
         fullDescription: json['full_description'] as String,
-        classLevel: {
-          'bard': json['bard'] as int,
-          'cleric': json['cleric'] as int,
-          'druid': json['druid'] as int,
-          'paladin': json['paladin'] as int,
-          'ranger': json['ranger'] as int,
-          'wizard': json['wizard'] as int,
-        },
+        level: json['level'] as Map<String, dynamic>,
         attributes: json['attributes'] as List<dynamic>,
         legal: json['legal'] as bool,
         notes: json['notes'] as String
