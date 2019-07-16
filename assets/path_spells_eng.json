@@ -3945,7 +3945,7 @@
   },
   {
     "name": "BlessY",
-    "description": "",
+    "description": "Allies gain +1 on attack rolls and saves against fear.",
     "level": {
       "adept": 1,
       "cleric": 1,
@@ -3955,7 +3955,7 @@
       "shaman": 1,
       "warpriest": 1
     },
-    "full_description": "",
+    "full_description": "-",
     "attributes": [
       "Y"
     ],
