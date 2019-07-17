@@ -43,6 +43,7 @@ flutter:
   assets:
     - assets/classes.json
     - assets/path_spells_eng.json
+    - assets/1.txt
     - assets/images/sorcerer.png
     - assets/images/bard.png
     - assets/images/cleric.png
