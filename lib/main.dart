@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
     String level = "";
     String output = "";
     String description = "";
-    i = g.indexOf("<S");
+    i = g.indexOf("<s");
     //i = -1;
     while (i != -1) {
       i++;
@@ -53,7 +53,7 @@ class MyApp extends StatelessWidget {
       output = "{";
       List<String> classes= ["adept","alchemist","antipaladin","arcanist","bard","bloodrager","cleric","druid","hunter","inquisitor","investigator","magus","medium","mesmerist","occultist","oracle","paladin","psychic","ranger","red mantis assassin","sahir-afiyun","shaman","skald","sorcerer","spiritualist","summoner","summoner (unchained)","warpriest","witch","wizard"];
       classes.forEach((element) {
-        if (level.contains(element)) output += element + " : " + level[level.indexOf(element)+element.length+1] + ", ";
+        if (level.contains(element)) output += "\"" + element + "\"" + " : " + level[level.indexOf(element)+element.length+1] + ", ";
       }  );
       output = output.substring(0, output.length-2);
       output += "}";
@@ -63,7 +63,7 @@ class MyApp extends StatelessWidget {
       description = "";
 
       //g = g.substring(i,g.length);
-      i = g.indexOf("<S");
+      i = g.indexOf("<s");
     }
   }
 
