@@ -35,6 +35,11 @@ class SpellView extends StatelessWidget {
       ));
     }
 
+    void addSubhead(String string) {
+      spellViewSpanParts.add(new TextSpan(
+          text: string, style: TextStyle(color: Colors.black, fontSize: 16)));
+    }
+
     void addNotes(String string) {
       spellViewSpanParts.add(new TextSpan(
           text: string + "\n\n", style: TextStyle(color: Colors.black)));
@@ -149,6 +154,15 @@ class SpellView extends StatelessWidget {
             i++;
           }
           addCaption(descriptionPart);
+          descriptionPart = "";
+        }
+        if (description[i] == 'v') {
+          i++;
+          while (description[i] != '>') {
+            descriptionPart += description[i];
+            i++;
+          }
+          addSubhead(descriptionPart);
           descriptionPart = "";
         }
         if (description[i] == 't') {
