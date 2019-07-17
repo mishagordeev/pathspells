@@ -37,7 +37,7 @@ class SpellView extends StatelessWidget {
 
     void addSubhead(String string) {
       spellViewSpanParts.add(new TextSpan(
-          text: string, style: TextStyle(color: Colors.black, fontSize: 16)));
+          text: string, style: TextStyle(color: Colors.black, fontSize: 16, fontWeight: FontWeight.bold)));
     }
 
     void addNotes(String string) {
