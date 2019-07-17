@@ -6,7 +6,7 @@
       "bard": 0,
       "adept": 0
     },
-    "full_description": "-",
+    "full_description": "<bSourse> Inner Sea Gods pg. 228, Pathfinder #8: Seven Days to the Grave pg. 71, Gods and Magic pg. 5\n<bLevel> cleric 1, inquisitor 1, oracle 1, paladin 1, warpriest 1 (Abadar)\n<bSchool> enchantment (compulsion) [mind-affecting]\n<bCasting Time> 1 standard action\n<bComponents> V, S, DF\n<bRange> touch\n<bTarget> creature touched\n<bDuration> 1 min./level\n<bSaving Throw> Will negates; <bSpell Resistance> yes\n\nThis spell functions identically to the spell <izone of truth>, except as noted above. The target momentarily takes on the semblance of a being of perfect order, like an archon or inevitable, so that all who can see the target know it is affected by the spell. This divine guise flickers over the target for only an instant and does not allow it to pass as a member of a different race.",
     "attributes": [
       "R"
     ],
@@ -14,13 +14,13 @@
     "notes": ""
   },
   {
-    "name": "AbeyanceM",
+    "name": "Abeyance",
     "description": "Suppress the effects of a single curse",
     "level": {
       "bard": 0,
       "adept": 0
     },
-    "full_description": "-",
+    "full_description": "<bSource> Pathfinder #82: Secrets of the Sphinx pg. 74\n<bLevel> cleric 2, inquisitor 2, oracle 2, paladin 2, warpriest 2\n<bSchool> abjuration\n<bCasting Time> 1 minute\n<bComponents> V, S, M (a flask of holy water worth 25 gp), DF\n<bRange> touch\n<biTarget> creature touched\n<bDuration> 24 hours\n<bSaving Throw> Will negates (harmless); <bSpell Resistance> yes (harmless)\n\n<iAbeyance> suppresses the effects of a single curse on a creature. It does not restore any damage or drain that might have been caused by the curse. <iAbeyance> cannot suppress curses that cannot be removed by <iremove curse>, but it can suppress curses such as lycanthropy that require remove curse along with additional measures. An individual curse can be suppressed only once by abeyance, even if cast by a different caster.\n\n<iAbeyance> does not allow a creature to divest itself of cursed objects, though it can suppress a curse contracted from an object.",
     "attributes": [
       "M"
     ],
@@ -34,19 +34,19 @@
       "bard": 0,
       "adept": 0
     },
-    "full_description": "-",
+    "full_description": "<bSource> Ultimate Combat pg. 221\n<bLevel> alchemist 1, arcanist 1, bard 1, investigator 1, magus 1, occultist 1, psychic 1, skald 1, sorcerer 1, wizard 1\n<bSchool> abjuration [force]\n<bCasting Time> 1 standard action\n<bComponents> V, S, M (a rabbit’s foot)\n<bRange> personal \n<bTarget> you\n<bDuration> 1 round/level or until discharged\n\nThis spell creates a subtle and complicated force effect that is most effective when used by a still or slow-moving spellcaster or formula user. While you are subject to this spell, you can take two 5-foot steps each round and still cast spells and use spell-like abilities without provoke attacks of opportunity. This spell automatically discharges as soon as you make an attack, cast a harmful spell against another creature, or move more than 5 feet with a single move action. If the action that discharges the spell also provokes attacks of opportunity, that action still provokes attacks of opportunity as normal.",
     "attributes": [],
     "legal": true,
     "notes": ""
   },
   {
-    "name": "Ablative BarrierY",
+    "name": "Ablative Barrier",
     "description": "Surrounds the target with layers of force",
     "level": {
       "bard": 0,
       "adept": 0
     },
-    "full_description": "<bSource> Ultimate Combat pg. 221\n<bLevel> alchemist 2, arcanist 3, bloodrager 2, investigator 2, magus 2, occultist 2, psychic 3, sorcerer 3, summoner 2, summoner (unchained) 3, wizard 3\n<bSchool> conjuration (creation) [force]\n<bCasting Time> 1 standard action\n<bComponents> V, S, M (a piece of metal cut from a shield)\n<bRange> touch\n<bTarget> creature touched\n<bDuration> 1 hour/level or until discharged\n<bSaving Throw> Will negates (harmless); <bSpell Resistance> no\n\nInvisible layers of solid force surround and protect the target, granting that target a +2 armor bonus to AC. Additionally, the first 5 points of lethal damage the target takes from each attack are converted into nonlethal damage. Against attacks that already deal nonlethal damage, the target gains DR 5/–. Once this spell has converted 5 points of damage to nonlethal damage per caster level (maximum 50 points), the spell is discharged.\n<cMythic Ablative Barrier><bSource> Mythic Adventures pg. 84\nAdd half your tier to the spell’s armor bonus. Add half your tier to the amount of lethal damage from each attack that is converted to nonlethal damage and to the DR against nonlethal damage. Add half your tier to your caster level when determining how much damage the spell converts before it’s discharged.",
+    "full_description": "<bSource> Ultimate Combat pg. 221\n<bLevel> alchemist 2, arcanist 3, bloodrager 2, investigator 2, magus 2, occultist 2, psychic 3, sorcerer 3, summoner 2, summoner (unchained) 3, wizard 3\n<bSchool> conjuration (creation) [force]\n<bCasting Time> 1 standard action\n<bComponents> V, S, M (a piece of metal cut from a shield)\n<bRange> touch\n<bTarget> creature touched\n<bDuration> 1 hour/level or until discharged\n<bSaving Throw> Will negates (harmless); <bSpell Resistance> no\n\nInvisible layers of solid force surround and protect the target, granting that target a +2 armor bonus to AC. Additionally, the first 5 points of lethal damage the target takes from each attack are converted into nonlethal damage. Against attacks that already deal nonlethal damage, the target gains DR 5/–. Once this spell has converted 5 points of damage to nonlethal damage per caster level (maximum 50 points), the spell is discharged.\n\n<cMythic Ablative Barrier><bSource> Mythic Adventures pg. 84\nAdd half your tier to the spell’s armor bonus. Add half your tier to the amount of lethal damage from each attack that is converted to nonlethal damage and to the DR against nonlethal damage. Add half your tier to your caster level when determining how much damage the spell converts before it’s discharged.",
     "attributes": [
       "Y"
     ],
@@ -54,13 +54,13 @@
     "notes": ""
   },
   {
-    "name": "Ablative Sphere (Garundi)M",
+    "name": "Ablative Sphere (Garundi)",
     "description": "Create a protective sphere around yourself, providing you with improved cover",
     "level": {
       "bard": 0,
       "adept": 0
     },
-    "full_description": "-",
+    "full_description": "<bSource> Humans of Golarion pg. 28\n<bLevel> arcanist 3, sorcerer 3, wizard 3\n<bSchool> abjuration\n<bCasting Time> 1 standard action\n<bComponents> V, S, M (a crystalline sphere worth 10 gp)\n<bRange> personal\n<bTarget> you\n<bDuration> 1 minute/level (D)\n\nThe Garundi tenaciously protect their homes, and through the years they have perfected magic to aid them in their defense. An immobile, crystalline, weblike globe surrounds you.\n\nWhen the <iablative sphere> winks into existence, it provides you with improved cover (<iPathfinder RPG Core Rulebook> 196). The barrier does not impede a spell’s line of sight or effect.\n\nThe sphere is 1 inch thick per caster level, has hardness 5, and 3 hit points per inch of thickness. When an <iablative sphere> loses hit points, the level of cover it provides is reduced. When the <iablative sphere> has lost one-third of its hit points, it provides cover instead of improved cover. Once it has lost two-thirds of its hit points, it provides only partial cover. Finally, when the <iablative sphere’s> hit points reach 0, the globe is destroyed. When an attack reduces an <iablative sphere’s> hit points to 0, you take any remaining damage.",
     "attributes": [
       "M"
     ],
@@ -68,13 +68,13 @@
     "notes": ""
   },
   {
-    "name": "Aboleth's LungR",
+    "name": "Aboleth's Lung",
     "description": "Allow the target to breathe water at the cost of no longer being able to breathe air",
     "level": {
       "bard": 0,
       "adept": 0
     },
-    "full_description": "-",
+    "full_description": "",
     "attributes": [
       "R"
     ],
@@ -94,8 +94,8 @@
     "notes": ""
   },
   {
-    "name": "Absorb Rune IIIM",
-    "description": "As absorb rune I, but affecting a rune up to 8th level",
+    "name": "Absorb Rune I",
+    "description": "Absorb a magic rune up to 3rd level, which can be moved or dispelled",
     "level": {
       "bard": 0,
       "adept": 0
@@ -108,7 +108,7 @@
     "notes": ""
   },
   {
-    "name": "Absorb Rune IIM",
+    "name": "Absorb Rune II",
     "description": "As absorb rune I, but affecting a rune up to 5th level",
     "level": {
       "bard": 0,
@@ -122,8 +122,8 @@
     "notes": ""
   },
   {
-    "name": "Absorb Rune IM",
-    "description": "Absorb a magic rune up to 3rd level, which can be moved or dispelled",
+    "name": "Absorb Rune III",
+    "description": "As absorb rune I, but affecting a rune up to 8th level",
     "level": {
       "bard": 0,
       "adept": 0
@@ -160,7 +160,7 @@
     "notes": ""
   },
   {
-    "name": "Absorbing InhalationR",
+    "name": "Absorbing Inhalation",
     "description": "Completely inhale a cloud-like effect, keeping it stored harmlessly in your body",
     "level": {
       "bard": 0,
@@ -186,7 +186,7 @@
     "notes": ""
   },
   {
-    "name": "AbstemiousnessR",
+    "name": "Abstemiousness",
     "description": "Enhance simple food to provide greater nutrition",
     "level": {
       "bard": 0,
@@ -224,7 +224,7 @@
     "notes": ""
   },
   {
-    "name": "Abyssal VerminR",
+    "name": "Abyssal Vermin",
     "description": "Infuse vermin with fiendish qualities",
     "level": {
       "bard": 0,
@@ -262,7 +262,7 @@
     "notes": ""
   },
   {
-    "name": "Accursed GlareR",
+    "name": "Accursed Glare",
     "description": "Channel a fell curse through your gaze",
     "level": {
       "bard": 0,
@@ -312,7 +312,7 @@
     "notes": ""
   },
   {
-    "name": "Acid PitF",
+    "name": "Acid Pit",
     "description": "Creates a pit with a layer of acid on the bottom",
     "level": {
       "bard": 0,
@@ -338,7 +338,7 @@
     "notes": ""
   },
   {
-    "name": "Acidic SprayM",
+    "name": "Acidic Spray",
     "description": "1d6/level acid damage plus 1 round of acid",
     "level": {
       "bard": 0,
@@ -448,7 +448,7 @@
     "notes": ""
   },
   {
-    "name": "Advanced ScurvyR",
+    "name": "Advanced Scurvy",
     "description": "Force the target to contract an advanced form of scurvy",
     "level": {
       "bard": 0,
@@ -558,7 +558,7 @@
     "notes": ""
   },
   {
-    "name": "Agonizing RebukeR",
+    "name": "Agonizing Rebuke",
     "description": "Force your attacker to suffer mental pain when harming you",
     "level": {
       "bard": 0,
@@ -620,7 +620,7 @@
     "notes": ""
   },
   {
-    "name": "Air of AuthorityR",
+    "name": "Air of Authority",
     "description": "Creatures believe you are their direct superior",
     "level": {
       "bard": 0,
@@ -670,7 +670,7 @@
     "notes": ""
   },
   {
-    "name": "Akashic CommunionFM",
+    "name": "Akashic Communion",
     "description": "Make 1 knowledge check /3 levels with a +10 bonus",
     "level": {
       "bard": 0,
@@ -733,7 +733,7 @@
     "notes": ""
   },
   {
-    "name": "Alchemical TinkeringR",
+    "name": "Alchemical Tinkering",
     "description": "Transform an alchemical item or firearm into another similar item",
     "level": {
       "bard": 0,
@@ -807,7 +807,7 @@
     "notes": ""
   },
   {
-    "name": "Alleviate CorruptionM",
+    "name": "Alleviate Corruption",
     "description": "Attempt to weakne a corruption's effect at risk to yourself",
     "level": {
       "bard": 0,
@@ -1001,7 +1001,7 @@
     "notes": ""
   },
   {
-    "name": "Analyze DweomerF",
+    "name": "Analyze Dweomer",
     "description": "Reveals magical aspects of subject",
     "level": {
       "bard": 0,
@@ -1051,7 +1051,7 @@
     "notes": ""
   },
   {
-    "name": "Ancestral RegressionR",
+    "name": "Ancestral Regression",
     "description": "Conceal a drow’s appearance with that of a surface elf",
     "level": {
       "bard": 0,
@@ -1125,19 +1125,7 @@
     "notes": ""
   },
   {
-    "name": "Animal Aspect, Greater",
-    "description": "As animal aspect, but you gain two animal qualities",
-    "level": {
-      "bard": 0,
-      "adept": 0
-    },
-    "full_description": "-",
-    "attributes": [],
-    "legal": true,
-    "notes": ""
-  },
-  {
-    "name": "Animal AspectY",
+    "name": "Animal Aspect",
     "description": "You gain some of the beneficial qualities of an animal",
     "level": {
       "bard": 0,
@@ -1147,6 +1135,18 @@
     "attributes": [
       "Y"
     ],
+    "legal": true,
+    "notes": ""
+  },
+  {
+    "name": "Animal Aspect, Greater",
+    "description": "As animal aspect, but you gain two animal qualities",
+    "level": {
+      "bard": 0,
+      "adept": 0
+    },
+    "full_description": "-",
+    "attributes": [],
     "legal": true,
     "notes": ""
   },
@@ -1211,21 +1211,7 @@
     "notes": ""
   },
   {
-    "name": "Animate Dead, LesserM",
-    "description": "Create one skeleton or zombie",
-    "level": {
-      "bard": 0,
-      "adept": 0
-    },
-    "full_description": "-",
-    "attributes": [
-      "M"
-    ],
-    "legal": true,
-    "notes": ""
-  },
-  {
-    "name": "Animate DeadMY",
+    "name": "Animate Dead",
     "description": "Creates undead skeletons and zombies",
     "level": {
       "bard": 0,
@@ -1240,7 +1226,21 @@
     "notes": ""
   },
   {
-    "name": "Animate ObjectsY",
+    "name": "Animate Dead, Lesser",
+    "description": "Create one skeleton or zombie",
+    "level": {
+      "bard": 0,
+      "adept": 0
+    },
+    "full_description": "-",
+    "attributes": [
+      "M"
+    ],
+    "legal": true,
+    "notes": ""
+  },
+  {
+    "name": "Animate Objects",
     "description": "Objects attack your foes",
     "level": {
       "bard": 0,
@@ -1254,7 +1254,7 @@
     "notes": ""
   },
   {
-    "name": "Animate PlantsY",
+    "name": "Animate Plants",
     "description": "One or more plants animate and fight for you",
     "level": {
       "bard": 0,
@@ -1376,7 +1376,7 @@
     "notes": ""
   },
   {
-    "name": "Anticipate PerilY",
+    "name": "Anticipate Peril",
     "description": "Target gains a bonus on one initiative check",
     "level": {
       "bard": 0,
@@ -1414,7 +1414,7 @@
     "notes": ""
   },
   {
-    "name": "Antimagic FieldY",
+    "name": "Antimagic Field",
     "description": "Negates magic within 10 ft",
     "level": {
       "bard": 0,
@@ -1656,7 +1656,7 @@
     "notes": ""
   },
   {
-    "name": "Aram Zey's FocusF",
+    "name": "Aram Zey's Focus",
     "description": "Grant the trapfinding ability or a +5 Disable Device bonus",
     "level": {
       "bard": 0,
@@ -1670,7 +1670,7 @@
     "notes": ""
   },
   {
-    "name": "Aram Zey's Trap WardM",
+    "name": "Aram Zey's Trap Ward",
     "description": "Protect yourself against magical traps",
     "level": {
       "bard": 0,
@@ -1696,7 +1696,7 @@
     "notes": ""
   },
   {
-    "name": "Arboreal HammerY",
+    "name": "Arboreal Hammer",
     "description": "Tree branches attack opponents",
     "level": {
       "bard": 0,
@@ -1722,7 +1722,7 @@
     "notes": ""
   },
   {
-    "name": "Arcane CannonFY",
+    "name": "Arcane Cannon",
     "description": "Your focus becomes a magical cannon that fires on its own",
     "level": {
       "bard": 0,
@@ -1773,7 +1773,7 @@
     "notes": ""
   },
   {
-    "name": "Arcane LockM",
+    "name": "Arcane Lock",
     "description": "Magically locks a portal or chest",
     "level": {
       "bard": 0,
@@ -1931,7 +1931,7 @@
     "notes": ""
   },
   {
-    "name": "Aroden's SpellbaneFY",
+    "name": "Aroden's Spellbane",
     "description": "Create an area to completely block out spells of your choosing",
     "level": {
       "bard": 0,
@@ -1994,7 +1994,7 @@
     "notes": ""
   },
   {
-    "name": "AscensionMY",
+    "name": "Ascension",
     "description": "Imbue creatures with mythic power",
     "level": {
       "bard": 0,
@@ -2057,7 +2057,7 @@
     "notes": ""
   },
   {
-    "name": "Aspect of the NightingaleR",
+    "name": "Aspect of the Nightingale",
     "description": "Your voice becomes clear and pleasant, like a nightingale",
     "level": {
       "bard": 0,
@@ -2131,8 +2131,8 @@
     "notes": ""
   },
   {
-    "name": "Astral Projection, LesserM",
-    "description": "Limited astral travel",
+    "name": "Astral Projection",
+    "description": "Projects you and companions onto Astral Plane",
     "level": {
       "bard": 0,
       "adept": 0
@@ -2145,8 +2145,8 @@
     "notes": ""
   },
   {
-    "name": "Astral ProjectionM",
-    "description": "Projects you and companions onto Astral Plane",
+    "name": "Astral Projection, Lesser",
+    "description": "Limited astral travel",
     "level": {
       "bard": 0,
       "adept": 0
@@ -2183,7 +2183,7 @@
     "notes": ""
   },
   {
-    "name": "AtonementF",
+    "name": "Atonement",
     "description": "Removes burden of misdeeds from subject and reverses magical alignment change",
     "level": {
       "bard": 0,
@@ -2368,7 +2368,21 @@
     "notes": ""
   },
   {
-    "name": "Awaken ConstructM",
+    "name": "Awaken",
+    "description": "Animal or tree gains human intellect",
+    "level": {
+      "bard": 0,
+      "adept": 0
+    },
+    "full_description": "-",
+    "attributes": [
+      "M"
+    ],
+    "legal": false,
+    "notes": ""
+  },
+  {
+    "name": "Awaken Construct",
     "description": "Grant a construct humanlike sentience",
     "level": {
       "bard": 0,
@@ -2391,20 +2405,6 @@
     "full_description": "-",
     "attributes": [],
     "legal": true,
-    "notes": ""
-  },
-  {
-    "name": "AwakenM",
-    "description": "Animal or tree gains human intellect",
-    "level": {
-      "bard": 0,
-      "adept": 0
-    },
-    "full_description": "-",
-    "attributes": [
-      "M"
-    ],
-    "legal": false,
     "notes": ""
   },
   {
@@ -2465,7 +2465,7 @@
     "notes": ""
   },
   {
-    "name": "Baleful PolymorphY",
+    "name": "Baleful Polymorph",
     "description": "Transforms subject into harmless animal",
     "level": {
       "adept": 5,
@@ -2548,7 +2548,7 @@
     "notes": ""
   },
   {
-    "name": "BaneY",
+    "name": "Bane",
     "description": "Enemies take –1 on attack rolls and saves against fear",
     "level": {
       "antipaladin": 1,
@@ -2695,7 +2695,7 @@
     "notes": ""
   },
   {
-    "name": "Barghest FeastR",
+    "name": "Barghest Feast",
     "description": "Absorb power by devouring a humanoid corpse",
     "level": {
       "alchemist": 3,
@@ -2709,7 +2709,7 @@
     "notes": ""
   },
   {
-    "name": "BarkskinY",
+    "name": "Barkskin",
     "description": "Grants +2 (or higher) enhancement to natural armor",
     "level": {
       "alchemist": 2,
@@ -2743,7 +2743,7 @@
     "notes": ""
   },
   {
-    "name": "Batrachian SurgeR",
+    "name": "Batrachian Surge",
     "description": "Amplify your latent amphibian nature",
     "level": {
       "bloodrager": 1,
@@ -2775,7 +2775,7 @@
     "notes": ""
   },
   {
-    "name": "Battle TranceRY",
+    "name": "Battle Trance",
     "description": "Gain ferocity, bonus hit points, and +4 vs. mind-affecting effects",
     "level": {
       "alchemist": 3,
@@ -2799,7 +2799,7 @@
     "notes": ""
   },
   {
-    "name": "Battlemind LinkY",
+    "name": "Battlemind Link",
     "description": "You and an ally gain attack and AC bonuses",
     "level": {
       "arcanist": 6,
@@ -2836,7 +2836,7 @@
     "notes": ""
   },
   {
-    "name": "Beacon of LuckR",
+    "name": "Beacon of Luck",
     "description": "Send out a burst of luck to allies around you",
     "level": {
       "bard": 3,
@@ -2924,7 +2924,7 @@
     "notes": ""
   },
   {
-    "name": "Beast Shape IY",
+    "name": "Beast Shape I",
     "description": "You take the form of a Diminutive or Huge animal, or Small or \"medium\" magical beast",
     "level": {
       "alchemist": 3,
@@ -2944,7 +2944,7 @@
     "notes": ""
   },
   {
-    "name": "Beast Shape IIY",
+    "name": "Beast Shape II",
     "description": "You take the form and some of the powers of a Tiny or Large animal",
     "level": {
       "alchemist": 4,
@@ -2964,7 +2964,7 @@
     "notes": ""
   },
   {
-    "name": "Beast Shape IIIY",
+    "name": "Beast Shape III",
     "description": "You take the form of a Diminutive to Huge animal or a Tiny to Large magical beast",
     "level": {
       "alchemist": 5,
@@ -2982,7 +2982,7 @@
     "notes": ""
   },
   {
-    "name": "Beast Shape IVY",
+    "name": "Beast Shape IV",
     "description": "You take the form and some of the powers of a Small or \"medium\" animal",
     "level": {
       "alchemist": 6,
@@ -3110,14 +3110,14 @@
       "spiritualist": 5,
       "witch": 6
     },
-    "full_description": "<bSource> Haunted Heroes Handbook pg. 26\n<bSchool> necromancy (haunted) [emotion, fear, mind-affecting]; <bLevel> cleric 6, inquisitor 6, oracle 6, shaman 6, spiritualist 5, witch 6\n<bCasting Time> 1 standard action\n<bComponents> V, S, M/DF (a vial of sea water)\n<bRange> close (25 ft. + 5 ft./2 levels)\n<bArea> one 5-ft. cube/level (S)\n<bDuration> see text\n<bSaving Throw> Will partial; see text; <bSpell Resistance> yes\nYou call upon the restless souls of those who died at sea. This spell can be cast only on an area of deep water. When a creature enters the area, the haunt manifests, automatically grabbing the creature and dragging it under the water on initiative count 10. Each round, the haunt deals 1d6 points of nonlethal damage as it drags its victim down 10 feet; a successful DC 15 Swim check reduces the descent to 5 feet and negates the nonlethal damage. Each round in the haunt’s clutches reduces the duration the victim can hold her breath by 2 rounds (<iPathfinder RPG Core Rulebook 445>). A victim can make a single move or standard action each round while in the haunt’s grasp if she succeeds at a Will save; on a failed save, she can only struggle helplessly against the haunt. A victim cannot use her actions to swim toward the surface while the haunt is active. If the haunt reaches the bottom of its body of water, it pounds its victim against the bottom, dealing 2d6 points of nonlethal damage per round to the victim and reducing the duration the victim can hold her breath by an additional round. This continues until either the haunt is neutralized (in which case the victim must still swim to the surface) or the victim drowns. \n\nThe haunt can grab and attempt to drown multiple creatures in its area on its initiative count. The magic holding the haunt together is unstable and deteriorates while the haunt is active. Each round at the end of its turn, the haunt automatically loses 1d6 hit points per creature it is currently affecting. Furthermore, the spell’s haunt-like manifestation is active throughout the spell’s duration, rendering it vulnerable to effects that damage haunts. When the haunt reaches 0 hit points, the spell ends. \n<vHaunt Statistics><bNotice> Perception DC 30 (To detect the smell of brine)\n<bhp> 5 hp/level; <bTrigger> proximity; <bReset> none",
+    "full_description": "<bSource> Haunted Heroes Handbook pg. 26\n<bSchool> necromancy (haunted) [emotion, fear, mind-affecting]; <bLevel> cleric 6, inquisitor 6, oracle 6, shaman 6, spiritualist 5, witch 6\n<bCasting Time> 1 standard action\n<bComponents> V, S, M/DF (a vial of sea water)\n<bRange> close (25 ft. + 5 ft./2 levels)\n<bArea> one 5-ft. cube/level (S)\n<bDuration> see text\n<bSaving Throw> Will partial; see text; <bSpell Resistance> yes\n\nYou call upon the restless souls of those who died at sea. This spell can be cast only on an area of deep water. When a creature enters the area, the haunt manifests, automatically grabbing the creature and dragging it under the water on initiative count 10. Each round, the haunt deals 1d6 points of nonlethal damage as it drags its victim down 10 feet; a successful DC 15 Swim check reduces the descent to 5 feet and negates the nonlethal damage. Each round in the haunt’s clutches reduces the duration the victim can hold her breath by 2 rounds (<iPathfinder RPG Core Rulebook 445>). A victim can make a single move or standard action each round while in the haunt’s grasp if she succeeds at a Will save; on a failed save, she can only struggle helplessly against the haunt. A victim cannot use her actions to swim toward the surface while the haunt is active. If the haunt reaches the bottom of its body of water, it pounds its victim against the bottom, dealing 2d6 points of nonlethal damage per round to the victim and reducing the duration the victim can hold her breath by an additional round. This continues until either the haunt is neutralized (in which case the victim must still swim to the surface) or the victim drowns. \n\nThe haunt can grab and attempt to drown multiple creatures in its area on its initiative count. The magic holding the haunt together is unstable and deteriorates while the haunt is active. Each round at the end of its turn, the haunt automatically loses 1d6 hit points per creature it is currently affecting. Furthermore, the spell’s haunt-like manifestation is active throughout the spell’s duration, rendering it vulnerable to effects that damage haunts. When the haunt reaches 0 hit points, the spell ends. \n\n<vHaunt Statistics>\n<bNotice> Perception DC 30 (To detect the smell of brine)\n<bhp> 5 hp/level; <bTrigger> proximity; <bReset> none",
     "attributes": [],
     "legal": true,
     "notes": ""
   },
   {
     "name": "Bestow Auras",
-    "description": "Transfer your paladin or antipaladin auras to another creature",
+    "description": "Transfer your \"paladin\" or \"antipaladin\" auras to another creature",
     "level": {
       "antipaladin": 3,
       "paladin": 3
@@ -3182,7 +3182,7 @@
   },
   {
     "name": "Bestow Grace of the Champion",
-    "description": "Target gains paladin abilities for 1 round/level",
+    "description": "Target gains \"paladin\" abilities for 1 round/level",
     "level": {
       "cleric": 7,
       "oracle": 7,
@@ -3194,7 +3194,7 @@
     "notes": ""
   },
   {
-    "name": "Bestow InsightR",
+    "name": "Bestow Insight",
     "description": "Grant the target a bonus on a skill check and consider them trained",
     "level": {
       "arcanist": 2,
@@ -3379,7 +3379,7 @@
     "notes": ""
   },
   {
-    "name": "BindingM",
+    "name": "Binding",
     "description": "As binding earth but with multiple targets",
     "level": {
       "arcanist": 8,
@@ -3396,7 +3396,7 @@
     "notes": ""
   },
   {
-    "name": "Binding EarthR",
+    "name": "Binding Earth",
     "description": "Areas of earth and stone attempt to drag the target of this spell down",
     "level": {
       "druid": 2,
@@ -3411,7 +3411,7 @@
     "notes": ""
   },
   {
-    "name": "Binding Earth, MassR",
+    "name": "Binding Earth, Mass",
     "description": "Utilizes an array of techniques to imprison a creature",
     "level": {
       "druid": 6,
@@ -3426,7 +3426,7 @@
     "notes": ""
   },
   {
-    "name": "Bit of LuckR",
+    "name": "Bit of Luck",
     "description": "Gain a pool of luck that can be used to add a luck bonus to any d20 rolls, which can turn a failure into a success",
     "level": {
       "alchemist": 4,
@@ -3502,7 +3502,7 @@
     "notes": ""
   },
   {
-    "name": "Black MarkRY",
+    "name": "Black Mark",
     "description": "Mark someone which makes them afraid of water and turns aquatic creatures against them",
     "level": {
       "druid": 7,
@@ -3534,7 +3534,7 @@
     "notes": ""
   },
   {
-    "name": "Black Sword of WarR",
+    "name": "Black Sword of War",
     "description": "Enchant a weapon to deal extra bleed damage",
     "level": {
       "antipaladin": 3,
@@ -3556,7 +3556,7 @@
     "notes": ""
   },
   {
-    "name": "Black TentaclesY",
+    "name": "Black Tentacles",
     "description": "Tentacles grapple all creatures within a 20-ft. spread",
     "level": {
       "arcanist": 4,
@@ -3591,7 +3591,7 @@
     "notes": "3.5 Material"
   },
   {
-    "name": "Blade BarrierY",
+    "name": "Blade Barrier",
     "description": "Wall of blades deals 1d6/level damage",
     "level": {
       "cleric": 6,
@@ -3721,7 +3721,7 @@
     "notes": ""
   },
   {
-    "name": "BlasphemyY",
+    "name": "Blasphemy",
     "description": "Kills, paralyzes, weakens, or dazes nonevil subjects",
     "level": {
       "cleric": 7,
@@ -3792,7 +3792,7 @@
     "notes": ""
   },
   {
-    "name": "Bleaching ResistanceR",
+    "name": "Bleaching Resistance",
     "description": "Ability score drain from the Bleaching doesn’t affect your ability score modifiers",
     "level": {
       "alchemist": 4,
@@ -3875,7 +3875,7 @@
     "notes": ""
   },
   {
-    "name": "Bleeding StrikeR",
+    "name": "Bleeding Strike",
     "description": "Enhance a weapon to deal bleed damage with its attack",
     "level": {
       "antipaladin": 1,
@@ -3895,7 +3895,7 @@
     "notes": ""
   },
   {
-    "name": "BlendR",
+    "name": "Blend",
     "description": "Change the appearance of a creature to better blend in with its surroundings",
     "level": {
       "alchemist": 1,
@@ -3944,7 +3944,7 @@
     "notes": ""
   },
   {
-    "name": "BlessY",
+    "name": "Bless",
     "description": "Allies gain +1 on attack rolls and saves against fear.",
     "level": {
       "adept": 1,
@@ -3976,7 +3976,7 @@
     "notes": ""
   },
   {
-    "name": "Bless WaterM",
+    "name": "Bless Water",
     "description": "Makes holy water",
     "level": {
       "cleric": 1,
@@ -4032,7 +4032,7 @@
     "notes": ""
   },
   {
-    "name": "Blessing of FervorY",
+    "name": "Blessing of Fervor",
     "description": "Gives allies a choice of benefits",
     "level": {
       "cleric": 4,
@@ -4060,7 +4060,7 @@
     "notes": ""
   },
   {
-    "name": "Blessing of Luck and Resolve, MassR",
+    "name": "Blessing of Luck and Resolve, Mass",
     "description": "As blessing of luck and resolve but with multiple creatures",
     "level": {
       "cleric": 2,
@@ -4077,7 +4077,7 @@
     "notes": ""
   },
   {
-    "name": "Blessing of Luck and ResolveR",
+    "name": "Blessing of Luck and Resolve",
     "description": "Increase resistance against fear",
     "level": {
       "cleric": 6,
@@ -4124,7 +4124,7 @@
     "notes": ""
   },
   {
-    "name": "Blessing of the WatchR",
+    "name": "Blessing of the Watch",
     "description": "Functions as bless, except lasts for 1 hour/level but only in the caster’s home city",
     "level": {
       "cleric": 1,
@@ -4176,7 +4176,7 @@
     "notes": ""
   },
   {
-    "name": "Blinding RayRY",
+    "name": "Blinding Ray",
     "description": "Fire blinding rays of sunlight to blind enemies and damage those with sensitivity to light",
     "level": {
       "cleric": 2,
@@ -4194,7 +4194,7 @@
     "notes": ""
   },
   {
-    "name": "Blindness/DeafnessY",
+    "name": "Blindness/Deafness",
     "description": "Makes subject blinded or deafened",
     "level": {
       "antipaladin": 2,
@@ -4222,7 +4222,7 @@
     "notes": ""
   },
   {
-    "name": "BlinkY",
+    "name": "Blink",
     "description": "You randomly vanish and reappear for 1 round per level",
     "level": {
       "arcanist": 3,
@@ -4242,7 +4242,7 @@
     "notes": ""
   },
   {
-    "name": "Blistering InvectiveY",
+    "name": "Blistering Invective",
     "description": "Make an Intimidate check against all foes within 30 feet; those demoralized also take fire damage",
     "level": {
       "alchemist": 2,
@@ -4322,7 +4322,7 @@
     "notes": ""
   },
   {
-    "name": "Blood BlazeR",
+    "name": "Blood Blaze",
     "description": "Ignite the blood of those who come near you",
     "level": {
       "alchemist": 2,
@@ -4364,7 +4364,7 @@
     "notes": ""
   },
   {
-    "name": "Blood Crow StrikeY",
+    "name": "Blood Crow Strike",
     "description": "Unarmed strikes create crows that deal fire and negative energy damage",
     "level": {
       "cleric": 4,
@@ -4469,7 +4469,7 @@
     "notes": ""
   },
   {
-    "name": "Blood ScentR",
+    "name": "Blood Scent",
     "description": "Magnify the target’s ability to smell the presence of blood",
     "level": {
       "alchemist": 3,
@@ -4499,7 +4499,7 @@
     "notes": ""
   },
   {
-    "name": "Blood SentinelM",
+    "name": "Blood Sentinel",
     "description": "Animate an animal sculpture to be your temporary familiar",
     "level": {
       "alchemist": 3,
@@ -4509,7 +4509,7 @@
       "sorcerer": 3,
       "wizard": 3
     },
-    "full_description": "-",
+    "full_description": "<bSource> Advanced Class Guide pg. 176\n<bSchool> transmutation; <bLevel> alchemist 3, arcanist 3, investigator 3, red mantis assassin 3, sorcerer 3, wizard 3\n<bCasting Time> 1 standard action\n<bComponents> V, S, M (a life-sized animal sculpture of a familiar made of clay, cloth, stone, or wood, plus mandrake root worth 25 gp)\n<bRange> touch\n<bTarget> one animal sculpture\n<bDuration> 10 minutes/level\n<bSaving Throw> none; <bSpell Resistance> no (harmless)\n\nAfter casting this spell, you pour a few drops of your blood and saliva into the mouth of the animal sculpture material component, temporarily giving it life. The animal is bonded to you as if it were a familiar, and it has the abilities of a familiar (use your caster level as your effective wizard level to determine its abilities), but it does not grant you the Alertness feat or the special ability of its animal type. If your blood sentinel is slain, you take 2 points of Intelligence drain and the blood sentinel’s body becomes a destroyed statue. This spell has no effect if you already have a familiar or another blood sentinel.",
     "attributes": [
       "M"
     ],
@@ -4627,7 +4627,7 @@
     "notes": ""
   },
   {
-    "name": "Bloodstone MirrorM",
+    "name": "Bloodstone Mirror",
     "description": "Protect yourself against a mind-affecting effect and redirect it to a nearby creature",
     "level": {
       "cleric": 7,
@@ -4643,7 +4643,7 @@
     "notes": ""
   },
   {
-    "name": "Bloodsworn RetributionRT",
+    "name": "Bloodsworn Retribution",
     "description": "Swear an oath, damaging yourself to gain a bonus to things relating to that oath",
     "level": {
       "cleric": 6,
@@ -4696,7 +4696,7 @@
     "notes": ""
   },
   {
-    "name": "Bloody Tears and Jagged SmileR",
+    "name": "Bloody Tears and Jagged Smile",
     "description": "Become more intimidating with black eyes that weep blood and turn your teeth into jagged fangs",
     "level": {
       "arcanist": 2,
@@ -4817,7 +4817,7 @@
     "notes": ""
   },
   {
-    "name": "Boiling BloodY",
+    "name": "Boiling Blood",
     "description": "Targets take fire damage; orcs get +2 Strength",
     "level": {
       "arcanist": 2,
@@ -5026,7 +5026,7 @@
     "notes": ""
   },
   {
-    "name": "Borrowed TimeY",
+    "name": "Borrowed Time",
     "description": "Take extra swift actions at the cost of Con damage",
     "level": {
       "alchemist": 6,
@@ -5175,7 +5175,7 @@
     "notes": ""
   },
   {
-    "name": "Break EnchantmentY",
+    "name": "Break Enchantment",
     "description": "Frees subjects from enchantments, transmutations, and curses",
     "level": {
       "adept": 5,
@@ -5205,7 +5205,7 @@
     "notes": ""
   },
   {
-    "name": "Break, GreaterM",
+    "name": "Break, Greater",
     "description": "Break all nearby objects",
     "level": {
       "arcanist": 6,
@@ -5223,7 +5223,7 @@
     "notes": ""
   },
   {
-    "name": "BreakY",
+    "name": "Break",
     "description": "Gives an object the broken condition",
     "level": {
       "arcanist": 1,
@@ -5242,7 +5242,7 @@
     "notes": ""
   },
   {
-    "name": "Breath of LifeY",
+    "name": "Breath of Life",
     "description": "Cures 5d8 damage + 1/level and restores life to recently slain creatures",
     "level": {
       "cleric": 5,
@@ -5344,7 +5344,7 @@
     "notes": ""
   },
   {
-    "name": "Brittle PortalR",
+    "name": "Brittle Portal",
     "description": "Reduce the hardness of objects within the area",
     "level": {
       "antipaladin": 2,
@@ -5479,7 +5479,7 @@
     "notes": ""
   },
   {
-    "name": "Bullet WardF",
+    "name": "Bullet Ward",
     "description": "Adamantine bullets intercept firearm attacks",
     "level": {
       "antipaladin": 2,
@@ -5555,7 +5555,7 @@
     "notes": ""
   },
   {
-    "name": "Burn CorruptionR",
+    "name": "Burn Corruption",
     "description": "Scour the life in an area, especially Abyssal life",
     "level": {
       "arcanist": 5,
@@ -5619,7 +5619,7 @@
     "notes": ""
   },
   {
-    "name": "Burning GazeY",
+    "name": "Burning Gaze",
     "description": "Inflict 1d6 fire damage to creature by looking at it",
     "level": {
       "arcanist": 2,
@@ -5642,7 +5642,7 @@
     "notes": ""
   },
   {
-    "name": "Burning HandsY",
+    "name": "Burning Hands",
     "description": "1d4/level fire damage (max 5d4)",
     "level": {
       "adept": 1,
@@ -5681,7 +5681,7 @@
     "notes": ""
   },
   {
-    "name": "BurrowY",
+    "name": "Burrow",
     "description": "Target gains a burrow speed of 15",
     "level": {
       "alchemist": 3,
@@ -5741,7 +5741,7 @@
     "notes": ""
   },
   {
-    "name": "Burst of GloryR",
+    "name": "Burst of Glory",
     "description": "Increase your allie’s attack rolls, saves against fear, and hit points",
     "level": {
       "cleric": 5,
@@ -5831,13 +5831,13 @@
       "paladin": 4,
       "warpriest": 4
     },
-    "full_description": "<bSource> Demon Hunter's Handbook pg. 26\n<bSchool> evocation [light]; <bLevel> cleric 4, oracle 4, paladin 4, warpriest 4\n<bCasting Time> 1 standard action\n<bComponents> V, S\n<bRange> close (25 ft. + 5 ft./2 levels)\n<bTarget> one creature\n<bDuration> 1 round/4 levels\n<bSaving Throw> see text; <bSpell Resistance> yes\n\nThe target becomes filled with intense magical light, taking 2d6 points of damage as the light bursts from its wounds and orifices (if the target is an undead creature, it instead takes 2d8 points of damage). In addition, the creature radiates bright light in a 30-foot radius and increases the light level by one step for an additional 30 feet beyond that area—darkness becomes dim light, dim light becomes normal light, and normal light becomes bright light. Creatures that take penalties in bright light take them while within the 30-foot radius of this magical light. A successful Will save halves the damage and negates the light effect.\n\nFor every 4 character levels you possess, the light continues to fill the creature for another round (to a maximum of 5 rounds at 20th level), though the target may make a Will save each round to halve the damage and end the effect. Any creature adjacent to the target that fails its save and takes damage takes half as much damage and is blinded for 1 round. A successful Reflex save halves this damage (to a total of one-quarter the damage taken by the target) and negates the blindness effect.",
+    "full_description": "<bSource> Quests and Campaigns pg. 28\n<bSchool> enchantment; <bLevel> arcanist 3, bard 3, skald 3, sorcerer 3, wizard 3\n<bCasting Time> 1 standard action \n<bComponents> V, S, M (promotional materials such as flyers and posters worth 10 gp)\n<bRange> touch \n<bTarget> one building\n<bDuration> see text (D) \n<bSaving Throw> none; <bSpell Resistance> no\n \nYou may cast this spell immediately prior to spending 1 day of downtime to promote a business (see page 85 of <iUltimate Campaign>). The spell is cast on a building you wish to promote, which is magically bestowed with magical decorations and other improvements that make it generally more appealing, and it is treated as seeing increased activity for the spell’s duration. If the spell is cast on a building that you do not promote immediately thereafter, the spell is expended with no effect. \n\nAfter the initial day of downtime spent promoting your building, the spell maintains the influx of activity for a number of days equal to half your caster level (maximum 5 days). During this time, you needn’t spend additional downtime to promote the building, but you must spend capital as normal to promote the building. The capital the affected building generates for you is unaffected by the spell. If you spend 1 day promoting a different building than the target of this spell while this spell remains active, the spell immediately ends.",
     "attributes": [],
     "legal": false,
     "notes": ""
   },
   {
-    "name": "Business BoomsM",
+    "name": "Business Booms",
     "description": "(Downtime Spell) Promote your business with magic and increase the amount of activity it receives",
     "level": {
       "arcanist": 3,
