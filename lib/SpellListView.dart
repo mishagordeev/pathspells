@@ -101,12 +101,10 @@ class SpellListView extends StatelessWidget {
 
   Widget LabelAttributes(String attribute) {
     return Container(
-      padding: EdgeInsets.all(1.5),
       child: Container(
-        width: 18,
-        height: 18,
-        color: Colors.red[900].withOpacity(0.7),
-        child: Text(attribute, textAlign: TextAlign.center,style: TextStyle(color: Colors.white)),
+        width: 22,
+        height: 22,
+        child: Text(attribute, textAlign: TextAlign.left,style: TextStyle(color: Colors.black, fontSize: 14)),
       ),
     );
   }
@@ -151,7 +149,7 @@ class SpellListView extends StatelessWidget {
                   ],
                 ),
               ),
-              body: SpellView(spell.fullDescription,spell.notes),
+              body: SpellView(spell.fullDescription,spell.notes,spell.legal),
             );
           } else
           return Scaffold(
@@ -160,7 +158,7 @@ class SpellListView extends StatelessWidget {
                   spell.name,
                 ),
               ),
-              body: SpellView(spell.fullDescription,spell.notes),
+              body: SpellView(spell.fullDescription,spell.notes,spell.legal),
           );
         },
       ),

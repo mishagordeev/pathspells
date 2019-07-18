@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 class SpellView extends StatelessWidget {
   final String description;
   final String notes;
+  final bool legal;
 
-  SpellView(this.description, this.notes);
+  SpellView(this.description, this.notes, this.legal);
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +34,20 @@ class SpellView extends StatelessWidget {
           ],
         ),
       ));
+    }
+
+    void addNotLegalLabel() {
+      if (notes != '') {
+        spellViewSpanParts.add(new TextSpan(
+            text: "Not Pathfinder Society legal\n", style: TextStyle(color: Colors.red[900], fontSize: 16, fontWeight: FontWeight.bold)));
+
+      } else {
+        spellViewSpanParts.add(new TextSpan(
+            text: "Not Pathfinder Society legal\n\n",
+            style: TextStyle(color: Colors.red[900],
+                fontSize: 16,
+                fontWeight: FontWeight.bold)));
+      }
     }
 
     void addSubhead(String string) {
@@ -118,7 +133,9 @@ class SpellView extends StatelessWidget {
               );
           }));
     }
-
+    if (!legal) {
+      addNotLegalLabel();
+    }
     if (notes != '') {
       addNotes(notes);
     }
