@@ -70,7 +70,7 @@ class SpellListView extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(0.5),
       child: Container(
-        height: 24,
+        height: 26,
         child: Text(attribute, textAlign: TextAlign.left,style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold)),
       ),
     );
