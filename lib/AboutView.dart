@@ -16,7 +16,8 @@ class AboutView extends StatelessWidget{
               TextSpan(
                   text: "paizo.com/communityuse",
                   style: TextStyle(
-                      color: Colors.red[900], fontWeight: FontWeight.bold),
+                      color: Colors.red[900], decoration: TextDecoration.underline,),
+
                   recognizer: new TapGestureRecognizer()
                     ..onTap = () {
                       launch('https:paizo.com/communityuse');
@@ -27,7 +28,7 @@ class AboutView extends StatelessWidget{
               TextSpan(
                   text: "paizo.com",
                   style: TextStyle(
-                      color: Colors.red[900], fontWeight: FontWeight.bold),
+                    color: Colors.red[900], decoration: TextDecoration.underline,),
                   recognizer: new TapGestureRecognizer()
                     ..onTap = () {
                       launch('https://paizo.com');
@@ -37,62 +38,52 @@ class AboutView extends StatelessWidget{
               TextSpan(
                   text: "Archives of Nethys",
                   style: TextStyle(
-                      color: Colors.red[900], fontWeight: FontWeight.bold),
+                    color: Colors.red[900], decoration: TextDecoration.underline,),
                   recognizer: new TapGestureRecognizer()
                     ..onTap = () {
                       launch('https://aonprd.com');
                     }),
               TextSpan(text: " website. Thank Blake Davis for his great work!\n\n"),
               TextSpan(
-                text: " F ",
+                text: "F",
                 style: TextStyle(
-                    backgroundColor: Colors.red[900].withOpacity(0.7),
-                    color: Colors.white,
-                    letterSpacing: 0.8),
+                    color: Colors.red[900].withOpacity(0.9)),
               ),
               TextSpan(
                 text:
                 " – this spell has a focus component not normally included in a spell component pouch.\n",
               ),
               TextSpan(
-                text: " M ",
+                text: "M",
                 style: TextStyle(
-                    backgroundColor: Colors.red[900].withOpacity(0.7),
-                    color: Colors.white,
-                    letterSpacing: -0.5),
+                    color: Colors.red[900].withOpacity(0.9)),
               ),
               TextSpan(
                 text:
                 " – this spell has a material component not normally included in a spell component pouch.\n",
               ),
               TextSpan(
-                text: " R ",
+                text: "R",
                 style: TextStyle(
-                    backgroundColor: Colors.red[900].withOpacity(0.7),
-                    color: Colors.white,
-                    letterSpacing: 0.6),
+                    color: Colors.red[900].withOpacity(0.9)),
               ),
               TextSpan(
                 text:
                 " – spell requires a requisite religion or race. If religion, spellcaster must worship the listed deity to utilize the spell. If race, the spell might only target members of the listed race (the spell will say this if it does), but often are just the race's guarded secrets. Members of other races can learn to cast them with GM permission.\n",
               ),
               TextSpan(
-                text: " T ",
+                text: "T",
                 style: TextStyle(
-                    backgroundColor: Colors.red[900].withOpacity(0.7),
-                    color: Colors.white,
-                    letterSpacing: 0.6),
+                    color: Colors.red[900].withOpacity(0.9)),
               ),
               TextSpan(
                 text:
                 " – in order to prepare any of these spells, the caster must spend an hour performing a ritual in which he beseeches Torag (or a member of his family) for the aid of one of his divine family members. For 24 hours after the ritual, the caster may prepare spells of the requested deity. The caster may only attune himself to one additional deity at a time.\n",
               ),
               TextSpan(
-                text: " Y ",
+                text: "Y",
                 style: TextStyle(
-                    backgroundColor: Colors.red[900].withOpacity(0.7),
-                    color: Colors.white,
-                    letterSpacing: 0.6),
+                    color: Colors.red[900].withOpacity(0.9)),
               ),
               TextSpan(
                 text: " – this spell has a Mythic version.\n",
