@@ -25,6 +25,11 @@ class SpellListView extends StatelessWidget {
         itemBuilder: (BuildContext context, int index) {
           Widget legal;
           List <Widget> title = [Text(_spells[index].name)];
+          String subtitle = _spells[index].description;
+
+          if (_spells[index].notes == "3.5 Material") {
+            subtitle = _spells[index].notes + ". " + subtitle;
+          }
 
           if (!_spells[index].legal) {
             legal = Container(
@@ -40,7 +45,7 @@ class SpellListView extends StatelessWidget {
                 title: Row(
                   children: title
                 ),
-                subtitle: Text(_spells[index].description),
+                subtitle: Text(subtitle),
                 trailing: legal,
                 onTap: () {
                   _showSpellView(_spells[index], context);
@@ -102,7 +107,6 @@ class SpellListView extends StatelessWidget {
   Widget LabelAttributes(String attribute) {
     return Container(
       child: Container(
-        width: 22,
         height: 22,
         child: Text(attribute, textAlign: TextAlign.left,style: TextStyle(color: Colors.black, fontSize: 14)),
       ),
