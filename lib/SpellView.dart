@@ -83,55 +83,27 @@ class SpellView extends StatelessWidget {
             .add(RichText(text: TextSpan(children: spellViewSpanParts)));
         spellViewSpanParts = [];
       }
-      spellViewParts.add(new GridView.builder(
-          physics: ScrollPhysics(),
-          shrinkWrap: true,
-          itemCount: tableElements.length,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            childAspectRatio: 20 / columnNumber,
-            crossAxisSpacing: 0,
-            mainAxisSpacing: 0,
-            crossAxisCount: columnNumber,
-          ),
-          itemBuilder: (BuildContext context, int index) {
-            if (index < columnNumber) if (index % columnNumber == 0)
-              return new Container(
-                  decoration: new BoxDecoration(
-                      border: new Border(
-                          bottom: BorderSide(
-                              color: Theme.of(context).dividerColor,
-                              width: 2.0))),
-                  child: Text(
-                    tableElements[index],
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                    textAlign: TextAlign.left,
-                  ));
-            else
-              return new Container(
-                  decoration: new BoxDecoration(
-                      border: new Border(
-                          bottom: BorderSide(
-                              color: Theme.of(context).dividerColor,
-                              width: 2.0))),
-                  child: Text(tableElements[index],
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                      textAlign: TextAlign.left));
-            if (index >= columnNumber) if (index % columnNumber == 0)
-              return new Container(
-                  decoration: new BoxDecoration(
-                      border: new Border(
-                          bottom: BorderSide(
-                              color: Theme.of(context).dividerColor))),
-                  child: Text(tableElements[index], textAlign: TextAlign.left));
-            else
-              return new Container(
-                decoration: new BoxDecoration(
-                    border: new Border(
-                        bottom:
-                            BorderSide(color: Theme.of(context).dividerColor))),
-                child: Text(tableElements[index], textAlign: TextAlign.left),
-              );
-          }));
+
+      List<TableRow> rows = [];
+      List<Widget> elements = [];
+      int i = 0;
+      while (i!=tableElements.length) {
+        if (i < columnNumber) {
+          elements.add(Text(tableElements[i],textAlign: TextAlign.center,style: TextStyle(fontWeight: FontWeight.bold),));
+        } else
+        elements.add(Text(tableElements[i],textAlign: TextAlign.center,));
+        i++;
+        if (i % columnNumber == 0) {
+          rows.add(TableRow(children: elements));
+          elements = [];
+        }
+      }
+
+      spellViewParts.add(Table(
+        border: TableBorder(bottom: BorderSide(),horizontalInside: BorderSide()),
+        defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+        children: rows,
+      ));
     }
     if (!legal) {
       addNotLegalLabel();
