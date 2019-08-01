@@ -21,18 +21,28 @@ class ClassListView extends StatelessWidget {
                 leading: Image.asset(classes[index].image),
                 title: Text(classes[index].name),
                 onTap: () {
-                  _showClassSpells(context, classes[index].id, classes[index].levelCount, classes[index].name);
+                  _showClassSpells(context, classes[index].id, classes[index].levelCount, classes[index].name,classes[index].hasNotZeroLevel);
                 });
           })
     );
   }
 
-  void _showClassSpells(BuildContext context, String characterClass, int levelCount, String className) {
+  void _showClassSpells(BuildContext context, String characterClass, int levelCount, String className, bool hasNotZeroLevel) {
     List<Widget> tabs = [];
     List<Widget> tabsView = [];
     List<String> endingNumerals = ['','st','nd','rd','th','th','th','th','th','th'];
 
-    for (int i = 0; i < levelCount; i++) {
+    int startIndex;
+    int length;
+    if (hasNotZeroLevel) {
+      startIndex = 1;
+      length = levelCount - 1;
+    } else {
+      startIndex = 0;
+      length = levelCount;
+    }
+    
+    for (int i = startIndex; i < levelCount; i++) {
       tabs.add(Tab(child: Text(i.toString() + endingNumerals[i] + "-" + "Level",style: TextStyle(fontSize: 16),),));
       tabsView.add(SpellListView(spells, characterClass, i));
     }
@@ -40,7 +50,7 @@ class ClassListView extends StatelessWidget {
       MaterialPageRoute<void>(
         builder: (BuildContext context) {
           return DefaultTabController(
-              length: levelCount,
+              length: length,
               child: Scaffold(
                 appBar: AppBar(
                     title: Text(className),
