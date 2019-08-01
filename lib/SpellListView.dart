@@ -104,10 +104,10 @@ class SpellListView extends StatelessWidget {
 
   Widget LabelAttributes(String attribute) {
     return Container(
-      padding: EdgeInsets.all(1),
+      padding: EdgeInsets.all(0.5),
       child: Container(
         height: 22,
-        child: Text(attribute, textAlign: TextAlign.left,style: TextStyle(color: Colors.red[900].withOpacity(0.5), fontSize: 14)),
+        child: Text(attribute, textAlign: TextAlign.left,style: TextStyle(color: Colors.red[900].withOpacity(0.5), fontSize: 12)),
       ),
     );
   }
