@@ -3,210 +3,35 @@
     "has_not_zero_level": false,
     "id": "adept",
     "image": "assets/images/adept.png",
-    "name": "Adept",
-    "level_count": 7
+    "name": "Arcane",
+    "level_count": 10
   },
   {
     "has_not_zero_level": true,
     "id": "alchemist",
     "image": "assets/images/alchemist.png",
-    "name": "Alchemist",
-    "level_count": 7
+    "name": "Divine",
+    "level_count": 10
   },
   {
     "has_not_zero_level": true,
     "id": "antipaladin",
     "image": "assets/images/antipaladin.png",
-    "name": "Antipaladin",
-    "level_count": 7
+    "name": "Occult",
+    "level_count": 10
   },
   {
     "has_not_zero_level": false,
     "id": "arcanist",
     "image": "assets/images/arcanist.png",
-    "name": "Arcanist",
+    "name": "Primal",
     "level_count": 10
   },
   {
     "has_not_zero_level": false,
     "id": "bard",
     "image": "assets/images/bard.png",
-    "name": "Bard",
-    "level_count": 7
-  },
-  {
-    "has_not_zero_level": true,
-    "id": "bloodrager",
-    "image": "assets/images/bloodrager.png",
-    "name": "Bloodrager",
-    "level_count": 7
-  },
-  {
-    "has_not_zero_level": false,
-    "id": "cleric",
-    "image": "assets/images/cleric.png",
-    "name": "Cleric",
-    "level_count": 10
-  },
-  {
-    "has_not_zero_level": false,
-    "id": "druid",
-    "image": "assets/images/druid.png",
-    "name": "Druid",
-    "level_count": 10
-  },
-  {
-    "has_not_zero_level": false,
-    "id": "hunter",
-    "image": "assets/images/hunter.png",
-    "name": "Hunter",
-    "level_count": 7
-  },
-  {
-    "has_not_zero_level": true,
-    "id": "inquisitor",
-    "image": "assets/images/inquisitor.png",
-    "name": "Inquisitor",
-    "level_count": 7
-  },
-  {
-    "has_not_zero_level": false,
-    "id": "investigator",
-    "image": "assets/images/investigator.png",
-    "name": "Investigator",
-    "level_count": 7
-  },
-  {
-    "has_not_zero_level": false,
-    "id": "magus",
-    "image": "assets/images/magus.png",
-    "name": "Magus",
-    "level_count": 7
-  },
-  {
-    "has_not_zero_level": false,
-    "id": "medium",
-    "image": "assets/images/medium.png",
-    "name": "Medium",
-    "level_count": 7
-  },
-  {
-    "has_not_zero_level": false,
-    "id": "mesmerist",
-    "image": "assets/images/mesmerist.png",
-    "name": "Mesmerist",
-    "level_count": 10
-  },
-  {
-    "has_not_zero_level": false,
-    "id": "occultist",
-    "image": "assets/images/occultist.png",
-    "name": "Occultist",
-    "level_count": 10
-  },
-  {
-    "has_not_zero_level": false,
-    "id": "oracle",
-    "image": "assets/images/oracle.png",
-    "name": "Oracle",
-    "level_count": 10
-  },
-  {
-    "has_not_zero_level": true,
-    "id": "paladin",
-    "image": "assets/images/paladin.png",
-    "name": "Paladin",
-    "level_count": 5
-  },
-  {
-    "has_not_zero_level": false,
-    "id": "psychic",
-    "image": "assets/images/psychic.png",
-    "name": "Psychic",
-    "level_count": 10
-  },
-  {
-    "has_not_zero_level": true,
-    "id": "ranger",
-    "image": "assets/images/ranger.png",
-    "name": "Ranger",
-    "level_count": 5
-  },
-  {
-    "has_not_zero_level": true,
-    "id": "red mantis assassin",
-    "image": "assets/images/red_mantis_assassin.png",
-    "name": "Red Mantis Assassin",
-    "level_count": 10
-  },
-  {
-    "has_not_zero_level": true,
-    "id": "sahir-afiyun",
-    "image": "assets/images/sahir-afiyun.png",
-    "name": "Sahir-Afiyun",
-    "level_count": 5
-  },
-  {
-    "has_not_zero_level": false,
-    "id": "shaman",
-    "image": "assets/images/shaman.png",
-    "name": "Shaman",
-    "level_count": 5
-  },
-  {
-    "has_not_zero_level": false,
-    "id": "skald",
-    "image": "assets/images/skald.png",
-    "name": "Skald",
-    "level_count": 5
-  },
-  {
-    "has_not_zero_level": false,
-    "id": "sorcerer",
-    "image": "assets/images/sorcerer.png",
-    "name": "Sorcerer",
-    "level_count": 10
-  },
-  {
-    "has_not_zero_level": false,
-    "id": "spiritualist",
-    "image": "assets/images/spiritualist.png",
-    "name": "Spiritualist",
-    "level_count": 10
-  },
-  {
-    "has_not_zero_level": false,
-    "id": "summoner",
-    "image": "assets/images/summoner_unchained.png",
-    "name": "Summoner",
-    "level_count": 10
-  },
-  {
-    "has_not_zero_level": false,
-    "id": "summoner (unchained)",
-    "image": "assets/images/summoner.png",
-    "name": "Summoner (Unchained)",
-    "level_count": 10
-  },
-  {
-    "has_not_zero_level": false,
-    "id": "warpriest",
-    "image": "assets/images/warpriest.png",
-    "name": "Warpriest",
-    "level_count": 10
-  },
-  {
-    "has_not_zero_level": false,
-    "id": "witch",
-    "image": "assets/images/witch.png",
-    "name": "Witch",
-    "level_count": 10
-  },
-  {
-    "has_not_zero_level": false,
-    "id": "wizard",
-    "image": "assets/images/wizard.png",
-    "name": "Wizard",
+    "name": "Rituals",
     "level_count": 10
   }
 ]
