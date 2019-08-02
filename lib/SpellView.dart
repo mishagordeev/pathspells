@@ -98,7 +98,7 @@ class SpellView extends StatelessWidget {
       }
 
       spellViewParts.add(Table(
-        border: TableBorder(bottom: BorderSide(),horizontalInside: BorderSide()),
+        border: TableBorder(bottom: BorderSide(color: Theme.of(context).dividerColor, width: 1.0),horizontalInside: BorderSide(color: Theme.of(context).dividerColor, width: 1.0)),
         defaultVerticalAlignment: TableCellVerticalAlignment.middle,
         children: rows,
       ));
