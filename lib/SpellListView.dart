@@ -58,6 +58,18 @@ class SpellListView extends StatelessWidget {
       List<Spell> spells, String characterClass, int level) {
     List<Spell> filteredSpellList = [];
     int itemCount = spells.length;
+    List alpha = ['A','B','C','D','E','F','G','H','I','J','K','L',
+    'M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+
+    if (characterClass == "alpha") {
+      for (int i = 0; i < itemCount; i++) {
+        if (spells[i].name[0] == alpha[level]) {
+          filteredSpellList.add(spells[i]);
+        }
+      }
+      return filteredSpellList;
+    }
+
     for (int i = 0; i < itemCount; i++) {
       if (spells[i].level[characterClass] == level) {
         filteredSpellList.add(spells[i]);

@@ -30,7 +30,8 @@ class ClassListView extends StatelessWidget {
   void _showClassSpells(BuildContext context, String characterClass, int levelCount, String className, bool hasNotZeroLevel) {
     List<Widget> tabs = [];
     List<Widget> tabsView = [];
-    List<String> endingNumerals = ['','st','nd','rd','th','th','th','th','th','th'];
+    List<String> endingNumerals = ['','st','nd','rd','th','th','th','th','th','th','th',
+      'th','th','th','th','th','th','th','th','th','th','th','th','th','th','th'];
 
     int startIndex;
     int length;
