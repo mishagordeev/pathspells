@@ -1,6 +1,13 @@
 [
   {
     "has_not_zero_level": false,
+    "id": "alltext",
+    "image": "assets/images/adept.png",
+    "name": "Alltext",
+    "level_count": 26
+  },
+  {
+    "has_not_zero_level": false,
     "id": "alpha",
     "image": "assets/images/adept.png",
     "name": "Alpha",

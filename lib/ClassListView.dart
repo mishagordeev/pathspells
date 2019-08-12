@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pathspells_flutter/SpellListView.dart';
 import 'package:pathspells_flutter/Spell.dart';
 import 'package:pathspells_flutter/Class.dart';
+import 'package:pathspells_flutter/SpellListTestView.dart';
 
 class ClassListView extends StatelessWidget {
   final List<Class> classes;
@@ -42,11 +43,19 @@ class ClassListView extends StatelessWidget {
       startIndex = 0;
       length = levelCount;
     }
-    
+    if (characterClass == "alltext") {
+      print("test");
+      for (int i = startIndex; i < levelCount; i++) {
+        tabs.add(Tab(child: Text(i.toString() + endingNumerals[i] + "-" + "123",style: TextStyle(fontSize: 16),),));
+        tabsView.add(SpellListTestView(spells, characterClass, i));
+      }
+    } else {
     for (int i = startIndex; i < levelCount; i++) {
       tabs.add(Tab(child: Text(i.toString() + endingNumerals[i] + "-" + "Level",style: TextStyle(fontSize: 16),),));
       tabsView.add(SpellListView(spells, characterClass, i));
-    }
+    }}
+
+
     Navigator.of(context).push(
       MaterialPageRoute<void>(
         builder: (BuildContext context) {
