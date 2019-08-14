@@ -33,6 +33,8 @@ class ClassListView extends StatelessWidget {
     List<Widget> tabsView = [];
     List<String> endingNumerals = ['','st','nd','rd','th','th','th','th','th','th','th',
       'th','th','th','th','th','th','th','th','th','th','th','th','th','th','th'];
+    List<String> alpha = ['A','B','C','D','E','F','G','H','I','J','K','L',
+      'M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 
     int startIndex;
     int length;
@@ -44,13 +46,15 @@ class ClassListView extends StatelessWidget {
       length = levelCount;
     }
     if (characterClass == "alltext") {
-      print("test");
       for (int i = startIndex; i < levelCount; i++) {
-        tabs.add(Tab(child: Text(i.toString() + endingNumerals[i] + "-" + "123",style: TextStyle(fontSize: 16),),));
+        tabs.add(Tab(child: Text(alpha[i],style: TextStyle(fontSize: 16),),));
         tabsView.add(SpellListTestView(spells, characterClass, i));
       }
     } else {
     for (int i = startIndex; i < levelCount; i++) {
+      if (characterClass == "alpha") {
+        tabs.add(Tab(child: Text(alpha[i],style: TextStyle(fontSize: 16),),));
+      } else
       tabs.add(Tab(child: Text(i.toString() + endingNumerals[i] + "-" + "Level",style: TextStyle(fontSize: 16),),));
       tabsView.add(SpellListView(spells, characterClass, i));
     }}

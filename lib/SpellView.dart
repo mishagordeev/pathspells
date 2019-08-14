@@ -169,9 +169,9 @@ class SpellView extends StatelessWidget {
     }
     addBlankText(descriptionPart);
     spellViewParts.add(RichText(text: TextSpan(children: spellViewSpanParts)));
-    return new ListView(
+    return new Column(
 
-        children: (spellViewParts),
-        padding: EdgeInsets.fromLTRB(8.0, 4.0, 8.0, 8.0));
+        children: (spellViewParts));
+       // padding: EdgeInsets.fromLTRB(8.0, 4.0, 8.0, 8.0));
   }
 }

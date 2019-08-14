@@ -27,7 +27,7 @@ class SpellListTestView extends StatelessWidget {
             child: Column(
               children: <Widget>[
                 Text(_spells[index].name),
-                Text(_spells[index].fullDescription)
+                SpellView(_spells[index].fullDescription,_spells[index].notes,_spells[index].legal)
               ],
             )
           );
