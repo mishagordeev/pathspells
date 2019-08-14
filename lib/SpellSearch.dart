@@ -27,14 +27,15 @@ class SpellSearch extends SearchDelegate {
     final ThemeData theme = Theme.of(context);
     return theme.copyWith(
         inputDecorationTheme: InputDecorationTheme(
-            hintStyle: TextStyle(color: theme.primaryTextTheme.title.color)),
+            hintStyle: TextStyle(color: Colors.white70)),
         primaryColor: theme.primaryColor,
         primaryIconTheme: theme.primaryIconTheme,
         primaryColorBrightness: theme.primaryColorBrightness,
         primaryTextTheme: theme.primaryTextTheme,
         textTheme: theme.textTheme.copyWith(
-            title: theme.textTheme.title
-                .copyWith(color: theme.primaryTextTheme.title.color)));
+          title: theme.textTheme.title
+              .copyWith(color: Colors.white))
+    );
   }
 
   @override
