@@ -39,11 +39,11 @@ class SpellView extends StatelessWidget {
     void addNotLegalLabel() {
       if (notes != '') {
         spellViewSpanParts.add(new TextSpan(
-            text: "Not Pathfinder Society legal.\n", style: TextStyle(color: Colors.black)));
+            text: "Not Pathfinder Society legal\n", style: TextStyle(color: Colors.black)));
 
       } else {
         spellViewSpanParts.add(new TextSpan(
-            text: "Not Pathfinder Society legal.\n\n",
+            text: "Not Pathfinder Society legal\n\n",
             style: TextStyle(color: Colors.black)));
       }
     }
