@@ -44,8 +44,18 @@ class AboutView extends StatelessWidget{
                       launch('https://aonprd.com');
                     }),
               TextSpan(text: " website. Thank Blake Davis for his great work!\n\n"),
+              TextSpan(text: "Send all suggestions and all founded bugs to my "),
               TextSpan(
-                text: "F",
+                  text: "e-mail",
+                  style: TextStyle(
+                    color: Colors.red[900], decoration: TextDecoration.underline,),
+                  recognizer: new TapGestureRecognizer()
+                    ..onTap = () {
+                      launch('mailto:mishagordeev@gmail.com');
+                    }),
+              TextSpan(text: " or discord misha#6189.\n\n"),
+              TextSpan(
+                text: " F",
                 style: TextStyle(
                     color: Colors.red[900].withOpacity(0.9)),
               ),
