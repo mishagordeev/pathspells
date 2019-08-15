@@ -4,7 +4,7 @@
     "id": "adept",
     "image": "assets/images/adept.png",
     "name": "Adept",
-    "level_count": 7
+    "level_count": 6
   },
   {
     "has_not_zero_level": true,
@@ -39,7 +39,7 @@
     "id": "bloodrager",
     "image": "assets/images/bloodrager.png",
     "name": "Bloodrager",
-    "level_count": 7
+    "level_count": 5
   },
   {
     "has_not_zero_level": false,
@@ -63,14 +63,14 @@
     "level_count": 7
   },
   {
-    "has_not_zero_level": true,
+    "has_not_zero_level": false,
     "id": "inquisitor",
     "image": "assets/images/inquisitor.png",
     "name": "Inquisitor",
     "level_count": 7
   },
   {
-    "has_not_zero_level": false,
+    "has_not_zero_level": true,
     "id": "investigator",
     "image": "assets/images/investigator.png",
     "name": "Investigator",
@@ -95,14 +95,14 @@
     "id": "mesmerist",
     "image": "assets/images/mesmerist.png",
     "name": "Mesmerist",
-    "level_count": 10
+    "level_count": 7
   },
   {
     "has_not_zero_level": false,
     "id": "occultist",
     "image": "assets/images/occultist.png",
     "name": "Occultist",
-    "level_count": 10
+    "level_count": 7
   },
   {
     "has_not_zero_level": false,
@@ -137,28 +137,28 @@
     "id": "red mantis assassin",
     "image": "assets/images/red_mantis_assassin.png",
     "name": "Red Mantis Assassin",
-    "level_count": 10
+    "level_count": 5
   },
   {
     "has_not_zero_level": true,
     "id": "sahir-afiyun",
     "image": "assets/images/sahir-afiyun.png",
     "name": "Sahir-Afiyun",
-    "level_count": 5
+    "level_count": 6
   },
   {
     "has_not_zero_level": false,
     "id": "shaman",
     "image": "assets/images/shaman.png",
     "name": "Shaman",
-    "level_count": 5
+    "level_count": 10
   },
   {
     "has_not_zero_level": false,
     "id": "skald",
     "image": "assets/images/skald.png",
     "name": "Skald",
-    "level_count": 5
+    "level_count": 7
   },
   {
     "has_not_zero_level": false,
@@ -172,28 +172,28 @@
     "id": "spiritualist",
     "image": "assets/images/spiritualist.png",
     "name": "Spiritualist",
-    "level_count": 10
+    "level_count": 7
   },
   {
     "has_not_zero_level": false,
     "id": "summoner",
     "image": "assets/images/summoner_unchained.png",
     "name": "Summoner",
-    "level_count": 10
+    "level_count": 7
   },
   {
     "has_not_zero_level": false,
     "id": "summoner (unchained)",
     "image": "assets/images/summoner.png",
     "name": "Summoner (Unchained)",
-    "level_count": 10
+    "level_count": 7
   },
   {
     "has_not_zero_level": false,
     "id": "warpriest",
     "image": "assets/images/warpriest.png",
     "name": "Warpriest",
-    "level_count": 10
+    "level_count": 7
   },
   {
     "has_not_zero_level": false,
