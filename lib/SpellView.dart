@@ -53,6 +53,29 @@ class SpellView extends StatelessWidget {
           text: string, style: TextStyle(color: Colors.black, fontSize: 16, fontWeight: FontWeight.bold)));
     }
 
+    void addDoubleSubhead(String string1, String string2) {
+      if (spellViewSpanParts != []) {
+        spellViewParts
+            .add(Container(
+          child: RichText(text: TextSpan(children: spellViewSpanParts)),
+          color: Colors.amberAccent,
+        ));
+        spellViewSpanParts = [];
+      }
+      spellViewParts.add(new Container(
+        color: Colors.red[900].withOpacity(0.9),
+        padding: EdgeInsets.symmetric(horizontal: 3.0),
+        child: Row(
+            children: <Widget>[
+              Expanded(
+                child: Text('text1', textAlign: TextAlign.left, style: TextStyle(color: Colors.white),),
+              ),
+              Expanded(
+                child: Text('text2', textAlign: TextAlign.right,  style: TextStyle(color: Colors.white)),
+              ),]),
+      ));
+    }
+
     void addNotes(String string) {
       spellViewSpanParts.add(new TextSpan(
           text: string + "\n\n", style: TextStyle(color: Colors.black)));
@@ -143,6 +166,11 @@ class SpellView extends StatelessWidget {
           addCaption(descriptionPart);
           descriptionPart = "";
         }
+
+        if (description[i] == 'h') {
+          addDoubleSubhead("test1", "test2");
+        }
+
         if (description[i] == 'v') {
           i++;
           while (description[i] != '>') {
