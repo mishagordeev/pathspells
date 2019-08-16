@@ -145,12 +145,7 @@ class SpellListView extends StatelessWidget {
           if (spell.attributes.isNotEmpty) {
             return Scaffold(
               appBar: AppBar(
-                title: Row(
-                  children: <Widget>[
-                    Text(spell.name, softWrap: true,),
-                    _setAppBarAttributes(spell.attributes)
-                  ],
-                ),
+                title: Text(spell.name, softWrap: true,),
               ),
               body: SpellView(spell.fullDescription,spell.notes,spell.legal),
             );
